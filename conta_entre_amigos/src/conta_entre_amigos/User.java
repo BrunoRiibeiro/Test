@@ -1,7 +1,8 @@
 package conta_entre_amigos;
 
 public class User {
-    private String name;
+	
+	private String name;
     private String birthday;
     private String [] friends;
     private String [] yourGroups;
@@ -59,4 +60,5 @@ public class User {
     public String friendList(){
         return "oi";
     }
+
 }

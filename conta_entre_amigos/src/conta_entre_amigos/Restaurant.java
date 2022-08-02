@@ -1,8 +1,8 @@
 package conta_entre_amigos;
 
-public class Restaurant extends Reservation{
-    
-    private String name;
+public class Restaurant extends Arrangement{
+
+	private String name;
     private int stars;
     private String [] meal;
     private double [] mealPrice;
@@ -34,10 +34,8 @@ public class Restaurant extends Reservation{
     public void setMealPrice(double[] mealPrice) {
         this.mealPrice = mealPrice;
     }
-    
-    
-    
-    
+        
+
     public void sumPrices(){
         
     }
@@ -61,5 +59,4 @@ public class Restaurant extends Reservation{
     public boolean cancel() {
         return true;
     }
-    
 }

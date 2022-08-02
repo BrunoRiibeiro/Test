@@ -1,8 +1,8 @@
 package conta_entre_amigos;
 
 public class Group {
-    
-    private String name;
+	
+	private String name;
     private String category;
     private String [] members;
     private int numberOfMembers;
@@ -10,6 +10,7 @@ public class Group {
     private String [] restaurantList;
     private double totalPrice;
 
+    
     public String getName() {
         return name;
     }
