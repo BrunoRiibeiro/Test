@@ -6,8 +6,9 @@ public class Group {
     private String category;
     private String [] members;
     private int numberOfMembers;
-    private String [] travelList;
-    private String [] restaurantList;
+    private String [] travelList;   
+	private String [] accomodationList;
+    private String [] transportationList;
     private double totalPrice;
 
     
@@ -46,12 +47,19 @@ public class Group {
         this.travelList = travelList;
     }
 
-    public String[] getRestaurantList() {
-        return restaurantList;
-    }
-    public void setRestaurantList(String[] restaurantList) {
-        this.restaurantList = restaurantList;
-    }
+    public String[] getAccomodationList() {
+		return accomodationList;
+	}
+    public void setAccomodationList(String[] accomodationList) {
+		this.accomodationList = accomodationList;
+	}
+	
+    public String[] getTransportationList() {
+		return transportationList;
+	}
+	public void setTransportationList(String[] transportationList) {
+		this.transportationList = transportationList;
+	}
 
     public double getTotalPrice() {
         return totalPrice;
