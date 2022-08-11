@@ -1,10 +1,12 @@
 package model;
+import java.util.ArrayList;
+import java.util.List;
 
 public class User {
 	
 	private String name;
     private String birthday;
-    private String [] friends;
+    private List<String> friends = new ArrayList<>();
     private String [] yourGroups;
     private double balance;
     
@@ -24,11 +26,11 @@ public class User {
         this.birthday = birthday;
     }
 
-    public String[] getFriends() {
+    public List<String> getFriends() {
         return friends;
     }
     public void setFriends(String friends[]) {
-        this.friends = friends;
+        
     }
 
     public String[] getYourGroups() {
@@ -49,8 +51,8 @@ public class User {
         return true;
     }
     
-    public void addFriend(User friend){
-        
+    public void addFriend(String friend){
+        friends.add(friend);
     } 
     
     public void removeFriend(User friend){
