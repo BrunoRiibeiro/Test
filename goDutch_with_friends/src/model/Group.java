@@ -1,10 +1,12 @@
 package model;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Group {
 	
 	private String name;
     private String category;
-    private String[] members;
+    private List<User> members = new ArrayList<>();
     private int numberOfMembers;
     private String[] travelList;   
 	private String[] accomodationList;
@@ -26,10 +28,10 @@ public class Group {
         this.category = category;
     }
 
-    public String[] getMembers() {
+    public List<User> getMembers() {
         return members;
     }
-    public void setMembers(String[] members) {
+    public void setMembers(List<User> members) {
         this.members = members;
     }
 
