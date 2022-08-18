@@ -1,10 +1,12 @@
 package model;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Group {
 	
 	private String name;
     private String category;
-    private String[] members;
+    private List<User> members = new ArrayList<>();
     private int numberOfMembers;
     private String[] travelList;   
 	private String[] accomodationList;
@@ -12,7 +14,15 @@ public class Group {
     private double totalPrice;
 
     
-    public String getName() {
+    public Group(String name, String category, List<User> members) {
+		super();
+		this.name = name;
+		this.category = category;
+		this.members = members;
+	}
+    
+    
+	public String getName() {
         return name;
     }
     public void setName(String name) {
@@ -26,10 +36,10 @@ public class Group {
         this.category = category;
     }
 
-    public String[] getMembers() {
+    public List<User> getMembers() {
         return members;
     }
-    public void setMembers(String[] members) {
+    public void setMembers(List<User> members) {
         this.members = members;
     }
 
