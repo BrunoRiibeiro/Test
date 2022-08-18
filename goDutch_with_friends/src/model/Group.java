@@ -14,7 +14,15 @@ public class Group {
     private double totalPrice;
 
     
-    public String getName() {
+    public Group(String name, String category, List<User> members) {
+		super();
+		this.name = name;
+		this.category = category;
+		this.members = members;
+	}
+    
+    
+	public String getName() {
         return name;
     }
     public void setName(String name) {
