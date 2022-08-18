@@ -12,18 +12,18 @@ import javax.swing.JPanel;
 public class Home implements ActionListener {
 	
 	private JFrame frame;
-	private JButton buttonGroups, buttonFriends, buttonProfile;
+	private JButton buttonCreateUser, buttonFriends, buttonProfile;
 	private JPanel panel;
 	
 	public Home() {
 		frame = new JFrame();
 		
-		buttonGroups = new JButton("Groups");
-		buttonGroups.setEnabled(false);
-		buttonGroups.setBackground(Color.PINK);
-		buttonGroups.setForeground(Color.BLACK);
-		buttonGroups.setBounds(280, 213, 267, 31);
-		buttonGroups.addActionListener(this);
+		buttonCreateUser = new JButton("Cadastrar Usuário");
+		buttonCreateUser.setEnabled(false);
+		buttonCreateUser.setBackground(Color.PINK);
+		buttonCreateUser.setForeground(Color.BLACK);
+		buttonCreateUser.setBounds(280, 213, 267, 31);
+		buttonCreateUser.addActionListener(this);
 		
 		buttonFriends = new JButton("Friends");
 		buttonFriends.setEnabled(false);
@@ -45,7 +45,7 @@ public class Home implements ActionListener {
 		panel = new JPanel();
 		panel.setBorder(BorderFactory.createEmptyBorder(250, 250, 20, 31));
 		panel.setLayout(null);
-		panel.add(buttonGroups);
+		panel.add(buttonCreateUser);
 		panel.add(buttonFriends);
 		panel.add(buttonProfile);
 		
