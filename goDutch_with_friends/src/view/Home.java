@@ -1,9 +1,10 @@
 package view;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,19 +12,19 @@ import javax.swing.JPanel;
 
 public class Home implements ActionListener {
 	
-	private JFrame frame;
-	private JButton buttonCreateUser, buttonFriends, buttonProfile;
-	private JPanel panel;
+	private final JFrame frame;
+	private final JButton buttonRegisterUser, buttonFriends, buttonProfile;
+	private final JPanel panel;
 	
 	public Home() {
 		frame = new JFrame();
 		
-		buttonCreateUser = new JButton("Cadastrar Usuário");
-		buttonCreateUser.setEnabled(false);
-		buttonCreateUser.setBackground(Color.PINK);
-		buttonCreateUser.setForeground(Color.BLACK);
-		buttonCreateUser.setBounds(280, 213, 267, 31);
-		buttonCreateUser.addActionListener(this);
+		buttonRegisterUser = new JButton("Cadastrar Usuário");
+		buttonRegisterUser.setEnabled(false);
+		buttonRegisterUser.setBackground(Color.PINK);
+		buttonRegisterUser.setForeground(Color.BLACK);
+		buttonRegisterUser.setBounds(280, 213, 267, 31);
+		buttonRegisterUser.addActionListener(this);
 		
 		buttonFriends = new JButton("Friends");
 		buttonFriends.setEnabled(false);
@@ -45,7 +46,7 @@ public class Home implements ActionListener {
 		panel = new JPanel();
 		panel.setBorder(BorderFactory.createEmptyBorder(250, 250, 20, 31));
 		panel.setLayout(null);
-		panel.add(buttonCreateUser);
+		panel.add(buttonRegisterUser);
 		panel.add(buttonFriends);
 		panel.add(buttonProfile);
 		
