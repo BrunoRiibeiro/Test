@@ -12,6 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import controller.RegisterUserController;
+
 public class RegisterUser extends JFrame implements ActionListener {
 
 	private final JTextField textFieldName;
@@ -21,6 +23,7 @@ public class RegisterUser extends JFrame implements ActionListener {
 	private final JButton buttonRegister;
 	private final JFrame frame;
 	private final JPanel panel;
+	private final RegisterUserController controller;
 
 
 	
@@ -48,7 +51,7 @@ public class RegisterUser extends JFrame implements ActionListener {
 		frame.add(textFieldBrithday);
 		
 		buttonRegister = new JButton("Cadastrar");
-		buttonRegister.setEnabled(false);
+		buttonRegister.setEnabled(true);
 		buttonRegister.setBackground(Color.PINK);
 		buttonRegister.setForeground(Color.BLACK);
 		buttonRegister.setBounds(280, 340, 125, 31);
@@ -69,14 +72,47 @@ public class RegisterUser extends JFrame implements ActionListener {
 		frame.setVisible(true);
 		
 		
+		controller = new RegisterUserController(this);
 	}
 
+	
+	public JTextField getTextFieldName() {
+		return textFieldName;
+	}
+
+
+	public JTextField getTextFieldBrithday() {
+		return textFieldBrithday;
+	}
+
+	public JLabel getLabelName() {
+		return labelName;
+	}
+
+	public JLabel getLabelBirthday() {
+		return labelBirthday;
+	}
+
+	public JButton getButtonRegister() {
+		return buttonRegister;
+	}
+
+	public JFrame getFrame() {
+		return frame;
+	}
+
+	public JPanel getPanel() {
+		return panel;
+	}
+
+	public RegisterUserController getController() {
+		return controller;
+	}
 
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
+		controller.sendAction(e.getSource());
 	}
 	
 }
