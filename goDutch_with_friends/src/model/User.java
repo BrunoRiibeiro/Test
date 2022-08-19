@@ -76,4 +76,10 @@ public class User {
         return "oi";
     }
 
+	@Override
+	public String toString() {
+		return "User [name=" + name + ", birthday=" + birthday + ", friends=" + friends + ", yourGroups=" + yourGroups
+				+ ", balance=" + balance + "]";
+	}
+    
 }
