@@ -80,7 +80,6 @@ public class RegisterUser extends JFrame implements ActionListener {
 		return textFieldName;
 	}
 
-
 	public JTextField getTextFieldBrithday() {
 		return textFieldBrithday;
 	}
