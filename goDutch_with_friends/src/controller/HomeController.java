@@ -1,6 +1,7 @@
 package controller;
 
 import view.Home;
+import view.RegisterUser;
 
 public class HomeController {
 	
@@ -12,7 +13,8 @@ public class HomeController {
 	}
 	
 	public void sendAction(Object source) {
-		System.out.println("0K");
+		if(source == view.getButtonRegisterUser())
+			new RegisterUser();
 	}
 	
 }

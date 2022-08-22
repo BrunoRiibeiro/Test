@@ -10,31 +10,36 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import controller.HomeController;
+import controller.RegisterUserController;
+
 public class Home implements ActionListener {
 	
 	private final JFrame frame;
 	private final JButton buttonRegisterUser, buttonFriends, buttonProfile;
 	private final JPanel panel;
+	private final HomeController controller;
+
 	
 	public Home() {
 		frame = new JFrame();
 		
 		buttonRegisterUser = new JButton("Cadastrar Usuário");
-		buttonRegisterUser.setEnabled(false);
+		buttonRegisterUser.setEnabled(true);
 		buttonRegisterUser.setBackground(Color.PINK);
 		buttonRegisterUser.setForeground(Color.BLACK);
 		buttonRegisterUser.setBounds(280, 213, 267, 31);
 		buttonRegisterUser.addActionListener(this);
 		
 		buttonFriends = new JButton("Friends");
-		buttonFriends.setEnabled(false);
+		buttonFriends.setEnabled(true);
 		buttonFriends.setBackground(Color.PINK);
 		buttonFriends.setForeground(Color.BLACK);
 		buttonFriends.setBounds(280, 254, 267, 31);
 		buttonFriends.addActionListener(this);
 		
 		buttonProfile = new JButton("Profile");
-		buttonProfile.setEnabled(false);
+		buttonProfile.setEnabled(true);
 		buttonProfile.setBackground(Color.PINK);
 		buttonProfile.setForeground(Color.BLACK);
 		buttonProfile.setBounds(280, 295, 267, 31);
@@ -58,13 +63,39 @@ public class Home implements ActionListener {
 		frame.setTitle("goDu");
 		frame.setVisible(true);
 		
+		
+		controller = new HomeController(this);
+	}
+	
+	
 
+	public JFrame getFrame() {
+		return frame;
+	}
+
+	public JButton getButtonRegisterUser() {
+		return buttonRegisterUser;
+	}
+
+	public JButton getButtonFriends() {
+		return buttonFriends;
+	}
+
+	public JButton getButtonProfile() {
+		return buttonProfile;
+	}
+
+	public JPanel getPanel() {
+		return panel;
+	}
+
+	public HomeController getController() {
+		return controller;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
+		controller.sendAction(e.getSource());
 	}
 
 }
