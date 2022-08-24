@@ -23,7 +23,8 @@ public abstract class Jstructure extends JPanel implements ActionListener {
 	private JButton buttonCancelar;
 
 	/**
-	 * Gera um panel com um fundo, um t�tulo e dois bot�es.
+	 * Gera um panel com um fundo branco, um titulo e dois botoes, confirma e
+	 * cancela.
 	 * 
 	 * O titulo da tela para ser mostrado no topo
 	 */
