@@ -1,12 +1,10 @@
 package view;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 
 import javax.swing.JFormattedTextField;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -30,32 +28,24 @@ public class RegisterUser extends Jstructure implements ActionListener {
 	 * Cria o panel com os campos para cadastro.
 	 */
 	public RegisterUser() {
-		super("Cadastre um novo Grupo");
-
-		JFrame frame = new JFrame();
-
-		controller = new RegisterUserController(this);
-
-		frame.setBackground(new Color(255, 255, 255));
-		frame.setLayout(null);
-		frame.setBounds(100, 100, 830, 522);
+		super("Cadastre um novo Usuário");
 
 		JLabel labelNome = new JLabel("Nome:");
 		labelNome.setFont(Jstructure.FONT);
 		labelNome.setHorizontalAlignment(SwingConstants.RIGHT);
 		labelNome.setBounds(169, 195, 175, 13);
-		frame.add(labelNome);
+		this.add(labelNome);
 
 		JLabel labelData = new JLabel("Data de Nascimento:");
 		labelData.setFont(Jstructure.FONT);
 		labelData.setHorizontalAlignment(SwingConstants.RIGHT);
 		labelData.setBounds(169, 243, 175, 13);
-		frame.add(labelData);
+		this.add(labelData);
 
 		fieldName = new JTextField();
 		labelNome.setLabelFor(fieldName);
 		fieldName.setBounds(405, 192, 147, 19);
-		frame.add(fieldName);
+		this.add(fieldName);
 		fieldName.setColumns(10);
 
 		MaskFormatter mascaraData = null;
@@ -70,12 +60,10 @@ public class RegisterUser extends Jstructure implements ActionListener {
 		expectedDate = new JFormattedTextField(mascaraData);
 		labelData.setLabelFor(expectedDate);
 		expectedDate.setBounds(405, 240, 147, 19);
-		frame.add(expectedDate);
-
-		frame.add(getButtonConfirmar());
-		frame.add(getButtonCancelar());
-
-		frame.setVisible(true);
+		this.add(expectedDate);
+		
+		
+		controller = new RegisterUserController(this);
 	}
 
 	public JTextField getTextFieldName() {
