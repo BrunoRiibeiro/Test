@@ -20,7 +20,7 @@ import controller.RegisterGroupController;
  * JPanel para selecionar grupo para a edicao.
  * 
  */
-public class Groups extends JPanel implements ActionListener {
+public class GroupView extends JPanel implements ActionListener {
 	private static final long serialVersionUID = 3378863774624440091L;
 	private JList<String> fieldGroups;
 	private JButton buttonSelecionar;
@@ -32,11 +32,11 @@ public class Groups extends JPanel implements ActionListener {
 	 * Cria o panel com uma lista com bot�o, um bot�o para cadastrar um novo grupo e
 	 * um bot�o para finalizar o cadastro.
 	 */
-	public Groups() {
+	public GroupView() {
 
 		JFrame frame = new JFrame();
 
-		controller = new RegisterGroupController(this);
+		// controller = new RegisterGroupController(this);
 
 		frame.setBackground(new Color(245, 245, 220));
 		frame.setLayout(null);
@@ -74,7 +74,7 @@ public class Groups extends JPanel implements ActionListener {
 
 		fieldGroups = new JList<>();
 		scrollPane.setViewportView(fieldGroups);
-		fieldGroups.setModel(controller.atualizarModeloLista());
+		// fieldGroups.setModel(controller.atualizarModeloLista());
 		fieldGroups.setBorder(new LineBorder(new Color(0, 0, 0), 3));
 		fieldGroups.setFont(Jstructure.FONT);
 		fieldGroups.setForeground(Color.BLACK);
@@ -123,7 +123,7 @@ public class Groups extends JPanel implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		controller.executarBotao(e.getSource());
+		// controller.executarBotao(e.getSource());
 	}
 
 	public JList<String> getFieldGroups() {

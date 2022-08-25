@@ -29,7 +29,7 @@ public class Home implements ActionListener {
 		buttonRegisterUser.setBounds(280, 213, 267, 31);
 		buttonRegisterUser.addActionListener(this);
 
-		buttonFriends = new JButton("Friends");
+		buttonFriends = new JButton("Cadastrar Grupo");
 		buttonFriends.setEnabled(true);
 		buttonFriends.setBackground(Color.PINK);
 		buttonFriends.setForeground(Color.BLACK);

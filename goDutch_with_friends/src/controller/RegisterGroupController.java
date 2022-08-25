@@ -1,38 +1,38 @@
 package controller;
 
-import javax.swing.ListModel;
-
+import model.Group;
 import model.database.DatabaseProvider;
-import view.Groups;
+import view.Home;
 import view.RegisterGroup;
 
 public class RegisterGroupController {
 
+	private final RegisterGroup view;
+
 	public RegisterGroupController(RegisterGroup view) {
 		super();
-	}
-
-	public RegisterGroupController(Groups groups) {
-		// TODO Auto-generated constructor stub
+		this.view = view;
 	}
 
 	public void sendAction(Object source) {
-		registerNewGroup();
-		System.out.println(DatabaseProvider.getGroups());
+		if (source == view.getButtonConfirmar()) {
+			registerNewGroup();
+			System.out.println(DatabaseProvider.getGroups());
+			new Home();
+		} else if (source == view.getButtonCancelar()) {
+			new Home();
+		}
 	}
 
 	private void registerNewGroup() {
+		String name = view.getFieldName().getText();
+		String creator = view.getFieldCreator().getText();
+		String expectedDate = view.getFieldData().getText();
+		String motivation = view.getFieldMotivation().getText();
 
-	}
+		Group group = new Group(name, creator, expectedDate, motivation);
 
-	public void executarBotao(Object source) {
-		// TODO Auto-generated method stub
-
-	}
-
-	public ListModel<String> atualizarModeloLista() {
-		// TODO Auto-generated method stub
-		return null;
+		DatabaseProvider.getGroups().add(group);
 	}
 
 }

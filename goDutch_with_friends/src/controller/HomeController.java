@@ -1,6 +1,6 @@
 package controller;
 
-import view.Groups;
+import view.GroupView;
 import view.Home;
 import view.RegisterGroup;
 import view.RegisterUser;
@@ -20,7 +20,7 @@ public class HomeController {
 		} else if (source == view.getButtonFriends()) {
 			new RegisterGroup();
 		} else if (source == view.getButtonProfile()) {
-			new Groups();
+			new GroupView();
 		}
 	}
 

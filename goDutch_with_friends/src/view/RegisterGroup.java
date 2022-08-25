@@ -42,25 +42,25 @@ public class RegisterGroup extends Jstructure implements ActionListener {
 		frame.setLayout(null);
 		frame.setBounds(100, 100, 830, 522);
 
-		JLabel labelNome = new JLabel("Name Group:");
+		JLabel labelNome = new JLabel("Nome do Grupo:");
 		labelNome.setFont(Jstructure.FONT);
 		labelNome.setHorizontalAlignment(SwingConstants.RIGHT);
 		labelNome.setBounds(169, 195, 175, 13);
 		frame.add(labelNome);
 
-		JLabel labelCreator = new JLabel("Creator User:");
+		JLabel labelCreator = new JLabel("Criador do Grupo:");
 		labelCreator.setFont(Jstructure.FONT);
 		labelCreator.setHorizontalAlignment(SwingConstants.RIGHT);
 		labelCreator.setBounds(169, 243, 175, 13);
 		frame.add(labelCreator);
 
-		JLabel labelData = new JLabel("Expected date:");
+		JLabel labelData = new JLabel("Data do planejamento:");
 		labelData.setFont(Jstructure.FONT);
 		labelData.setHorizontalAlignment(SwingConstants.RIGHT);
 		labelData.setBounds(158, 297, 186, 13);
 		frame.add(labelData);
 
-		JLabel labelMotivation = new JLabel("Motivation:");
+		JLabel labelMotivation = new JLabel("Motivação do Grupo:");
 		labelMotivation.setFont(Jstructure.FONT);
 		labelMotivation.setHorizontalAlignment(SwingConstants.RIGHT);
 		labelMotivation.setBounds(82, 343, 262, 13);
@@ -132,6 +132,6 @@ public class RegisterGroup extends Jstructure implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		controller.executarBotao(e.getSource());
+		controller.sendAction(e.getSource());
 	}
 }
