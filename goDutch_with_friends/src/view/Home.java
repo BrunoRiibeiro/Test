@@ -15,7 +15,7 @@ import controller.HomeController;
 public class Home implements ActionListener {
 
 	private final JFrame frame;
-	private final JButton buttonRegisterUser, buttonFriends, buttonProfile;
+	private final JButton buttonRegisterUser, buttonRegisterGroup, buttonGroup, buttonUser;
 	private final JPanel panel;
 	private final HomeController controller;
 
@@ -29,26 +29,34 @@ public class Home implements ActionListener {
 		buttonRegisterUser.setBounds(280, 213, 267, 31);
 		buttonRegisterUser.addActionListener(this);
 
-		buttonFriends = new JButton("Cadastrar Grupo");
-		buttonFriends.setEnabled(true);
-		buttonFriends.setBackground(Color.PINK);
-		buttonFriends.setForeground(Color.BLACK);
-		buttonFriends.setBounds(280, 254, 267, 31);
-		buttonFriends.addActionListener(this);
+		buttonRegisterGroup = new JButton("Cadastrar Grupo");
+		buttonRegisterGroup.setEnabled(true);
+		buttonRegisterGroup.setBackground(Color.PINK);
+		buttonRegisterGroup.setForeground(Color.BLACK);
+		buttonRegisterGroup.setBounds(280, 254, 267, 31);
+		buttonRegisterGroup.addActionListener(this);
 
-		buttonProfile = new JButton("Profile");
-		buttonProfile.setEnabled(true);
-		buttonProfile.setBackground(Color.PINK);
-		buttonProfile.setForeground(Color.BLACK);
-		buttonProfile.setBounds(280, 295, 267, 31);
-		buttonProfile.addActionListener(this);
+		buttonGroup = new JButton("Grupos");
+		buttonGroup.setEnabled(true);
+		buttonGroup.setBackground(Color.PINK);
+		buttonGroup.setForeground(Color.BLACK);
+		buttonGroup.setBounds(280, 295, 267, 31);
+		buttonGroup.addActionListener(this);
+
+		buttonUser = new JButton("Usuarios");
+		buttonUser.setEnabled(true);
+		buttonUser.setBackground(Color.PINK);
+		buttonUser.setForeground(Color.BLACK);
+		buttonUser.setBounds(280, 336, 267, 31);
+		buttonUser.addActionListener(this);
 
 		panel = new JPanel();
 		panel.setBorder(BorderFactory.createEmptyBorder(250, 250, 20, 31));
 		panel.setLayout(null);
 		panel.add(buttonRegisterUser);
-		panel.add(buttonFriends);
-		panel.add(buttonProfile);
+		panel.add(buttonRegisterGroup);
+		panel.add(buttonGroup);
+		panel.add(buttonUser);
 
 		frame.setBackground(new Color(245, 245, 220));
 		frame.setBounds(100, 100, 830, 522);
@@ -68,12 +76,16 @@ public class Home implements ActionListener {
 		return buttonRegisterUser;
 	}
 
-	public JButton getButtonFriends() {
-		return buttonFriends;
+	public JButton getButtonRegisterGroup() {
+		return buttonRegisterGroup;
 	}
 
-	public JButton getButtonProfile() {
-		return buttonProfile;
+	public JButton getButtonGroup() {
+		return buttonGroup;
+	}
+
+	public JButton getButtonUser() {
+		return buttonUser;
 	}
 
 	public JPanel getPanel() {

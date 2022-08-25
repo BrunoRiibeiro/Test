@@ -1,11 +1,11 @@
 package controller;
 
-import view.GroupView;
+import view.UserView;
 
-public class GroupController {
-	private final GroupView view;
+public class UserController {
+	private final UserView view;
 
-	public GroupController(GroupView view) {
+	public UserController(UserView view) {
 		super();
 		this.view = view;
 	}

@@ -14,35 +14,35 @@ import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
-import controller.GroupController;
+import controller.UserController;
 
 /**
  * JPanel para selecionar grupo para a edicao.
  * 
  */
-public class GroupView extends JPanel implements ActionListener {
+public class UserView extends JPanel implements ActionListener {
 	private static final long serialVersionUID = 3378863774624440091L;
 	private JList<String> fieldGroups;
 	private JButton buttonSelecionar;
 	private JButton buttonNewGroup;
 	private JButton buttonFinalizar;
-	private GroupController controller;
+	private UserController controller;
 
 	/**
 	 * Cria o panel com uma lista com bot�o, um bot�o para cadastrar um novo grupo e
 	 * um bot�o para finalizar o cadastro.
 	 */
-	public GroupView() {
+	public UserView() {
 
 		JFrame frame = new JFrame();
 
-		controller = new GroupController(this);
+		controller = new UserController(this);
 
 		frame.setBackground(new Color(245, 245, 220));
 		frame.setLayout(null);
 		frame.setBounds(100, 100, 830, 522);
 
-		JLabel labelTitulo = new JLabel("Grupos cadastrados:");
+		JLabel labelTitulo = new JLabel("Usuarios cadastrados:");
 		labelTitulo.setFont(Jstructure.FONT);
 		labelTitulo.setHorizontalAlignment(SwingConstants.CENTER);
 		labelTitulo.setBounds(278, 61, 254, 16);
@@ -102,7 +102,7 @@ public class GroupView extends JPanel implements ActionListener {
 		return buttonNewGroup;
 	}
 
-	public GroupController getController() {
+	public UserController getController() {
 		return controller;
 	}
 

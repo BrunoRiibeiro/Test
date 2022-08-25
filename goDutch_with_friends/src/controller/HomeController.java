@@ -4,6 +4,7 @@ import view.GroupView;
 import view.Home;
 import view.RegisterGroup;
 import view.RegisterUser;
+import view.UserView;
 
 public class HomeController {
 
@@ -17,10 +18,12 @@ public class HomeController {
 	public void sendAction(Object source) {
 		if (source == view.getButtonRegisterUser()) {
 			new RegisterUser();
-		} else if (source == view.getButtonFriends()) {
+		} else if (source == view.getButtonRegisterGroup()) {
 			new RegisterGroup();
-		} else if (source == view.getButtonProfile()) {
+		} else if (source == view.getButtonGroup()) {
 			new GroupView();
+		} else if (source == view.getButtonUser()) {
+			new UserView();
 		}
 	}
 
