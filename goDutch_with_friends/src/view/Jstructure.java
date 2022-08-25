@@ -17,11 +17,10 @@ import javax.swing.SwingConstants;
 public abstract class Jstructure extends JPanel implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
-
 	protected static final Font FONT = new Font("Algerian", Font.PLAIN, 14);
-
-	private JButton buttonConfirmar;
-	private JButton buttonCancelar;
+	
+	private final JButton buttonConfirm;
+	private final JButton buttonCancel;
 
 	/**
 	 * Gera um panel com um fundo branco, um titulo e dois botoes, confirma e
@@ -30,41 +29,41 @@ public abstract class Jstructure extends JPanel implements ActionListener {
 	 * O titulo da tela para ser mostrado no topo
 	 */
 
-	public Jstructure(String titulo) {
+	public Jstructure(String title) {
 
 		this.setBackground(new Color(255, 255, 255));
 		this.setLayout(null);
 		this.setBounds(100, 100, 830, 522);
 
-		JLabel labelTitulo = new JLabel(titulo);
+		JLabel labelTitulo = new JLabel(title);
 		labelTitulo.setFont(FONT);
 		labelTitulo.setHorizontalAlignment(SwingConstants.CENTER);
 		labelTitulo.setBounds(299, 102, 233, 13);
 		add(labelTitulo);
 
-		buttonConfirmar = new JButton("Confirmar");
-		buttonConfirmar.addActionListener(this);
-		buttonConfirmar.setForeground(new Color(0, 128, 0));
-		buttonConfirmar.setBackground(Color.LIGHT_GRAY);
-		buttonConfirmar.setFont(FONT);
-		buttonConfirmar.setBounds(492, 457, 119, 21);
-		this.add(buttonConfirmar);
+		buttonConfirm = new JButton("Confirmar");
+		buttonConfirm.addActionListener(this);
+		buttonConfirm.setForeground(new Color(0, 128, 0));
+		buttonConfirm.setBackground(Color.LIGHT_GRAY);
+		buttonConfirm.setFont(FONT);
+		buttonConfirm.setBounds(492, 457, 119, 21);
+		this.add(buttonConfirm);
 
-		buttonCancelar = new JButton("Cancelar");
-		buttonCancelar.addActionListener(this);
-		buttonCancelar.setForeground(new Color(128, 0, 0));
-		buttonCancelar.setBackground(Color.LIGHT_GRAY);
-		buttonCancelar.setFont(FONT);
-		buttonCancelar.setBounds(621, 457, 113, 21);
-		this.add(buttonCancelar);
+		buttonCancel = new JButton("Cancelar");
+		buttonCancel.addActionListener(this);
+		buttonCancel.setForeground(new Color(128, 0, 0));
+		buttonCancel.setBackground(Color.LIGHT_GRAY);
+		buttonCancel.setFont(FONT);
+		buttonCancel.setBounds(621, 457, 113, 21);
+		this.add(buttonCancel);
 
 	}
 
 	public JButton getButtonConfirmar() {
-		return buttonConfirmar;
+		return buttonConfirm;
 	}
 
 	public JButton getButtonCancelar() {
-		return buttonCancelar;
+		return buttonCancel;
 	}
 }
