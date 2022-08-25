@@ -15,7 +15,8 @@ import javax.swing.SwingConstants;
  * 
  */
 public abstract class Jstructure extends JPanel implements ActionListener {
-	private static final long serialVersionUID = -1060587114635639328L;
+
+	private static final long serialVersionUID = 1L;
 
 	protected static final Font FONT = new Font("Algerian", Font.PLAIN, 14);
 
@@ -28,10 +29,12 @@ public abstract class Jstructure extends JPanel implements ActionListener {
 	 * 
 	 * O titulo da tela para ser mostrado no topo
 	 */
+
 	public Jstructure(String titulo) {
-		setBackground(new Color(255, 255, 255));
-		setLayout(null);
-		setBounds(100, 100, 830, 522);
+
+		this.setBackground(new Color(255, 255, 255));
+		this.setLayout(null);
+		this.setBounds(100, 100, 830, 522);
 
 		JLabel labelTitulo = new JLabel(titulo);
 		labelTitulo.setFont(FONT);
@@ -45,7 +48,7 @@ public abstract class Jstructure extends JPanel implements ActionListener {
 		buttonConfirmar.setBackground(Color.LIGHT_GRAY);
 		buttonConfirmar.setFont(FONT);
 		buttonConfirmar.setBounds(492, 457, 119, 21);
-		add(buttonConfirmar);
+		this.add(buttonConfirmar);
 
 		buttonCancelar = new JButton("Cancelar");
 		buttonCancelar.addActionListener(this);
@@ -53,7 +56,7 @@ public abstract class Jstructure extends JPanel implements ActionListener {
 		buttonCancelar.setBackground(Color.LIGHT_GRAY);
 		buttonCancelar.setFont(FONT);
 		buttonCancelar.setBounds(621, 457, 113, 21);
-		add(buttonCancelar);
+		this.add(buttonCancelar);
 
 	}
 

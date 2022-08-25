@@ -20,6 +20,7 @@ import controller.RegisterUserController;
 
 public class RegisterUser extends JFrame implements ActionListener {
 
+	private static final long serialVersionUID = 1L;
 	private final JTextField textFieldName;
 	private final JLabel labelName;
 	private final JFormattedTextField labelBirthday;

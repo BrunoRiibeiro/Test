@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
@@ -20,7 +21,7 @@ import controller.RegisterGroupController;
  * 
  */
 public class RegisterGroup extends Jstructure implements ActionListener {
-	private static final long serialVersionUID = -7318790884045444829L;
+	private static final long serialVersionUID = 1L;
 	private JTextField fieldName;
 	private JTextField fieldCreator;
 	private JTextField fieldMotivation;
@@ -36,6 +37,10 @@ public class RegisterGroup extends Jstructure implements ActionListener {
 		JFrame frame = new JFrame();
 
 		controller = new RegisterGroupController(this);
+
+		frame.setBackground(new Color(255, 255, 255));
+		frame.setLayout(null);
+		frame.setBounds(100, 100, 830, 522);
 
 		JLabel labelNome = new JLabel("Name Group:");
 		labelNome.setFont(Jstructure.FONT);
@@ -89,9 +94,12 @@ public class RegisterGroup extends Jstructure implements ActionListener {
 
 		fieldMotivation = new JTextField();
 		labelMotivation.setLabelFor(fieldMotivation);
-		fieldMotivation.setBounds(0, 500, 147, 19);
+		fieldMotivation.setBounds(405, 343, 147, 19);
 		frame.add(fieldMotivation);
 		fieldMotivation.setColumns(10);
+
+		frame.add(getButtonConfirmar());
+		frame.add(getButtonCancelar());
 
 		frame.setVisible(true);
 	}
