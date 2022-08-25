@@ -22,11 +22,11 @@ import controller.UserController;
  */
 public class UserView extends JPanel implements ActionListener {
 	private static final long serialVersionUID = 3378863774624440091L;
-	private JList<String> fieldGroups;
-	private JButton buttonSelecionar;
-	private JButton buttonNewGroup;
-	private JButton buttonFinalizar;
-	private UserController controller;
+	private final JList<String> fieldGroups;
+	private final JButton buttonSelect;
+	private final JButton buttonNewGroup;
+	private final JButton buttonFinish;
+	private final UserController controller;
 
 	/**
 	 * Cria o panel com uma lista com bot�o, um bot�o para cadastrar um novo grupo e
@@ -35,32 +35,29 @@ public class UserView extends JPanel implements ActionListener {
 	public UserView() {
 
 		JFrame frame = new JFrame();
-
-		controller = new UserController(this);
-
 		frame.setBackground(new Color(245, 245, 220));
 		frame.setLayout(null);
 		frame.setBounds(100, 100, 830, 522);
 
-		JLabel labelTitulo = new JLabel("Usuarios cadastrados:");
-		labelTitulo.setFont(Jstructure.FONT);
-		labelTitulo.setHorizontalAlignment(SwingConstants.CENTER);
-		labelTitulo.setBounds(278, 61, 254, 16);
-		frame.add(labelTitulo);
+		JLabel labelTitle = new JLabel("Usuarios cadastrados:");
+		labelTitle.setFont(Jstructure.FONT);
+		labelTitle.setHorizontalAlignment(SwingConstants.CENTER);
+		labelTitle.setBounds(278, 61, 254, 16);
+		frame.add(labelTitle);
 
-		JLabel labelTitulo2 = new JLabel("Lista:");
-		labelTitulo2.setFont(Jstructure.FONT);
-		labelTitulo2.setHorizontalAlignment(SwingConstants.CENTER);
-		labelTitulo2.setBounds(108, 84, 602, 16);
-		frame.add(labelTitulo2);
+		JLabel labelTitle2 = new JLabel("Lista:");
+		labelTitle2.setFont(Jstructure.FONT);
+		labelTitle2.setHorizontalAlignment(SwingConstants.CENTER);
+		labelTitle2.setBounds(108, 84, 602, 16);
+		frame.add(labelTitle2);
 
-		buttonSelecionar = new JButton("Selecionar");
-		buttonSelecionar.setForeground(new Color(153, 51, 102));
-		buttonSelecionar.setFont(Jstructure.FONT);
-		buttonSelecionar.setBackground(Color.LIGHT_GRAY);
-		buttonSelecionar.setBounds(122, 410, 117, 21);
-		buttonSelecionar.addActionListener(this);
-		frame.add(buttonSelecionar);
+		buttonSelect = new JButton("Selecionar");
+		buttonSelect.setForeground(new Color(153, 51, 102));
+		buttonSelect.setFont(Jstructure.FONT);
+		buttonSelect.setBackground(Color.LIGHT_GRAY);
+		buttonSelect.setBounds(122, 410, 117, 21);
+		buttonSelect.addActionListener(this);
+		frame.add(buttonSelect);
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(122, 110, 588, 289);
@@ -82,20 +79,22 @@ public class UserView extends JPanel implements ActionListener {
 		buttonNewGroup.addActionListener(this);
 		frame.add(buttonNewGroup);
 
-		buttonFinalizar = new JButton("Finalizar");
-		buttonFinalizar.setEnabled(false);
-		buttonFinalizar.setForeground(new Color(153, 0, 0));
-		buttonFinalizar.setFont(Jstructure.FONT);
-		buttonFinalizar.setBackground(Color.LIGHT_GRAY);
-		buttonFinalizar.setBounds(601, 460, 107, 21);
-		buttonFinalizar.addActionListener(this);
-		frame.add(buttonFinalizar);
+		buttonFinish = new JButton("Finalizar");
+		buttonFinish.setEnabled(false);
+		buttonFinish.setForeground(new Color(153, 0, 0));
+		buttonFinish.setFont(Jstructure.FONT);
+		buttonFinish.setBackground(Color.LIGHT_GRAY);
+		buttonFinish.setBounds(601, 460, 107, 21);
+		buttonFinish.addActionListener(this);
+		frame.add(buttonFinish);
 
 		frame.setVisible(true);
+
+		controller = new UserController(this);
 	}
 
 	public JButton getButtonSelecionar() {
-		return buttonSelecionar;
+		return buttonSelect;
 	}
 
 	public JButton getButtonNovoAtor() {
@@ -107,7 +106,7 @@ public class UserView extends JPanel implements ActionListener {
 	}
 
 	public JButton getButtonFinalizar() {
-		return buttonFinalizar;
+		return buttonFinish;
 	}
 
 	/**

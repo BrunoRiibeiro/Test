@@ -114,13 +114,12 @@ public class GroupView extends JPanel implements ActionListener {
 	 * 
 	 * implementa��o da interface ActionListener
 	 */
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		controller.sendAction(e.getSource());
-	}
-
 	public JList<String> getFieldGroups() {
 		return fieldGroups;
 	}
 
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		controller.sendAction(e.getSource());
+	}
 }
