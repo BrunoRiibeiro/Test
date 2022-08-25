@@ -99,7 +99,6 @@ public class RegisterGroup extends Jstructure implements ActionListener {
 
 	public JFormattedTextField getFieldData() {
 		return expectedDate;
-
 	}
 
 	public RegisterGroupController getController() {
