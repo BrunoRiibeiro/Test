@@ -20,9 +20,9 @@ import controller.RegisterUserController;
  */
 public class RegisterUser extends Jstructure implements ActionListener {
 	private static final long serialVersionUID = 1L;
-	private JTextField fieldName;
-	private JFormattedTextField expectedDate;
-	private RegisterUserController controller;
+	private final JTextField fieldName;
+	private final JFormattedTextField expectedDate;
+	private final RegisterUserController controller;
 
 	/**
 	 * Cria o panel com os campos para cadastro.
