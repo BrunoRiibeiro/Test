@@ -5,16 +5,15 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
+import javax.swing.JFrame;
+
 
 /**
  * Classe molde para as telas de cadastro comuns, possui uma constante para
  * definir a fonte do texto no aplicativo.
  * 
  */
-public abstract class Jstructure extends JPanel implements ActionListener {
+public abstract class Jstructure extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	protected static final Font FONT = new Font("Algerian", Font.PLAIN, 14);
@@ -34,12 +33,9 @@ public abstract class Jstructure extends JPanel implements ActionListener {
 		this.setBackground(new Color(255, 255, 255));
 		this.setLayout(null);
 		this.setBounds(100, 100, 830, 522);
-
-		JLabel labelTitulo = new JLabel(title);
-		labelTitulo.setFont(FONT);
-		labelTitulo.setHorizontalAlignment(SwingConstants.CENTER);
-		labelTitulo.setBounds(299, 102, 233, 13);
-		add(labelTitulo);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setTitle(title);
+		this.setVisible(true);
 
 		buttonConfirm = new JButton("Confirmar");
 		buttonConfirm.addActionListener(this);
