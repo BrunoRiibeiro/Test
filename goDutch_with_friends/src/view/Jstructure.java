@@ -3,9 +3,11 @@ package view;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.text.MaskFormatter;
 
 
 /**
@@ -61,5 +63,19 @@ public abstract class Jstructure extends JFrame implements ActionListener {
 
 	public JButton getButtonCancelar() {
 		return buttonCancel;
+	}
+	
+	public MaskFormatter maskingDate() {
+		MaskFormatter maskDate = null;
+		try {
+			maskDate = new MaskFormatter("##/##/####");
+		} catch (ParseException ignore) {
+			//
+		}
+		if (maskDate != null) {
+			maskDate.setPlaceholderCharacter('_');
+		}
+		return maskDate;
+		
 	}
 }

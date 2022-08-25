@@ -2,13 +2,11 @@ package view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
 
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.text.MaskFormatter;
 
 import controller.RegisterUserController;
 
@@ -47,17 +45,10 @@ public class RegisterUser extends Jstructure implements ActionListener {
 		fieldName.setBounds(405, 192, 147, 19);
 		this.add(fieldName);
 		fieldName.setColumns(10);
-
-		MaskFormatter mascaraData = null;
-		try {
-			mascaraData = new MaskFormatter("##/##/####");
-		} catch (ParseException ignore) {
-			//
-		}
-		if (mascaraData != null) {
-			mascaraData.setPlaceholderCharacter('_');
-		}
-		expectedDate = new JFormattedTextField(mascaraData);
+		
+		
+		
+		expectedDate = new JFormattedTextField(this.maskingDate());
 		labelData.setLabelFor(expectedDate);
 		expectedDate.setBounds(405, 240, 147, 19);
 		this.add(expectedDate);
