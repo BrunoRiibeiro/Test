@@ -20,7 +20,7 @@ public class RegisterUser extends Jstructure implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private final JTextField fieldName;
 	private final JFormattedTextField expectedDate;
-	private final RegisterUserController controller;
+	private final RegisterUserController controller = new RegisterUserController(this);
 
 	/**
 	 * Cria o panel com os campos para cadastro.
@@ -52,9 +52,6 @@ public class RegisterUser extends Jstructure implements ActionListener {
 		labelData.setLabelFor(expectedDate);
 		expectedDate.setBounds(405, 240, 147, 19);
 		this.add(expectedDate);
-		
-		
-		controller = new RegisterUserController(this);
 	}
 
 	public JTextField getTextFieldName() {

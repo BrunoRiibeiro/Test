@@ -26,7 +26,7 @@ public class UserView extends JPanel implements ActionListener {
 	private final JButton buttonSelect;
 	private final JButton buttonNewGroup;
 	private final JButton buttonFinish;
-	private final UserController controller;
+	private final UserController controller = new UserController(this);
 
 	/**
 	 * Cria o panel com uma lista com bot�o, um bot�o para cadastrar um novo grupo e
@@ -89,8 +89,6 @@ public class UserView extends JPanel implements ActionListener {
 		frame.add(buttonFinish);
 
 		frame.setVisible(true);
-
-		controller = new UserController(this);
 	}
 
 	public JButton getButtonSelecionar() {

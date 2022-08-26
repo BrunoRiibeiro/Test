@@ -17,7 +17,7 @@ public class Home implements ActionListener {
 	private final JFrame frame;
 	private final JButton buttonRegisterUser, buttonRegisterGroup, buttonGroup, buttonUser;
 	private final JPanel panel;
-	private final HomeController controller;
+	private final HomeController controller = new HomeController(this);
 
 	public Home() {
 		frame = new JFrame();
@@ -65,7 +65,6 @@ public class Home implements ActionListener {
 		frame.setTitle("goDu");
 		frame.setVisible(true);
 
-		controller = new HomeController(this);
 	}
 
 	public JFrame getFrame() {

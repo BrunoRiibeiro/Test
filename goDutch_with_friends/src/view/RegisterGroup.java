@@ -22,7 +22,7 @@ public class RegisterGroup extends Jstructure implements ActionListener {
 	private final JTextField fieldCreator;
 	private final JTextField fieldMotivation;
 	private final JFormattedTextField expectedDate;
-	private final RegisterGroupController controller;
+	private final RegisterGroupController controller = new RegisterGroupController(this);
 
 	/**
 	 * Cria o panel com os campos para cadastro.
@@ -82,7 +82,6 @@ public class RegisterGroup extends Jstructure implements ActionListener {
 		this.add(getButtonCancel());
 		this.setVisible(true);
 
-		controller = new RegisterGroupController(this);
 	}
 
 	public JTextField getFieldName() {
