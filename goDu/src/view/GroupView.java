@@ -83,16 +83,16 @@ public class GroupView extends JPanel implements ActionListener {
 		buttonEdit.setFont(Jstructure.FONT);
 		buttonEdit.setForeground(new Color(173, 140, 42));
 		buttonEdit.setBackground(Color.LIGHT_GRAY);
-		buttonEdit.setBounds(601, 420, 107, 21);
+		buttonEdit.setBounds(601, 420, 109, 21);
 		buttonEdit.setEnabled(true);
 		buttonEdit.addActionListener(this);
 		frame.add(buttonEdit);
 		
 		buttonDelete = new JButton("Delete");
 		buttonDelete.setFont(Jstructure.FONT);
-		buttonDelete.setForeground(new Color(186, 17, 17));
+		buttonDelete.setForeground(new Color(128, 0, 0));
 		buttonDelete.setBackground(Color.LIGHT_GRAY);
-		buttonDelete.setBounds(601, 450, 107, 21);
+		buttonDelete.setBounds(601, 450, 109, 21);
 		buttonDelete.setEnabled(true);
 		buttonDelete.addActionListener(this);
 		frame.add(buttonDelete);
