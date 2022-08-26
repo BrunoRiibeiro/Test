@@ -15,13 +15,11 @@ import javax.swing.text.MaskFormatter;
  * definir a fonte do texto no aplicativo.
  * 
  */
-public abstract class Jstructure extends JFrame implements ActionListener {
+public abstract class JstructureRegisters extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	protected static final Font FONT = new Font("Algerian", Font.PLAIN, 14);
-	
-	private final JButton buttonConfirm;
-	private final JButton buttonCancel;
+	private final JButton buttonConfirm, buttonCancel;
 
 	/**
 	 * Gera um panel com um fundo branco, um titulo e dois botoes, confirma e
@@ -30,7 +28,7 @@ public abstract class Jstructure extends JFrame implements ActionListener {
 	 * O titulo da tela para ser mostrado no topo
 	 */
 
-	public Jstructure(String title) {
+	public JstructureRegisters(String title) {
 
 		this.setBackground(new Color(255, 255, 255));
 		this.setLayout(null);

@@ -20,10 +20,8 @@ import controller.GroupController;
  * JPanel para selecionar grupo para a edicao.
  * 
  */
-public class GroupView extends JPanel implements ActionListener {
+public class GroupView extends JstructureShow implements ActionListener {
 	private static final long serialVersionUID = 3378863774624440091L;
-	private final JList<String> fieldGroups;
-	private final JButton buttonBack, buttonEdit, buttonNewGroup, buttonDelete;
 	private GroupController controller = new GroupController(this);
 
 	/**
@@ -31,92 +29,23 @@ public class GroupView extends JPanel implements ActionListener {
 	 * um bot�o para finalizar o cadastro.
 	 */
 	public GroupView() {
-		
-		JFrame frame = new JFrame();
-		frame.setBackground(new Color(245, 245, 220));
-		frame.setLayout(null);
-		frame.setBounds(100, 100, 830, 522);
+		super("Grupos");
 
 		JLabel labelTitle = new JLabel("Grupos cadastrados:");
-		labelTitle.setFont(Jstructure.FONT);
+		labelTitle.setFont(JstructureShow.FONT);
 		labelTitle.setHorizontalAlignment(SwingConstants.CENTER);
 		labelTitle.setBounds(278, 61, 254, 16);
-		frame.add(labelTitle);
+		this.add(labelTitle);
 
 		JLabel labelTitle2 = new JLabel("Lista:");
-		labelTitle2.setFont(Jstructure.FONT);
+		labelTitle2.setFont(JstructureShow.FONT);
 		labelTitle2.setHorizontalAlignment(SwingConstants.CENTER);
 		labelTitle2.setBounds(108, 84, 602, 16);
-		frame.add(labelTitle2);
-
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(122, 110, 588, 289);
-		frame.add(scrollPane);
-
-		fieldGroups = new JList<>();
-		scrollPane.setViewportView(fieldGroups);
-		fieldGroups.setModel(controller.updateList());
-		fieldGroups.setBorder(new LineBorder(new Color(0, 0, 0), 3));
-		fieldGroups.setFont(Jstructure.FONT);
-		fieldGroups.setForeground(Color.BLACK);
-		fieldGroups.setBackground(new Color(245, 245, 220));
+		this.add(labelTitle2);
 		
-		buttonNewGroup = new JButton("Novo grupo");
-		buttonNewGroup.setFont(Jstructure.FONT);
-		buttonNewGroup.setForeground(new Color(77, 112, 98));
-		buttonNewGroup.setBackground(Color.LIGHT_GRAY);
-		buttonNewGroup.setBounds(122, 420, 117, 21);
-		buttonNewGroup.setEnabled(true);
-		buttonNewGroup.addActionListener(this);
-		frame.add(buttonNewGroup);
-
-		buttonBack = new JButton("Voltar");
-		buttonBack.setFont(Jstructure.FONT);
-		buttonBack.setForeground(new Color(110, 24, 196));
-		buttonBack.setBackground(Color.LIGHT_GRAY);
-		buttonBack.setBounds(122, 450, 117, 21);
-		buttonBack.setEnabled(true);
-		buttonBack.addActionListener(this);
-		frame.add(buttonBack);
-
-		buttonEdit = new JButton("Editar");
-		buttonEdit.setFont(Jstructure.FONT);
-		buttonEdit.setForeground(new Color(173, 140, 42));
-		buttonEdit.setBackground(Color.LIGHT_GRAY);
-		buttonEdit.setBounds(601, 420, 109, 21);
-		buttonEdit.setEnabled(true);
-		buttonEdit.addActionListener(this);
-		frame.add(buttonEdit);
-		
-		buttonDelete = new JButton("Delete");
-		buttonDelete.setFont(Jstructure.FONT);
-		buttonDelete.setForeground(new Color(128, 0, 0));
-		buttonDelete.setBackground(Color.LIGHT_GRAY);
-		buttonDelete.setBounds(601, 450, 109, 21);
-		buttonDelete.setEnabled(true);
-		buttonDelete.addActionListener(this);
-		frame.add(buttonDelete);
-
-		frame.setVisible(true);
-
+		this.setVisible(true);
 	}
 	
-
-	public JButton getButtonNewGroup() {
-		return buttonNewGroup;
-	}
-
-	public JButton getButtonBack() {
-		return buttonBack;
-	}
-
-	public JButton getButtonEdit() {
-		return buttonEdit;
-	}
-	
-	public JButton getButtonDelete() {
-		return buttonDelete;
-	}
 
 	public GroupController getController() {
 		return controller;
@@ -127,9 +56,6 @@ public class GroupView extends JPanel implements ActionListener {
 	 * 
 	 * implementa��o da interface ActionListener
 	 */
-	public JList<String> getFieldGroups() {
-		return fieldGroups;
-	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

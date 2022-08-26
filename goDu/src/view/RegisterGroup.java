@@ -16,7 +16,7 @@ import controller.RegisterGroupController;
  * Herda a classe Jstructure que contem um fundo, titulo e dois botoes.
  * 
  */
-public class RegisterGroup extends Jstructure implements ActionListener {
+public class RegisterGroup extends JstructureRegisters implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private final JTextField fieldName;
 	private final JTextField fieldCreator;
@@ -31,25 +31,25 @@ public class RegisterGroup extends Jstructure implements ActionListener {
 		super("Cadastre um novo Grupo");
 
 		JLabel labelNome = new JLabel("Nome do Grupo:");
-		labelNome.setFont(Jstructure.FONT);
+		labelNome.setFont(JstructureRegisters.FONT);
 		labelNome.setHorizontalAlignment(SwingConstants.RIGHT);
 		labelNome.setBounds(169, 195, 175, 13);
 		this.add(labelNome);
 
 		JLabel labelCreator = new JLabel("Criador do Grupo:");
-		labelCreator.setFont(Jstructure.FONT);
+		labelCreator.setFont(JstructureRegisters.FONT);
 		labelCreator.setHorizontalAlignment(SwingConstants.RIGHT);
 		labelCreator.setBounds(169, 243, 175, 13);
 		this.add(labelCreator);
 
 		JLabel labelData = new JLabel("Data do planejamento:");
-		labelData.setFont(Jstructure.FONT);
+		labelData.setFont(JstructureRegisters.FONT);
 		labelData.setHorizontalAlignment(SwingConstants.RIGHT);
 		labelData.setBounds(158, 297, 186, 13);
 		this.add(labelData);
 
 		JLabel labelMotivation = new JLabel("Motivação do Grupo:");
-		labelMotivation.setFont(Jstructure.FONT);
+		labelMotivation.setFont(JstructureRegisters.FONT);
 		labelMotivation.setHorizontalAlignment(SwingConstants.RIGHT);
 		labelMotivation.setBounds(82, 343, 262, 13);
 		this.add(labelMotivation);
@@ -78,8 +78,6 @@ public class RegisterGroup extends Jstructure implements ActionListener {
 		this.add(fieldMotivation);
 		fieldMotivation.setColumns(10);
 
-		this.add(getButtonConfirm());
-		this.add(getButtonCancel());
 		this.setVisible(true);
 
 	}

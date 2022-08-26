@@ -20,12 +20,8 @@ import controller.UserController;
  * JPanel para selecionar grupo para a edicao.
  * 
  */
-public class UserView extends JPanel implements ActionListener {
+public class UserView extends JstructureShow implements ActionListener {
 	private static final long serialVersionUID = 3378863774624440091L;
-	private final JList<String> fieldGroups;
-	private final JButton buttonSelect;
-	private final JButton buttonNewGroup;
-	private final JButton buttonFinish;
 	private final UserController controller = new UserController(this);
 
 	/**
@@ -33,78 +29,26 @@ public class UserView extends JPanel implements ActionListener {
 	 * um bot�o para finalizar o cadastro.
 	 */
 	public UserView() {
-
-		JFrame frame = new JFrame();
-		frame.setBackground(new Color(245, 245, 220));
-		frame.setLayout(null);
-		frame.setBounds(100, 100, 830, 522);
+		super("Usuários");
 
 		JLabel labelTitle = new JLabel("Usuarios cadastrados:");
-		labelTitle.setFont(Jstructure.FONT);
+		labelTitle.setFont(JstructureShow.FONT);
 		labelTitle.setHorizontalAlignment(SwingConstants.CENTER);
 		labelTitle.setBounds(278, 61, 254, 16);
-		frame.add(labelTitle);
+		this.add(labelTitle);
 
 		JLabel labelTitle2 = new JLabel("Lista:");
-		labelTitle2.setFont(Jstructure.FONT);
+		labelTitle2.setFont(JstructureShow.FONT);
 		labelTitle2.setHorizontalAlignment(SwingConstants.CENTER);
 		labelTitle2.setBounds(108, 84, 602, 16);
-		frame.add(labelTitle2);
+		this.add(labelTitle2);
 
-		buttonSelect = new JButton("Selecionar");
-		buttonSelect.setForeground(new Color(153, 51, 102));
-		buttonSelect.setFont(Jstructure.FONT);
-		buttonSelect.setBackground(Color.LIGHT_GRAY);
-		buttonSelect.setBounds(122, 410, 117, 21);
-		buttonSelect.addActionListener(this);
-		frame.add(buttonSelect);
-
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(122, 110, 588, 289);
-		frame.add(scrollPane);
-
-		fieldGroups = new JList<>();
-		scrollPane.setViewportView(fieldGroups);
-		// fieldGroups.setModel(controller.atualizarModeloLista());
-		fieldGroups.setBorder(new LineBorder(new Color(0, 0, 0), 3));
-		fieldGroups.setFont(Jstructure.FONT);
-		fieldGroups.setForeground(Color.BLACK);
-		fieldGroups.setBackground(new Color(245, 245, 220));
-
-		buttonNewGroup = new JButton("Novo usuario");
-		buttonNewGroup.setFont(Jstructure.FONT);
-		buttonNewGroup.setForeground(Color.BLACK);
-		buttonNewGroup.setBackground(SystemColor.activeCaption);
-		buttonNewGroup.setBounds(122, 437, 182, 49);
-		buttonNewGroup.addActionListener(this);
-		frame.add(buttonNewGroup);
-
-		buttonFinish = new JButton("Finalizar");
-		buttonFinish.setEnabled(false);
-		buttonFinish.setForeground(new Color(153, 0, 0));
-		buttonFinish.setFont(Jstructure.FONT);
-		buttonFinish.setBackground(Color.LIGHT_GRAY);
-		buttonFinish.setBounds(601, 460, 107, 21);
-		buttonFinish.addActionListener(this);
-		frame.add(buttonFinish);
-
-		frame.setVisible(true);
+		this.setVisible(true);
 	}
-
-	public JButton getButtonSelecionar() {
-		return buttonSelect;
-	}
-
-	public JButton getButtonNovoAtor() {
-		return buttonNewGroup;
-	}
+	
 
 	public UserController getController() {
 		return controller;
-	}
-
-	public JButton getButtonFinalizar() {
-		return buttonFinish;
 	}
 
 	/**
@@ -117,8 +61,5 @@ public class UserView extends JPanel implements ActionListener {
 		controller.sendAction(e.getSource());
 	}
 
-	public JList<String> getFieldGroups() {
-		return fieldGroups;
-	}
 
 }
