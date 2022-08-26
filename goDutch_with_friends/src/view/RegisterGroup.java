@@ -78,8 +78,8 @@ public class RegisterGroup extends Jstructure implements ActionListener {
 		this.add(fieldMotivation);
 		fieldMotivation.setColumns(10);
 
-		this.add(getButtonConfirmar());
-		this.add(getButtonCancelar());
+		this.add(getButtonConfirm());
+		this.add(getButtonCancel());
 		this.setVisible(true);
 
 		controller = new RegisterGroupController(this);

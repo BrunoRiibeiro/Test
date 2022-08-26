@@ -15,11 +15,11 @@ public class RegisterGroupController {
 	}
 
 	public void sendAction(Object source) {
-		if (source == view.getButtonConfirmar()) {
+		if (source == view.getButtonConfirm()) {
 			registerNewGroup();
 			System.out.println(DatabaseProvider.getGroups());
 			new Home();
-		} else if (source == view.getButtonCancelar()) {
+		} else if (source == view.getButtonCancel()) {
 			new Home();
 		}
 	}

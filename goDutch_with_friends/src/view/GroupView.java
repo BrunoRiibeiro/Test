@@ -34,7 +34,6 @@ public class GroupView extends JPanel implements ActionListener {
 	 */
 	public GroupView() {
 
-		GroupController controller = new GroupController(this);
 
 		JFrame frame = new JFrame();
 		frame.setBackground(new Color(245, 245, 220));
@@ -67,7 +66,7 @@ public class GroupView extends JPanel implements ActionListener {
 
 		fieldGroups = new JList<>();
 		scrollPane.setViewportView(fieldGroups);
-		fieldGroups.setModel(controller.atualizarModeloLista());
+		fieldGroups.setModel(controller.updateList());
 		fieldGroups.setBorder(new LineBorder(new Color(0, 0, 0), 3));
 		fieldGroups.setFont(Jstructure.FONT);
 		fieldGroups.setForeground(Color.BLACK);
@@ -95,20 +94,16 @@ public class GroupView extends JPanel implements ActionListener {
 		controller = new GroupController(this);
 	}
 
-	public JButton getButtonSelecionar() {
+	public JButton getButtonSelect() {
 		return buttonSelect;
 	}
 
-	public JButton getButtonNovoAtor() {
-		return buttonNewGroup;
+	public JButton getButtonFinish() {
+		return buttonFinish;
 	}
 
 	public GroupController getController() {
 		return controller;
-	}
-
-	public JButton getButtonFinalizar() {
-		return buttonFinish;
 	}
 
 	/**

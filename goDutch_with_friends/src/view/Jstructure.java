@@ -57,11 +57,11 @@ public abstract class Jstructure extends JFrame implements ActionListener {
 
 	}
 
-	public JButton getButtonConfirmar() {
+	public JButton getButtonConfirm() {
 		return buttonConfirm;
 	}
 
-	public JButton getButtonCancelar() {
+	public JButton getButtonCancel() {
 		return buttonCancel;
 	}
 	
