@@ -23,9 +23,7 @@ import controller.GroupController;
 public class GroupView extends JPanel implements ActionListener {
 	private static final long serialVersionUID = 3378863774624440091L;
 	private final JList<String> fieldGroups;
-	private final JButton buttonSelect;
-	private final JButton buttonNewGroup;
-	private final JButton buttonFinish;
+	private final JButton buttonBack, buttonEdit, buttonNewGroup, buttonDelete;
 	private GroupController controller = new GroupController(this);
 
 	/**
@@ -51,14 +49,6 @@ public class GroupView extends JPanel implements ActionListener {
 		labelTitle2.setBounds(108, 84, 602, 16);
 		frame.add(labelTitle2);
 
-		buttonSelect = new JButton("Selecionar");
-		buttonSelect.setForeground(new Color(153, 51, 102));
-		buttonSelect.setFont(Jstructure.FONT);
-		buttonSelect.setBackground(Color.LIGHT_GRAY);
-		buttonSelect.setBounds(122, 410, 117, 21);
-		buttonSelect.addActionListener(this);
-		frame.add(buttonSelect);
-
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(122, 110, 588, 289);
 		frame.add(scrollPane);
@@ -70,34 +60,62 @@ public class GroupView extends JPanel implements ActionListener {
 		fieldGroups.setFont(Jstructure.FONT);
 		fieldGroups.setForeground(Color.BLACK);
 		fieldGroups.setBackground(new Color(245, 245, 220));
-
-		buttonNewGroup = new JButton("Novo usuario");
+		
+		buttonNewGroup = new JButton("Novo grupo");
 		buttonNewGroup.setFont(Jstructure.FONT);
-		buttonNewGroup.setForeground(Color.BLACK);
-		buttonNewGroup.setBackground(SystemColor.activeCaption);
-		buttonNewGroup.setBounds(122, 437, 182, 49);
+		buttonNewGroup.setForeground(new Color(77, 112, 98));
+		buttonNewGroup.setBackground(Color.LIGHT_GRAY);
+		buttonNewGroup.setBounds(122, 420, 117, 21);
+		buttonNewGroup.setEnabled(true);
 		buttonNewGroup.addActionListener(this);
 		frame.add(buttonNewGroup);
 
-		buttonFinish = new JButton("Finalizar");
-		buttonFinish.setEnabled(false);
-		buttonFinish.setForeground(new Color(153, 0, 0));
-		buttonFinish.setFont(Jstructure.FONT);
-		buttonFinish.setBackground(Color.LIGHT_GRAY);
-		buttonFinish.setBounds(601, 460, 107, 21);
-		buttonFinish.addActionListener(this);
-		frame.add(buttonFinish);
+		buttonBack = new JButton("Voltar");
+		buttonBack.setFont(Jstructure.FONT);
+		buttonBack.setForeground(new Color(110, 24, 196));
+		buttonBack.setBackground(Color.LIGHT_GRAY);
+		buttonBack.setBounds(122, 450, 117, 21);
+		buttonBack.setEnabled(true);
+		buttonBack.addActionListener(this);
+		frame.add(buttonBack);
+
+		buttonEdit = new JButton("Editar");
+		buttonEdit.setFont(Jstructure.FONT);
+		buttonEdit.setForeground(new Color(173, 140, 42));
+		buttonEdit.setBackground(Color.LIGHT_GRAY);
+		buttonEdit.setBounds(601, 420, 107, 21);
+		buttonEdit.setEnabled(true);
+		buttonEdit.addActionListener(this);
+		frame.add(buttonEdit);
+		
+		buttonDelete = new JButton("Delete");
+		buttonDelete.setFont(Jstructure.FONT);
+		buttonDelete.setForeground(new Color(186, 17, 17));
+		buttonDelete.setBackground(Color.LIGHT_GRAY);
+		buttonDelete.setBounds(601, 450, 107, 21);
+		buttonDelete.setEnabled(true);
+		buttonDelete.addActionListener(this);
+		frame.add(buttonDelete);
 
 		frame.setVisible(true);
 
 	}
+	
 
-	public JButton getButtonSelect() {
-		return buttonSelect;
+	public JButton getButtonNewGroup() {
+		return buttonNewGroup;
 	}
 
-	public JButton getButtonFinish() {
-		return buttonFinish;
+	public JButton getButtonBack() {
+		return buttonBack;
+	}
+
+	public JButton getButtonEdit() {
+		return buttonEdit;
+	}
+	
+	public JButton getButtonDelete() {
+		return buttonDelete;
 	}
 
 	public GroupController getController() {

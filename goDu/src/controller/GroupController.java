@@ -18,9 +18,9 @@ public class GroupController {
 	}
 
 	public void sendAction(Object source) {
-		if (source == view.getButtonFinish()) {
+		if (source == view.getButtonBack()) {
 			new Home();
-		} else if (source == view.getButtonSelect()) {
+		} else if (source == view.getButtonEdit()) {
 			String pickedName = view.getFieldGroups().getSelectedValue();
 
 			if (pickedName != null) {
@@ -28,7 +28,7 @@ public class GroupController {
 				// new RegisterGroup();
 				// MainFrameControl.mostrarCadastraPapel();
 			}
-		} else {
+		} else if (source == view.getButtonNewGroup()) {
 			new RegisterGroup();
 		}
 	}
