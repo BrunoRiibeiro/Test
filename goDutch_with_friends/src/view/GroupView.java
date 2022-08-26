@@ -26,13 +26,15 @@ public class GroupView extends JPanel implements ActionListener {
 	private final JButton buttonSelect;
 	private final JButton buttonNewGroup;
 	private final JButton buttonFinish;
-	private final GroupController controller;
+	private GroupController controller;
 
 	/**
 	 * Cria o panel com uma lista com bot�o, um bot�o para cadastrar um novo grupo e
 	 * um bot�o para finalizar o cadastro.
 	 */
 	public GroupView() {
+
+		GroupController controller = new GroupController(this);
 
 		JFrame frame = new JFrame();
 		frame.setBackground(new Color(245, 245, 220));
@@ -65,7 +67,7 @@ public class GroupView extends JPanel implements ActionListener {
 
 		fieldGroups = new JList<>();
 		scrollPane.setViewportView(fieldGroups);
-		// fieldGroups.setModel(controller.atualizarModeloLista());
+		fieldGroups.setModel(controller.atualizarModeloLista());
 		fieldGroups.setBorder(new LineBorder(new Color(0, 0, 0), 3));
 		fieldGroups.setFont(Jstructure.FONT);
 		fieldGroups.setForeground(Color.BLACK);
@@ -87,7 +89,7 @@ public class GroupView extends JPanel implements ActionListener {
 		buttonFinish.setBounds(601, 460, 107, 21);
 		buttonFinish.addActionListener(this);
 		frame.add(buttonFinish);
-		
+
 		frame.setVisible(true);
 
 		controller = new GroupController(this);

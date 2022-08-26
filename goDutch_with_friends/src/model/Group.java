@@ -25,11 +25,11 @@ public class Group {
 		this.motivation = motivation;
 	}
 
-	public String getName() {
+	public String getNameGroup() {
 		return name;
 	}
 
-	public void setName(String name) {
+	public void setNameGroup(String name) {
 		this.name = name;
 	}
 
