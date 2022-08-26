@@ -44,7 +44,7 @@ public abstract class Jstructure extends JFrame implements ActionListener {
 		buttonConfirm.setForeground(new Color(0, 128, 0));
 		buttonConfirm.setBackground(Color.LIGHT_GRAY);
 		buttonConfirm.setFont(FONT);
-		buttonConfirm.setBounds(492, 457, 119, 21);
+		buttonConfirm.setBounds(621, 457, 119, 21);
 		this.add(buttonConfirm);
 
 		buttonCancel = new JButton("Cancelar");
@@ -52,7 +52,7 @@ public abstract class Jstructure extends JFrame implements ActionListener {
 		buttonCancel.setForeground(new Color(128, 0, 0));
 		buttonCancel.setBackground(Color.LIGHT_GRAY);
 		buttonCancel.setFont(FONT);
-		buttonCancel.setBounds(621, 457, 113, 21);
+		buttonCancel.setBounds(492, 457, 119, 21);
 		this.add(buttonCancel);
 
 	}
