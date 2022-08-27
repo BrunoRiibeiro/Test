@@ -3,6 +3,7 @@ package view;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -19,7 +20,7 @@ import controller.RegisterGroupController;
 public class RegisterGroup extends JstructureRegisters implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private final JTextField fieldName;
-	private final JTextField fieldCreator;
+	private JComboBox<Object> fieldCreator;
 	private final JTextField fieldMotivation;
 	private final JFormattedTextField expectedDate;
 	private final RegisterGroupController controller = new RegisterGroupController(this);
@@ -60,13 +61,12 @@ public class RegisterGroup extends JstructureRegisters implements ActionListener
 		this.add(fieldName);
 		fieldName.setColumns(10);
 
-		fieldCreator = new JTextField();
+		fieldCreator = new JComboBox<>();
 		labelCreator.setLabelFor(fieldCreator);
-		fieldCreator.setBounds(405, 240, 147, 19);
-		this.add(fieldCreator);
-		fieldCreator.setColumns(10);
+		fieldCreator.setBounds(405, 240, 147, 21);
+		fieldCreator.setModel(controller.updateModel());
+		add(fieldCreator);
 
-		
 		expectedDate = new JFormattedTextField(this.maskingDate());
 		labelData.setLabelFor(expectedDate);
 		expectedDate.setBounds(405, 294, 147, 19);
@@ -86,7 +86,7 @@ public class RegisterGroup extends JstructureRegisters implements ActionListener
 		return fieldName;
 	}
 
-	public JTextField getFieldCreator() {
+	public JComboBox<Object> getFieldCreator() {
 		return fieldCreator;
 	}
 

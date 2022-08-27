@@ -5,7 +5,7 @@ import javax.swing.DefaultListModel;
 import model.User;
 import model.database.DatabaseProvider;
 import view.Home;
-import view.RegisterGroup;
+import view.RegisterUser;
 import view.UserView;
 
 public class UserController {
@@ -21,30 +21,36 @@ public class UserController {
 		if (source == view.getButtonBack()) {
 			new Home();
 		} else if (source == view.getButtonEdit()) {
-			String pickedName = view.getFieldGroups().getSelectedValue();
+			String pickedName = view.getFieldUser().getSelectedValue();
 
 			if (pickedName != null) {
 				pickedUser = recoverPickedUser(pickedName);
 				// new RegisterUser();
 				// MainFrameControl.mostrarCadastraPapel();
 			}
-		} else if (source == view.getButtonNewGroup()) {
-			new RegisterGroup();
+		} else if (source == view.getButtonNewUser()) {
+			new RegisterUser();
 		}
 	}
+
 	public User getPickedUser() {
 		return pickedUser;
 	}
-	
-	public User recoverPickedUser(String name) {
+
+	public User recoverPickedUser(String nome) {
 		for (User currentUser : DatabaseProvider.getUsers()) {
-			if (name.equals(currentUser.getName())) {
+			if (nome.equals(currentUser.getName())) {
 				return currentUser;
 			}
 		}
 		return null;
 	}
 
+	/**
+	 * Gera um Model com o nome de todos os atores cadastrados.
+	 * 
+	 * @return DefaultListModel
+	 */
 	public DefaultListModel<String> updateList() {
 		DefaultListModel<String> names = new DefaultListModel<>();
 
@@ -54,4 +60,5 @@ public class UserController {
 
 		return names;
 	}
+
 }
