@@ -6,26 +6,37 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JScrollPane;
+import javax.swing.SwingConstants;
 
 public abstract class JstructureShow extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	protected static final Font FONT = new Font("Algerian", Font.PLAIN, 14);
 	private final JButton buttonBack, buttonEdit, buttonDelete;
-
-	public JstructureShow(String title) {
+	
+	public JstructureShow(String pageTitle, String headTitle, String listTitle) {
 
 		this.setBackground(new Color(245, 245, 220));
 		this.setBounds(100, 100, 830, 522);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setTitle(title);
+		this.setTitle(pageTitle);
 		this.setLayout(null);
 		this.setVisible(true);
+		
+		JLabel labelTitle = new JLabel(headTitle);
+		labelTitle.setFont(JstructureShow.FONT);
+		labelTitle.setHorizontalAlignment(SwingConstants.CENTER);
+		labelTitle.setBounds(278, 51, 254, 16);
+		this.add(labelTitle);
 
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(122, 110, 588, 289);
-		this.add(scrollPane);
+		JLabel labelTitle2 = new JLabel(listTitle);
+		labelTitle2.setFont(JstructureShow.FONT);
+		labelTitle2.setHorizontalAlignment(SwingConstants.CENTER);
+		labelTitle2.setBounds(112, 84, 62, 16);
+		this.add(labelTitle2);
 
 		buttonBack = new JButton("Voltar");
 		buttonBack.setFont(JstructureShow.FONT);
@@ -65,6 +76,13 @@ public abstract class JstructureShow extends JFrame implements ActionListener {
 
 	public JButton getButtonDelete() {
 		return buttonDelete;
+	}
+	
+	public void addSourceList(JList<String> sourceList) {
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(122, 110, 588, 289);
+		scrollPane.setViewportView(sourceList);
+		this.add(scrollPane);
 	}
 
 }

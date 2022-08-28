@@ -5,10 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.JScrollPane;
-import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
 import controller.GroupController;
@@ -19,8 +16,8 @@ import controller.GroupController;
  */
 public class GroupView extends JstructureShow implements ActionListener {
 	private static final long serialVersionUID = 3378863774624440091L;
-	private JList<String> fieldGroups;
 	private GroupController controller = new GroupController(this);
+	private final JList<String> fieldGroups;
 	private final JButton buttonNewGroup;
 
 	/**
@@ -28,29 +25,15 @@ public class GroupView extends JstructureShow implements ActionListener {
 	 * um bot�o para finalizar o cadastro.
 	 */
 	public GroupView() {
-		super("Grupos");
-
-		JScrollPane scrollPane = new JScrollPane();
-
-		JLabel labelTitle = new JLabel("Grupos cadastrados:");
-		labelTitle.setFont(JstructureShow.FONT);
-		labelTitle.setHorizontalAlignment(SwingConstants.CENTER);
-		labelTitle.setBounds(278, 61, 254, 16);
-		this.add(labelTitle);
-
-		JLabel labelTitle2 = new JLabel("Lista:");
-		labelTitle2.setFont(JstructureShow.FONT);
-		labelTitle2.setHorizontalAlignment(SwingConstants.CENTER);
-		labelTitle2.setBounds(108, 84, 602, 16);
-		this.add(labelTitle2);
+		super("Grupos", "Grupos cadastrados:", "Lista:");
 
 		fieldGroups = new JList<>();
-		scrollPane.setViewportView(fieldGroups);
 		fieldGroups.setModel(controller.updateList());
 		fieldGroups.setBorder(new LineBorder(new Color(0, 0, 0), 3));
 		fieldGroups.setFont(JstructureShow.FONT);
 		fieldGroups.setForeground(Color.BLACK);
 		fieldGroups.setBackground(new Color(245, 245, 220));
+		this.addSourceList(fieldGroups);
 
 		buttonNewGroup = new JButton("Novo grupo");
 		buttonNewGroup.setFont(JstructureShow.FONT);
