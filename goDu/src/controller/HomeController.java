@@ -1,10 +1,10 @@
 package controller;
 
-import view.GroupView;
+import view.ShowGroup;
+import view.ShowUser;
 import view.Home;
 import view.RegisterGroup;
 import view.RegisterUser;
-import view.UserView;
 
 public class HomeController {
 
@@ -21,9 +21,9 @@ public class HomeController {
 		} else if (source == view.getButtonRegisterGroup()) {
 			new RegisterGroup();
 		} else if (source == view.getButtonGroup()) {
-			new GroupView();
+			new ShowGroup();
 		} else if (source == view.getButtonUser()) {
-			new UserView();
+			new ShowUser();
 		}
 	}
 

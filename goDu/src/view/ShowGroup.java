@@ -14,7 +14,7 @@ import controller.GroupController;
  * JPanel para selecionar grupo para a edicao.
  * 
  */
-public class GroupView extends JstructureShow implements ActionListener {
+public class ShowGroup extends JstructureShow implements ActionListener {
 	private static final long serialVersionUID = 3378863774624440091L;
 	private GroupController controller = new GroupController(this);
 	private final JList<String> fieldGroups;
@@ -24,7 +24,7 @@ public class GroupView extends JstructureShow implements ActionListener {
 	 * Cria o panel com uma lista com bot�o, um bot�o para cadastrar um novo grupo e
 	 * um bot�o para finalizar o cadastro.
 	 */
-	public GroupView() {
+	public ShowGroup() {
 		super("Grupos", "Grupos cadastrados:", "Lista:");
 
 		fieldGroups = new JList<>();

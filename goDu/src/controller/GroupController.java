@@ -4,15 +4,15 @@ import javax.swing.DefaultListModel;
 
 import model.Group;
 import model.database.DatabaseProvider;
-import view.GroupView;
+import view.ShowGroup;
 import view.Home;
 import view.RegisterGroup;
 
 public class GroupController {
-	private final GroupView view;
+	private final ShowGroup view;
 	private Group pickedGroup;
 
-	public GroupController(GroupView view) {
+	public GroupController(ShowGroup view) {
 		super();
 		this.view = view;
 	}

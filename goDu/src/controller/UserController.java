@@ -6,13 +6,13 @@ import model.User;
 import model.database.DatabaseProvider;
 import view.Home;
 import view.RegisterUser;
-import view.UserView;
+import view.ShowUser;
 
 public class UserController {
-	private final UserView view;
+	private final ShowUser view;
 	private User pickedUser;
 
-	public UserController(UserView view) {
+	public UserController(ShowUser view) {
 		super();
 		this.view = view;
 	}

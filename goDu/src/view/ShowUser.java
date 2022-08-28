@@ -14,7 +14,7 @@ import controller.UserController;
  * JPanel para selecionar grupo para a edicao.
  * 
  */
-public class UserView extends JstructureShow implements ActionListener {
+public class ShowUser extends JstructureShow implements ActionListener {
 	private static final long serialVersionUID = 3378863774624440091L;
 	private UserController controller = new UserController(this);
 	private final JList<String> fieldUser;
@@ -24,7 +24,7 @@ public class UserView extends JstructureShow implements ActionListener {
 	 * Cria o panel com uma lista com bot�o, um bot�o para cadastrar um novo grupo e
 	 * um bot�o para finalizar o cadastro.
 	 */
-	public UserView() {
+	public ShowUser() {
 		super("Usuários", "Usuarios cadastrados:", "Lista:");
 
 		fieldUser = new JList<>();
