@@ -1,6 +1,12 @@
 package controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.DefaultComboBoxModel;
+
 import model.Group;
+import model.User;
 import model.database.DatabaseProvider;
 import view.Home;
 import view.RegisterGroup;
@@ -26,7 +32,7 @@ public class RegisterGroupController {
 
 	private void registerNewGroup() {
 		String name = view.getFieldName().getText();
-		String creator = view.getFieldCreator().getText();
+		User creator = resgatarUserEscolhido(view.getFieldCreator().getSelectedItem().toString());
 		String expectedDate = view.getFieldData().getText();
 		String motivation = view.getFieldMotivation().getText();
 
@@ -35,4 +41,27 @@ public class RegisterGroupController {
 		DatabaseProvider.getGroups().add(group);
 	}
 
+	public DefaultComboBoxModel<Object> updateModel() {
+		return new DefaultComboBoxModel<>(criarArrayUser());
+	}
+
+	public Object[] criarArrayUser() {
+		List<String> model = new ArrayList<>();
+
+		for (User user : DatabaseProvider.getUsers()) {
+			model.add(user.getName());
+		}
+
+		return model.toArray();
+	}
+
+	public User resgatarUserEscolhido(String nome) {
+		for (User useratual : DatabaseProvider.getUsers()) {
+			if (useratual.getName().equals(nome)) {
+				return useratual;
+			}
+		}
+
+		return null;
+	}
 }

@@ -16,7 +16,7 @@ import controller.RegisterUserController;
  * Herda a classe Jstructure que contem um fundo, titulo e dois botoes.
  * 
  */
-public class RegisterUser extends Jstructure implements ActionListener {
+public class RegisterUser extends JstructureRegisters implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private final JTextField fieldName;
 	private final JFormattedTextField expectedDate;
@@ -29,13 +29,13 @@ public class RegisterUser extends Jstructure implements ActionListener {
 		super("Cadastre um novo Usuário");
 
 		JLabel labelNome = new JLabel("Nome:");
-		labelNome.setFont(Jstructure.FONT);
+		labelNome.setFont(JstructureRegisters.FONT);
 		labelNome.setHorizontalAlignment(SwingConstants.RIGHT);
 		labelNome.setBounds(169, 195, 175, 13);
 		this.add(labelNome);
 
 		JLabel labelData = new JLabel("Data de Nascimento:");
-		labelData.setFont(Jstructure.FONT);
+		labelData.setFont(JstructureRegisters.FONT);
 		labelData.setHorizontalAlignment(SwingConstants.RIGHT);
 		labelData.setBounds(169, 243, 175, 13);
 		this.add(labelData);
@@ -45,9 +45,7 @@ public class RegisterUser extends Jstructure implements ActionListener {
 		fieldName.setBounds(405, 192, 147, 19);
 		this.add(fieldName);
 		fieldName.setColumns(10);
-		
-		
-		
+
 		expectedDate = new JFormattedTextField(this.maskingDate());
 		labelData.setLabelFor(expectedDate);
 		expectedDate.setBounds(405, 240, 147, 19);

@@ -4,23 +4,23 @@ import javax.swing.DefaultListModel;
 
 import model.Group;
 import model.database.DatabaseProvider;
-import view.GroupView;
 import view.Home;
 import view.RegisterGroup;
+import view.ShowGroup;
 
 public class GroupController {
-	private final GroupView view;
+	private final ShowGroup view;
 	private Group pickedGroup;
 
-	public GroupController(GroupView view) {
+	public GroupController(ShowGroup view) {
 		super();
 		this.view = view;
 	}
 
 	public void sendAction(Object source) {
-		if (source == view.getButtonFinish()) {
+		if (source == view.getButtonBack()) {
 			new Home();
-		} else if (source == view.getButtonSelect()) {
+		} else if (source == view.getButtonEdit()) {
 			String pickedName = view.getFieldGroups().getSelectedValue();
 
 			if (pickedName != null) {
@@ -28,7 +28,7 @@ public class GroupController {
 				// new RegisterGroup();
 				// MainFrameControl.mostrarCadastraPapel();
 			}
-		} else {
+		} else if (source == view.getButtonNewGroup()) {
 			new RegisterGroup();
 		}
 	}
@@ -50,7 +50,7 @@ public class GroupController {
 		DefaultListModel<String> names = new DefaultListModel<>();
 
 		for (Group currentGroup : DatabaseProvider.getGroups()) {
-			names.addElement(currentGroup.getNameGroup());
+			names.addElement(currentGroup.getNameGroup() + " - Preço total: " + currentGroup.getTotalPrice());
 		}
 
 		return names;

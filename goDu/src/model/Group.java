@@ -7,7 +7,7 @@ import java.util.List;
 public class Group {
 
 	private String name;
-	private String creator;
+	private User creator;
 	private String motivation;
 	private String expectedDate;
 	private List<User> members = new ArrayList<>();
@@ -17,12 +17,13 @@ public class Group {
 	private String[] transportationList;
 	private double totalPrice;
 
-	public Group(String name, String creator, String expectedDate, String motivation) {
+	public Group(String name, User creator, String expectedDate, String motivation) {
 		super();
 		this.name = name;
 		this.creator = creator;
 		this.expectedDate = expectedDate;
 		this.motivation = motivation;
+		this.totalPrice = 0;
 	}
 
 	public String getNameGroup() {
@@ -49,11 +50,11 @@ public class Group {
 		this.expectedDate = expectedDate;
 	}
 
-	public String getCreator() {
+	public User getCreator() {
 		return creator;
 	}
 
-	public void setCreator(String creator) {
+	public void setCreator(User creator) {
 		this.creator = creator;
 	}
 
