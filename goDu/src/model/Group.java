@@ -121,9 +121,20 @@ public class Group {
 	public void addRestaurant() {
 
 	}
+	
+	public void addMembers(User member) {
+		members.add(member);
+		numberOfMembers++;
+	}
+	
+	public void removeMembers(User member) {
+		members.remove(members.indexOf(member));
+		numberOfMembers--;
+	}
 
-	public String payList() {
-		return "oi!";
+	public String payPerPerson() {
+		double eachPrice = totalPrice / numberOfMembers;
+		return "Preço por participante: " + eachPrice;
 	}
 
 	@Override
