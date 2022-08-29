@@ -4,9 +4,9 @@ import javax.swing.DefaultListModel;
 
 import model.Group;
 import model.database.DatabaseProvider;
-import view.ShowGroup;
 import view.Home;
 import view.RegisterGroup;
+import view.ShowGroup;
 
 public class GroupController {
 	private final ShowGroup view;
@@ -50,7 +50,7 @@ public class GroupController {
 		DefaultListModel<String> names = new DefaultListModel<>();
 
 		for (Group currentGroup : DatabaseProvider.getGroups()) {
-			names.addElement(currentGroup.getNameGroup());
+			names.addElement(currentGroup.getNameGroup() + " - Preço total: " + currentGroup.getTotalPrice());
 		}
 
 		return names;

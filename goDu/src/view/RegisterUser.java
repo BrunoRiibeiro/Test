@@ -45,9 +45,7 @@ public class RegisterUser extends JstructureRegisters implements ActionListener 
 		fieldName.setBounds(405, 192, 147, 19);
 		this.add(fieldName);
 		fieldName.setColumns(10);
-		
-		
-		
+
 		expectedDate = new JFormattedTextField(this.maskingDate());
 		labelData.setLabelFor(expectedDate);
 		expectedDate.setBounds(405, 240, 147, 19);

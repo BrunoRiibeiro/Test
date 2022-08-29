@@ -23,6 +23,7 @@ public class Group {
 		this.creator = creator;
 		this.expectedDate = expectedDate;
 		this.motivation = motivation;
+		this.totalPrice = 0;
 	}
 
 	public String getNameGroup() {

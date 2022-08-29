@@ -35,7 +35,7 @@ public class ShowUser extends JstructureShow implements ActionListener {
 		fieldUser.setBackground(new Color(245, 245, 220));
 		this.addSourceList(fieldUser);
 
-		buttonNewUser = new JButton("Novo grupo");
+		buttonNewUser = new JButton("Novo Usuário");
 		buttonNewUser.setFont(JstructureShow.FONT);
 		buttonNewUser.setForeground(new Color(77, 112, 98));
 		buttonNewUser.setBackground(Color.LIGHT_GRAY);
