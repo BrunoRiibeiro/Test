@@ -4,6 +4,7 @@ import javax.swing.DefaultListModel;
 
 import model.Group;
 import model.database.DatabaseProvider;
+import view.EditGroup;
 import view.Home;
 import view.RegisterGroup;
 import view.ShowGroup;
@@ -25,8 +26,7 @@ public class GroupController {
 
 			if (pickedName != null) {
 				pickedGroup = recoverPickedGroup(pickedName);
-				// new RegisterGroup();
-				// MainFrameControl.mostrarCadastraPapel();
+				new EditGroup();
 			}
 		} else if (source == view.getButtonNewGroup()) {
 			new RegisterGroup();

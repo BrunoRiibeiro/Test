@@ -1,62 +1,64 @@
 package model;
 
-public class Restaurant extends Arrangement{
+public class Restaurant extends Arrangement {
 
 	private String name;
-    private int stars;
-    private String [] meal;
-    private double [] mealPrice;
+	private int stars;
+	private String[] meal;
+	private double[] mealPrice;
 
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public int getStars() {
-        return stars;
-    }
-    public void setStars(int stars) {
-        this.stars = stars;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public String[] getMeal() {
-        return meal;
-    }
-    public void setMeal(String[] meal) {
-        this.meal = meal;
-    }
+	public int getStars() {
+		return stars;
+	}
 
-    public double[] getMealPrice() {
-        return mealPrice;
-    }
-    public void setMealPrice(double[] mealPrice) {
-        this.mealPrice = mealPrice;
-    }
-        
+	public void setStars(int stars) {
+		this.stars = stars;
+	}
 
-    public void sumPrices(){
-        
-    }
-    
-    public int toEvaluate(){
-        return 2;
-    } 
-    
+	public String[] getMeal() {
+		return meal;
+	}
 
-    @Override
-    public void toPostpone() {
-        
-    }
+	public void setMeal(String[] meal) {
+		this.meal = meal;
+	}
 
-    @Override
-    public void antecipate() {
-        
-    }
+	public double[] getMealPrice() {
+		return mealPrice;
+	}
 
-    @Override
-    public boolean cancel() {
-        return true;
-    }
+	public void setMealPrice(double[] mealPrice) {
+		this.mealPrice = mealPrice;
+	}
+
+	public void sumPrices() {
+
+	}
+
+	public int toEvaluate() {
+		return 2;
+	}
+
+	@Override
+	public void toPostpone() {
+
+	}
+
+	@Override
+	public void antecipate() {
+
+	}
+
+	@Override
+	public boolean cancel() {
+		return true;
+	}
 }
