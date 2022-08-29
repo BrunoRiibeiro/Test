@@ -4,6 +4,7 @@ import javax.swing.DefaultListModel;
 
 import model.User;
 import model.database.DatabaseProvider;
+import view.EditUser;
 import view.Home;
 import view.RegisterUser;
 import view.ShowUser;
@@ -25,11 +26,20 @@ public class UserController {
 
 			if (pickedName != null) {
 				pickedUser = recoverPickedUser(pickedName);
-				// new RegisterUser();
-				// MainFrameControl.mostrarCadastraPapel();
+				new EditUser();
 			}
 		} else if (source == view.getButtonNewUser()) {
 			new RegisterUser();
+		} else if (source == view.getButtonDelete()) {
+			String pickedName = view.getFieldUser().getSelectedValue();
+
+			if (pickedName != null) {
+				pickedUser = recoverPickedUser(pickedName);
+				DatabaseProvider.getUsers().remove(pickedUser);
+			}
+
+			System.out.println(DatabaseProvider.getUsers());
+			new ShowUser();
 		}
 	}
 
