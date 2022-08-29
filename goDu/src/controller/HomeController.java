@@ -1,10 +1,10 @@
 package controller;
 
-import view.ShowGroup;
-import view.ShowUser;
 import view.Home;
 import view.RegisterGroup;
 import view.RegisterUser;
+import view.ShowGroup;
+import view.ShowUser;
 
 public class HomeController {
 
