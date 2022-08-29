@@ -1,18 +1,17 @@
 package model;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-	
+
 	private String name;
-    private String birthday;
-    private List<User> friends = new ArrayList<>();
-    private List<Group> yourGroups = new ArrayList<>();
-    private double balance;
-    
-    
-    
-    public User(String name, String birthday) {
+	private String birthday;
+	private List<User> friends = new ArrayList<>();
+	private List<Group> yourGroups = new ArrayList<>();
+	private double balance;
+
+	public User(String name, String birthday) {
 		super();
 		this.name = name;
 		this.birthday = birthday;
@@ -58,29 +57,26 @@ public class User {
 		this.balance = balance;
 	}
 
-	
-	
-	public boolean deposity (User friend, double amount){
+	public boolean deposity(User friend, double amount) {
 		return true;
 	}
 
-	public void addFriend(User friend){
-        friends.add(friend);
-    } 
-    
-    public void removeFriend(User friend){
-        
-    }
-    
-    public String friendList(){
-        return "oi";
-    }
+	public void addFriend(User friend) {
+		friends.add(friend);
+	}
+
+	public void removeFriend(User friend) {
+
+	}
+
+	public String friendList() {
+		return "oi";
+	}
 
 	@Override
 	public String toString() {
 		return "User [name=" + name + ", birthday=" + birthday + ", friends=" + friends + ", yourGroups=" + yourGroups
 				+ ", balance=" + balance + "]";
 	}
-    
 
 }
