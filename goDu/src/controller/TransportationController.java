@@ -8,6 +8,9 @@ import view.ShowTransportation;
 
 public class TransportationController {
 
+	GroupController controller = new GroupController();
+	// controller.
+
 	private final ShowTransportation view;
 
 	public TransportationController(ShowTransportation view) {
@@ -31,7 +34,7 @@ public class TransportationController {
 
 		Transportation transport = new Transportation(transportMode, cost);
 
-		DatabaseProvider.getTransports().add(transport);
+		// pickedGroup.setTransportationList(transport);
 	}
 
 }

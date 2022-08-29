@@ -10,12 +10,16 @@ import view.RegisterGroup;
 import view.ShowGroup;
 
 public class GroupController {
-	private final ShowGroup view;
+	private ShowGroup view;
 	private Group pickedGroup;
 
 	public GroupController(ShowGroup view) {
 		super();
 		this.view = view;
+	}
+
+	public GroupController() {
+
 	}
 
 	public void sendAction(Object source) {
@@ -27,9 +31,12 @@ public class GroupController {
 			if (pickedName != null) {
 				pickedGroup = recoverPickedGroup(pickedName);
 				new EditGroup();
+
 			}
 		} else if (source == view.getButtonNewGroup()) {
 			new RegisterGroup();
+		} else if (source == view.getButtonDelete()) {
+
 		}
 	}
 
