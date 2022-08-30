@@ -1,7 +1,6 @@
 package view;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -15,7 +14,7 @@ import controller.RegisterRestaurantController;
  * Herda a classe Jstructure que contem um fundo, titulo e dois botoes.
  * 
  */
-public class RegisterRestaurant extends JstructureRegisters implements ActionListener {
+public class RegisterRestaurant extends JstructureRegisters {
 	private static final long serialVersionUID = 1L;
 	private final JTextField fieldRestaurant, fieldStars, fieldMeal, fieldCost;
 	private final RegisterRestaurantController controller = new RegisterRestaurantController(this);

@@ -1,6 +1,5 @@
 package controller;
 
-import view.EditDataGroup;
 import view.EditGroup;
 import view.RegisterAccommodation;
 import view.RegisterRestaurant;
