@@ -1,0 +1,63 @@
+package controller;
+
+import java.util.List;
+
+import model.Accommodation;
+import model.Group;
+import model.Restaurant;
+import model.Transportation;
+import model.User;
+import model.database.DatabaseProvider;
+import view.EditDataGroup;
+import view.Home;
+import view.ShowUser;
+
+public class EditDataGroupController {
+
+	private final EditDataGroup view;
+
+	public EditDataGroupController(EditDataGroup view) {
+		super();
+		this.view = view;
+	}
+
+	public void sendAction(Object source) {
+		if (source == view.getButtonConfirm()) {
+			String pickedNameSplitted = GroupController.nameGroupEdit.substring(0,
+					GroupController.nameGroupEdit.lastIndexOf(" -"));
+			editDataGroup((pickedNameSplitted));
+			System.out.println(DatabaseProvider.getGroups());
+			new Home();
+		} else if (source == view.getButtonCancel()) {
+			new ShowUser();
+		}
+	}
+
+	private void editDataGroup(String name) {
+		for (Group currentGroup : DatabaseProvider.getGroups()) {
+			if (name.equals(currentGroup.getNameGroup())) {
+
+				String names = view.getFieldName().getText();
+				String motivation = view.getFieldMotivation().getText();
+				String expectedDate = view.getFieldData().getText();
+				Integer numberOfMembers = Integer.parseInt(view.getFieldMembers().getText());
+
+				User creator = currentGroup.getCreator();
+				List<User> members = currentGroup.getMembers();
+				List<Transportation> tRANSPORTATION = currentGroup.getTRANSPORTATION();
+				List<Restaurant> rESTAURANT = currentGroup.getRESTAURANT();
+				List<Accommodation> aCCOMMODATION = currentGroup.getACCOMMODATION();
+				double totalPrice = currentGroup.getTotalPrice();
+
+				Group group = new Group(names, creator, motivation, expectedDate, members, tRANSPORTATION,
+						numberOfMembers, rESTAURANT, aCCOMMODATION, totalPrice);
+
+				DatabaseProvider.getGroups().add(group);
+
+				DatabaseProvider.getGroups().remove(currentGroup);
+			}
+		}
+
+	}
+
+}
