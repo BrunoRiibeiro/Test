@@ -4,6 +4,7 @@ import javax.swing.DefaultListModel;
 
 import model.User;
 import model.database.DatabaseProvider;
+import view.EditUser;
 import view.Home;
 import view.RegisterUser;
 import view.ShowUser;
@@ -29,7 +30,7 @@ public class UserController {
 			String pickedName = view.getFieldUser().getSelectedValue();
 
 			if (pickedName != null) {
-				pickedUserEdit = recoverPickedUser(pickedName);
+				pickedUserEdit = searchForPickedUser(pickedName);
 				new EditUser();
 			}
 		} else if (source == view.getButtonNewUser()) {
@@ -38,7 +39,7 @@ public class UserController {
 			String pickedName = view.getFieldUser().getSelectedValue();
 
 			if (pickedName != null) {
-				pickedUserDelete = recoverPickedUser(pickedName);
+				pickedUserDelete = searchForPickedUser(pickedName);
 				DatabaseProvider.getUsers().remove(pickedUserDelete);
 			}
 
@@ -55,7 +56,7 @@ public class UserController {
 		return pickedUserEdit;
 	}
 
-	public User recoverPickedUser(String nome) {
+	public User searchForPickedUser(String nome) {
 		for (User currentUser : DatabaseProvider.getUsers()) {
 			if (nome.equals(currentUser.getName())) {
 				return currentUser;

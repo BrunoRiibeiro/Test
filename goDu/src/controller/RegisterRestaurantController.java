@@ -2,7 +2,7 @@ package controller;
 
 import java.util.List;
 
-import model.Accomodation;
+import model.Accommodation;
 import model.Group;
 import model.Restaurant;
 import model.Transportation;
@@ -50,7 +50,7 @@ public class RegisterRestaurantController {
 				List<Transportation> tRANSPORTATION = currentGroup.getTRANSPORTATION();
 				int numberOfMembers = currentGroup.getNumberOfMembers();
 				List<Restaurant> rESTAURANT = currentGroup.getRESTAURANT();
-				List<Accomodation> aCCOMODATION = currentGroup.getACCOMODATION();
+				List<Accommodation> aCCOMODATION = currentGroup.getACCOMODATION();
 				double totalPrice = currentGroup.getTotalPrice();
 				Restaurant restaurant = new Restaurant(nameRestaurant, stars, meal, MealCost);
 				rESTAURANT.add(restaurant);

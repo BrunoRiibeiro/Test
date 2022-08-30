@@ -2,6 +2,7 @@ package controller;
 
 import view.EditGroup;
 import view.RegisterAccommodation;
+import view.RegisterRestaurant;
 import view.RegisterTransportation;
 import view.ShowGroup;
 
