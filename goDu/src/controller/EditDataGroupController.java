@@ -9,8 +9,8 @@ import model.Transportation;
 import model.User;
 import model.database.DatabaseProvider;
 import view.EditDataGroup;
+import view.EditGroup;
 import view.Home;
-import view.ShowUser;
 
 public class EditDataGroupController {
 
@@ -29,7 +29,7 @@ public class EditDataGroupController {
 			System.out.println(DatabaseProvider.getGroups());
 			new Home();
 		} else if (source == view.getButtonCancel()) {
-			new ShowUser();
+			new EditGroup();
 		}
 	}
 
@@ -37,7 +37,14 @@ public class EditDataGroupController {
 		for (Group currentGroup : DatabaseProvider.getGroups()) {
 			if (name.equals(currentGroup.getNameGroup())) {
 
-				String names = view.getFieldName().getText();
+				String names;
+
+				if (view.getFieldName().getText().length() == 0) {
+					names = currentGroup.getNameGroup();
+				} else {
+					names = view.getFieldName().getText();
+				}
+
 				String motivation = view.getFieldMotivation().getText();
 				String expectedDate = view.getFieldData().getText();
 				Integer numberOfMembers = Integer.parseInt(view.getFieldMembers().getText());
