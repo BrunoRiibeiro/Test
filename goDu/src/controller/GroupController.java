@@ -18,10 +18,6 @@ public class GroupController {
 		this.view = view;
 	}
 
-	public GroupController() {
-
-	}
-
 	public void sendAction(Object source) {
 		if (source == view.getButtonBack()) {
 			new Home();
@@ -29,14 +25,13 @@ public class GroupController {
 			String pickedName = view.getFieldGroups().getSelectedValue();
 
 			if (pickedName != null) {
-				pickedGroup = recoverPickedGroup(pickedName);
+				pickedGroup = searchForPickedGroup(pickedName);
 				new EditGroup();
-
 			}
 		} else if (source == view.getButtonNewGroup()) {
 			new RegisterGroup();
 		} else if (source == view.getButtonDelete()) {
-
+			deletePickedGroup();
 		}
 	}
 
@@ -44,13 +39,26 @@ public class GroupController {
 		return pickedGroup;
 	}
 
-	public Group recoverPickedGroup(String name) {
+	public Group searchForPickedGroup(String name) {
 		for (Group currentGroup : DatabaseProvider.getGroups()) {
 			if (name.equals(currentGroup.getNameGroup())) {
 				return currentGroup;
 			}
 		}
 		return null;
+	}
+	
+	public void deletePickedGroup() {
+		String pickedName = view.getFieldGroups().getSelectedValue();
+		String pickedNameSplitted = pickedName.substring(0,pickedName.lastIndexOf(" -"));
+		
+		if (pickedName != null) {
+			pickedGroup = searchForPickedGroup(pickedNameSplitted);
+			DatabaseProvider.getGroups().remove(pickedGroup);
+		}
+
+		System.out.println(DatabaseProvider.getGroups());
+		new ShowGroup();
 	}
 
 	public DefaultListModel<String> updateList() {

@@ -25,21 +25,13 @@ public class UserController {
 			String pickedName = view.getFieldUser().getSelectedValue();
 
 			if (pickedName != null) {
-				pickedUser = recoverPickedUser(pickedName);
+				pickedUser = searchForPickedUser(pickedName);
 				new EditUser();
 			}
 		} else if (source == view.getButtonNewUser()) {
 			new RegisterUser();
 		} else if (source == view.getButtonDelete()) {
-			String pickedName = view.getFieldUser().getSelectedValue();
-
-			if (pickedName != null) {
-				pickedUser = recoverPickedUser(pickedName);
-				DatabaseProvider.getUsers().remove(pickedUser);
-			}
-
-			System.out.println(DatabaseProvider.getUsers());
-			new ShowUser();
+			deletePickedUser();
 		}
 	}
 
@@ -47,13 +39,25 @@ public class UserController {
 		return pickedUser;
 	}
 
-	public User recoverPickedUser(String nome) {
+	public User searchForPickedUser(String nome) {
 		for (User currentUser : DatabaseProvider.getUsers()) {
 			if (nome.equals(currentUser.getName())) {
 				return currentUser;
 			}
 		}
 		return null;
+	}
+	
+	public void deletePickedUser() {
+		String pickedName = view.getFieldUser().getSelectedValue();
+
+		if (pickedName != null) {
+			pickedUser = searchForPickedUser(pickedName);
+			DatabaseProvider.getUsers().remove(pickedUser);
+		}
+
+		System.out.println(DatabaseProvider.getUsers());
+		new ShowUser();
 	}
 
 	/**
