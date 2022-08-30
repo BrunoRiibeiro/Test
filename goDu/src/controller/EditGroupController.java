@@ -18,7 +18,7 @@ public class EditGroupController {
 		if (source == view.getButtonAccommodation()) {
 			new RegisterAccommodation();
 		} else if (source == view.getButtonRestaurant()) {
-			// new RegisterGroup();
+			new RegisterRestaurant();
 		} else if (source == view.getButtonTransportation()) {
 			new RegisterTransportation();
 		} else if (source == view.getButtonEditProfile()) {
