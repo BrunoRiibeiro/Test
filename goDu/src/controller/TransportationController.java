@@ -4,16 +4,16 @@ import model.Transportation;
 import model.database.DatabaseProvider;
 import view.EditGroup;
 import view.Home;
-import view.ShowTransportation;
+import view.RegisterTransportation;
 
 public class TransportationController {
 
 	GroupController controller = new GroupController();
 	// controller.
 
-	private final ShowTransportation view;
+	private final RegisterTransportation view;
 
-	public TransportationController(ShowTransportation view) {
+	public TransportationController(RegisterTransportation view) {
 		super();
 		this.view = view;
 	}

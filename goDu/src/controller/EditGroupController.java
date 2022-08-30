@@ -1,8 +1,8 @@
 package controller;
 
 import view.EditGroup;
+import view.RegisterTransportation;
 import view.ShowGroup;
-import view.ShowTransportation;
 
 public class EditGroupController {
 
@@ -19,7 +19,7 @@ public class EditGroupController {
 		} else if (source == view.getButtonRestaurant()) {
 			// new RegisterGroup();
 		} else if (source == view.getButtonTransportation()) {
-			new ShowTransportation();
+			new RegisterTransportation();
 		} else if (source == view.getButtonEditProfile()) {
 			// new ShowUser();
 		} else if (source == view.getButtonBackGroup()) {
