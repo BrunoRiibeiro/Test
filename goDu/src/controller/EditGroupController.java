@@ -1,6 +1,7 @@
 package controller;
 
 import view.EditGroup;
+import view.RegisterAccomodation;
 import view.RegisterTransportation;
 import view.ShowGroup;
 
@@ -15,7 +16,7 @@ public class EditGroupController {
 
 	public void sendAction(Object source) {
 		if (source == view.getButtonAccomodation()) {
-			// new RegisterUser();
+			new RegisterAccomodation();
 		} else if (source == view.getButtonRestaurant()) {
 			// new RegisterGroup();
 		} else if (source == view.getButtonTransportation()) {

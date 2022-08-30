@@ -10,8 +10,13 @@ import view.RegisterUser;
 import view.ShowUser;
 
 public class UserController {
-	private final ShowUser view;
-	private User pickedUser;
+	private ShowUser view;
+	public static User pickedUserEdit;
+	private User pickedUserDelete;
+
+	public UserController() {
+
+	}
 
 	public UserController(ShowUser view) {
 		super();
@@ -25,8 +30,7 @@ public class UserController {
 			String pickedName = view.getFieldUser().getSelectedValue();
 
 			if (pickedName != null) {
-				pickedUser = searchForPickedUser(pickedName);
-				new EditUser();
+				pickedUserEdit = searchForPickedUser(pickedName);
 			}
 		} else if (source == view.getButtonNewUser()) {
 			new RegisterUser();
@@ -35,8 +39,12 @@ public class UserController {
 		}
 	}
 
-	public User getPickedUser() {
-		return pickedUser;
+	public User getPickedUserDelete() {
+		return pickedUserDelete;
+	}
+
+	public User getPickedUserEdit() {
+		return pickedUserEdit;
 	}
 
 	public User searchForPickedUser(String nome) {

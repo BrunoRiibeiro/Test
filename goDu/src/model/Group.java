@@ -1,7 +1,6 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Group {
@@ -11,11 +10,27 @@ public class Group {
 	private String motivation;
 	private String expectedDate;
 	private List<User> members = new ArrayList<>();
+	private List<Transportation> TRANSPORTATION = new ArrayList<>();
 	private int numberOfMembers;
-	private String[] travelList;
-	private String[] accomodationList;
-	private String[] transportationList;
+	private List<Restaurant> RESTAURANT = new ArrayList<>();
+	private List<Accomodation> ACCOMODATION = new ArrayList<>();
 	private double totalPrice;
+
+	public Group(String name, User creator, String motivation, String expectedDate, List<User> members,
+			List<Transportation> tRANSPORTATION, int numberOfMembers, List<Restaurant> rESTAURANT,
+			List<Accomodation> aCCOMODATION, double totalPrice) {
+		super();
+		this.name = name;
+		this.creator = creator;
+		this.motivation = motivation;
+		this.expectedDate = expectedDate;
+		this.members = members;
+		TRANSPORTATION = tRANSPORTATION;
+		this.numberOfMembers = numberOfMembers;
+		RESTAURANT = rESTAURANT;
+		ACCOMODATION = aCCOMODATION;
+		this.totalPrice = totalPrice;
+	}
 
 	public Group(String name, User creator, String expectedDate, String motivation) {
 		super();
@@ -74,28 +89,16 @@ public class Group {
 		this.numberOfMembers = numberOfMembers;
 	}
 
-	public String[] getTravelList() {
-		return travelList;
+	public List<Restaurant> getRESTAURANT() {
+		return RESTAURANT;
 	}
 
-	public void setTravelList(String[] travelList) {
-		this.travelList = travelList;
+	public List<Accomodation> getACCOMODATION() {
+		return ACCOMODATION;
 	}
 
-	public String[] getAccomodationList() {
-		return accomodationList;
-	}
-
-	public void setAccomodationList(String[] accomodationList) {
-		this.accomodationList = accomodationList;
-	}
-
-	public String[] getTransportationList() {
-		return transportationList;
-	}
-
-	public void setTransportationList(String[] transportationList) {
-		this.transportationList = transportationList;
+	public List<Transportation> getTRANSPORTATION() {
+		return TRANSPORTATION;
 	}
 
 	public double getTotalPrice() {
@@ -121,12 +124,12 @@ public class Group {
 	public void addRestaurant() {
 
 	}
-	
+
 	public void addMembers(User member) {
 		members.add(member);
 		numberOfMembers++;
 	}
-	
+
 	public void removeMembers(User member) {
 		members.remove(members.indexOf(member));
 		numberOfMembers--;
@@ -141,8 +144,8 @@ public class Group {
 	public String toString() {
 		return "Group [name=" + name + ", creator=" + creator + ", motivation=" + motivation + ", expectedDate="
 				+ expectedDate + ", members=" + members + ", numberOfMembers=" + numberOfMembers + ", travelList="
-				+ Arrays.toString(travelList) + ", accomodationList=" + Arrays.toString(accomodationList)
-				+ ", transportationList=" + Arrays.toString(transportationList) + ", totalPrice=" + totalPrice + "]";
+				+ RESTAURANT + ", accomodationList=" + ACCOMODATION + ", transportationList=" + TRANSPORTATION
+				+ ", totalPrice=" + totalPrice + "]";
 	}
 
 }
