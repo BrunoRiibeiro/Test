@@ -16,13 +16,13 @@ public class HomeController {
 	}
 
 	public void sendAction(Object source) {
-		if (source == view.getButtonRegisterUser()) {
+		if (source == view.getButton1()) {
 			new RegisterUser();
-		} else if (source == view.getButtonRegisterGroup()) {
+		} else if (source == view.getButton2()) {
 			new RegisterGroup();
-		} else if (source == view.getButtonGroup()) {
+		} else if (source == view.getButton3()) {
 			new ShowGroup();
-		} else if (source == view.getButtonUser()) {
+		} else if (source == view.getButton4()) {
 			new ShowUser();
 		}
 	}
