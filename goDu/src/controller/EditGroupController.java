@@ -17,14 +17,14 @@ public class EditGroupController {
 	}
 
 	public void sendAction(Object source) {
-		if (source == view.getButtonAccommodation()) {
+		if (source == view.getButton1()) {
 			new RegisterAccommodation();
-		} else if (source == view.getButtonRestaurant()) {
+		} else if (source == view.getButton2()) {
 			new RegisterRestaurant();
-		} else if (source == view.getButtonTransportation()) {
+		} else if (source == view.getButton3()) {
 			new RegisterTransportation();
-		} else if (source == view.getButtonEditProfile()) {
-			new EditDataGroup();
+		} else if (source == view.getButton4()) {
+			// new ShowUser();
 		} else if (source == view.getButtonBackGroup()) {
 			new ShowGroup();
 		}
