@@ -9,8 +9,13 @@ import view.RegisterUser;
 import view.ShowUser;
 
 public class UserController {
-	private final ShowUser view;
-	private User pickedUser;
+	private ShowUser view;
+	public static User pickedUserEdit;
+	private User pickedUserDelete;
+
+	public UserController() {
+
+	}
 
 	public UserController(ShowUser view) {
 		super();
@@ -24,26 +29,42 @@ public class UserController {
 			String pickedName = view.getFieldUser().getSelectedValue();
 
 			if (pickedName != null) {
-				pickedUser = recoverPickedUser(pickedName);
-				// new RegisterUser();
-				// MainFrameControl.mostrarCadastraPapel();
+				pickedUserEdit = searchForPickedUser(pickedName);
 			}
 		} else if (source == view.getButtonNewUser()) {
 			new RegisterUser();
+		} else if (source == view.getButtonDelete()) {
+			deletePickedUser();
 		}
 	}
 
-	public User getPickedUser() {
-		return pickedUser;
+	public User getPickedUserDelete() {
+		return pickedUserDelete;
 	}
 
-	public User recoverPickedUser(String nome) {
+	public User getPickedUserEdit() {
+		return pickedUserEdit;
+	}
+
+	public User searchForPickedUser(String nome) {
 		for (User currentUser : DatabaseProvider.getUsers()) {
 			if (nome.equals(currentUser.getName())) {
 				return currentUser;
 			}
 		}
 		return null;
+	}
+	
+	public void deletePickedUser() {
+		String pickedName = view.getFieldUser().getSelectedValue();
+
+		if (pickedName != null) {
+			User pickedUser = searchForPickedUser(pickedName);
+			DatabaseProvider.getUsers().remove(pickedUser);
+		}
+
+		System.out.println(DatabaseProvider.getUsers());
+		new ShowUser();
 	}
 
 	/**

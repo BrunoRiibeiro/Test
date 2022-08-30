@@ -21,5 +21,4 @@ public class DatabaseProvider {
 	public static List<Group> getGroups() {
 		return GROUPS;
 	}
-
 }
