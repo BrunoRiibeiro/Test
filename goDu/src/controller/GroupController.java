@@ -12,6 +12,7 @@ import view.ShowGroup;
 public class GroupController {
 	private ShowGroup view;
 	public static Group pickedGroupEdit;
+	public static String nameGroupEdit;
 	private Group pickedGroup;
 
 	public GroupController(ShowGroup view) {
@@ -27,10 +28,10 @@ public class GroupController {
 		if (source == view.getButtonBack()) {
 			new Home();
 		} else if (source == view.getButtonEdit()) {
-			String pickedName = view.getFieldGroups().getSelectedValue();
+			nameGroupEdit = view.getFieldGroups().getSelectedValue();
 
-			if (pickedName != null) {
-				pickedGroupEdit = recoverPickedGroup(pickedName);
+			if (nameGroupEdit != null) {
+				pickedGroupEdit = recoverPickedGroup(nameGroupEdit);
 				new EditGroup();
 
 			}
