@@ -48,7 +48,7 @@ public class TransportationController {
 				List<Transportation> tRANSPORTATION = currentGroup.getTRANSPORTATION();
 				int numberOfMembers = currentGroup.getNumberOfMembers();
 				List<Restaurant> rESTAURANT = currentGroup.getRESTAURANT();
-				List<Accommodation> aCCOMODATION = currentGroup.getACCOMODATION();
+				List<Accommodation> aCCOMODATION = currentGroup.getACCOMMODATION();
 				double totalPrice = currentGroup.getTotalPrice();
 				Transportation transport = new Transportation(transportMode, cost);
 				tRANSPORTATION.add(transport);

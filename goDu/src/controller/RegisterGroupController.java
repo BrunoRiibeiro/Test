@@ -42,10 +42,10 @@ public class RegisterGroupController {
 	}
 
 	public DefaultComboBoxModel<Object> updateModel() {
-		return new DefaultComboBoxModel<>(criarArrayUser());
+		return new DefaultComboBoxModel<>(createArrayUser());
 	}
 
-	public Object[] criarArrayUser() {
+	public Object[] createArrayUser() {
 		List<String> model = new ArrayList<>();
 
 		for (User user : DatabaseProvider.getUsers()) {
