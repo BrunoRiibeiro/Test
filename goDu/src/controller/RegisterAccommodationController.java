@@ -48,13 +48,13 @@ public class RegisterAccommodationController {
 				List<Transportation> tRANSPORTATION = currentGroup.getTRANSPORTATION();
 				int numberOfMembers = currentGroup.getNumberOfMembers();
 				List<Restaurant> rESTAURANT = currentGroup.getRESTAURANT();
-				List<Accommodation> aCCOMODATION = currentGroup.getACCOMODATION();
+				List<Accommodation> aCCOMMODATION = currentGroup.getACCOMMODATION();
 				double totalPrice = currentGroup.getTotalPrice();
-				Accommodation accomodations = new Accommodation(accomodation, accomodationCost);
-				aCCOMODATION.add(accomodations);
+				Accommodation accommodations = new Accommodation(accomodation, accomodationCost);
+				aCCOMMODATION.add(accommodations);
 
 				Group group = new Group(names, creator, motivation, expectedDate, members, tRANSPORTATION,
-						numberOfMembers, rESTAURANT, aCCOMODATION, totalPrice);
+						numberOfMembers, rESTAURANT, aCCOMMODATION, totalPrice);
 
 				DatabaseProvider.getGroups().add(group);
 
