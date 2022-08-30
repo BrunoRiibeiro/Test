@@ -1,7 +1,6 @@
 package view;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -15,7 +14,7 @@ import controller.TransportationController;
  * Herda a classe Jstructure que contem um fundo, titulo e dois botoes.
  * 
  */
-public class RegisterTransportation extends JstructureRegisters implements ActionListener {
+public class RegisterTransportation extends JstructureRegisters {
 	private static final long serialVersionUID = 1L;
 	private final JTextField fieldTransportation, fieldCost;
 	private final TransportationController controller = new TransportationController(this);

@@ -1,7 +1,6 @@
 package view;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
@@ -16,7 +15,7 @@ import controller.EditUserController;
  * Herda a classe Jstructure que contem um fundo, titulo e dois botoes.
  * 
  */
-public class EditUser extends JstructureRegisters implements ActionListener {
+public class EditUser extends JstructureRegisters {
 	private static final long serialVersionUID = 1L;
 	private final JTextField fieldName;
 	private final JFormattedTextField expectedDate;
