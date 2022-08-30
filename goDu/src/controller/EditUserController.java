@@ -30,7 +30,11 @@ public class EditUserController {
 		String birthday = view.getTextFieldBirthday().getText();
 		User user = new User(name, birthday);
 
+		User oldUser = UserController.pickedUserEdit;
+
 		DatabaseProvider.getUsers().add(user);
+		DatabaseProvider.getUsers().remove(oldUser);
+
 	}
 
 }

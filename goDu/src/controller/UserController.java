@@ -10,8 +10,13 @@ import view.RegisterUser;
 import view.ShowUser;
 
 public class UserController {
-	private final ShowUser view;
-	private User pickedUser;
+	private ShowUser view;
+	public static User pickedUserEdit;
+	private User pickedUserDelete;
+
+	public UserController() {
+
+	}
 
 	public UserController(ShowUser view) {
 		super();
@@ -25,7 +30,7 @@ public class UserController {
 			String pickedName = view.getFieldUser().getSelectedValue();
 
 			if (pickedName != null) {
-				pickedUser = recoverPickedUser(pickedName);
+				pickedUserEdit = recoverPickedUser(pickedName);
 				new EditUser();
 			}
 		} else if (source == view.getButtonNewUser()) {
@@ -34,8 +39,8 @@ public class UserController {
 			String pickedName = view.getFieldUser().getSelectedValue();
 
 			if (pickedName != null) {
-				pickedUser = recoverPickedUser(pickedName);
-				DatabaseProvider.getUsers().remove(pickedUser);
+				pickedUserDelete = recoverPickedUser(pickedName);
+				DatabaseProvider.getUsers().remove(pickedUserDelete);
 			}
 
 			System.out.println(DatabaseProvider.getUsers());
@@ -43,8 +48,12 @@ public class UserController {
 		}
 	}
 
-	public User getPickedUser() {
-		return pickedUser;
+	public User getPickedUserDelete() {
+		return pickedUserDelete;
+	}
+
+	public User getPickedUserEdit() {
+		return pickedUserEdit;
 	}
 
 	public User recoverPickedUser(String nome) {
