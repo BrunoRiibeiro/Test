@@ -93,7 +93,7 @@ public class Group {
 		return RESTAURANT;
 	}
 
-	public List<Accommodation> getACCOMODATION() {
+	public List<Accommodation> getACCOMMODATION() {
 		return ACCOMMODATION;
 	}
 

@@ -42,8 +42,6 @@ public class UserController {
 				pickedUserDelete = searchForPickedUser(pickedName);
 				DatabaseProvider.getUsers().remove(pickedUserDelete);
 			}
-
-			System.out.println(DatabaseProvider.getUsers());
 			new ShowUser();
 		}
 	}
@@ -56,9 +54,9 @@ public class UserController {
 		return pickedUserEdit;
 	}
 
-	public User searchForPickedUser(String nome) {
+	public User searchForPickedUser(String name) {
 		for (User currentUser : DatabaseProvider.getUsers()) {
-			if (nome.equals(currentUser.getName())) {
+			if (name.equals(currentUser.getName())) {
 				return currentUser;
 			}
 		}
@@ -72,8 +70,6 @@ public class UserController {
 			User pickedUser = searchForPickedUser(pickedName);
 			DatabaseProvider.getUsers().remove(pickedUser);
 		}
-
-		System.out.println(DatabaseProvider.getUsers());
 		new ShowUser();
 	}
 

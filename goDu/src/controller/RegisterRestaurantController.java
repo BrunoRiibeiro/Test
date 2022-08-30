@@ -50,13 +50,13 @@ public class RegisterRestaurantController {
 				List<Transportation> tRANSPORTATION = currentGroup.getTRANSPORTATION();
 				int numberOfMembers = currentGroup.getNumberOfMembers();
 				List<Restaurant> rESTAURANT = currentGroup.getRESTAURANT();
-				List<Accommodation> aCCOMODATION = currentGroup.getACCOMODATION();
+				List<Accommodation> aCCOMMODATION = currentGroup.getACCOMMODATION();
 				double totalPrice = currentGroup.getTotalPrice();
 				Restaurant restaurant = new Restaurant(nameRestaurant, stars, meal, MealCost);
 				rESTAURANT.add(restaurant);
 
 				Group group = new Group(names, creator, motivation, expectedDate, members, tRANSPORTATION,
-						numberOfMembers, rESTAURANT, aCCOMODATION, totalPrice);
+						numberOfMembers, rESTAURANT, aCCOMMODATION, totalPrice);
 
 				DatabaseProvider.getGroups().add(group);
 
