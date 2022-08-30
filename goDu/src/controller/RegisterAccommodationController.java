@@ -2,7 +2,7 @@ package controller;
 
 import java.util.List;
 
-import model.Accomodation;
+import model.Accommodation;
 import model.Group;
 import model.Restaurant;
 import model.Transportation;
@@ -10,13 +10,13 @@ import model.User;
 import model.database.DatabaseProvider;
 import view.EditGroup;
 import view.Home;
-import view.RegisterAccomodation;
+import view.RegisterAccommodation;
 
-public class RegisterAccomodationController {
+public class RegisterAccommodationController {
 
-	private final RegisterAccomodation view;
+	private final RegisterAccommodation view;
 
-	public RegisterAccomodationController(RegisterAccomodation view) {
+	public RegisterAccommodationController(RegisterAccommodation view) {
 		super();
 		this.view = view;
 	}
@@ -25,7 +25,7 @@ public class RegisterAccomodationController {
 		if (source == view.getButtonConfirm()) {
 			String pickedNameSplitted = GroupController.nameGroupEdit.substring(0,
 					GroupController.nameGroupEdit.lastIndexOf(" -"));
-			registerNewAccomodation((pickedNameSplitted));
+			registerNewAccommodation((pickedNameSplitted));
 			System.out.println(DatabaseProvider.getGroups());
 			new Home();
 		} else if (source == view.getButtonCancel()) {
@@ -33,11 +33,11 @@ public class RegisterAccomodationController {
 		}
 	}
 
-	public void registerNewAccomodation(String name) {
+	public void registerNewAccommodation(String name) {
 		for (Group currentGroup : DatabaseProvider.getGroups()) {
 			if (name.equals(currentGroup.getNameGroup())) {
 
-				String accomodation = view.getTextFieldAccomodation().getText();
+				String accomodation = view.getTextFieldAccommodation().getText();
 				double accomodationCost = Double.parseDouble(view.getTextFieldCost().getText());
 
 				String names = currentGroup.getNameGroup();
@@ -48,9 +48,9 @@ public class RegisterAccomodationController {
 				List<Transportation> tRANSPORTATION = currentGroup.getTRANSPORTATION();
 				int numberOfMembers = currentGroup.getNumberOfMembers();
 				List<Restaurant> rESTAURANT = currentGroup.getRESTAURANT();
-				List<Accomodation> aCCOMODATION = currentGroup.getACCOMODATION();
+				List<Accommodation> aCCOMODATION = currentGroup.getACCOMODATION();
 				double totalPrice = currentGroup.getTotalPrice();
-				Accomodation accomodations = new Accomodation(accomodation, accomodationCost);
+				Accommodation accomodations = new Accommodation(accomodation, accomodationCost);
 				aCCOMODATION.add(accomodations);
 
 				Group group = new Group(names, creator, motivation, expectedDate, members, tRANSPORTATION,

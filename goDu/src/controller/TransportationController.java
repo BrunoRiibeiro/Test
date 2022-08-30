@@ -2,7 +2,7 @@ package controller;
 
 import java.util.List;
 
-import model.Accomodation;
+import model.Accommodation;
 import model.Group;
 import model.Restaurant;
 import model.Transportation;
@@ -48,7 +48,7 @@ public class TransportationController {
 				List<Transportation> tRANSPORTATION = currentGroup.getTRANSPORTATION();
 				int numberOfMembers = currentGroup.getNumberOfMembers();
 				List<Restaurant> rESTAURANT = currentGroup.getRESTAURANT();
-				List<Accomodation> aCCOMODATION = currentGroup.getACCOMODATION();
+				List<Accommodation> aCCOMODATION = currentGroup.getACCOMODATION();
 				double totalPrice = currentGroup.getTotalPrice();
 				Transportation transport = new Transportation(transportMode, cost);
 				tRANSPORTATION.add(transport);

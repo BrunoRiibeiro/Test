@@ -13,12 +13,12 @@ public class Group {
 	private List<Transportation> TRANSPORTATION = new ArrayList<>();
 	private int numberOfMembers;
 	private List<Restaurant> RESTAURANT = new ArrayList<>();
-	private List<Accomodation> ACCOMODATION = new ArrayList<>();
+	private List<Accommodation> ACCOMMODATION = new ArrayList<>();
 	private double totalPrice;
 
 	public Group(String name, User creator, String motivation, String expectedDate, List<User> members,
 			List<Transportation> tRANSPORTATION, int numberOfMembers, List<Restaurant> rESTAURANT,
-			List<Accomodation> aCCOMODATION, double totalPrice) {
+			List<Accommodation> aCCOMMODATION, double totalPrice) {
 		super();
 		this.name = name;
 		this.creator = creator;
@@ -28,7 +28,7 @@ public class Group {
 		TRANSPORTATION = tRANSPORTATION;
 		this.numberOfMembers = numberOfMembers;
 		RESTAURANT = rESTAURANT;
-		ACCOMODATION = aCCOMODATION;
+		ACCOMMODATION = aCCOMMODATION;
 		this.totalPrice = totalPrice;
 	}
 
@@ -93,8 +93,8 @@ public class Group {
 		return RESTAURANT;
 	}
 
-	public List<Accomodation> getACCOMODATION() {
-		return ACCOMODATION;
+	public List<Accommodation> getACCOMODATION() {
+		return ACCOMMODATION;
 	}
 
 	public List<Transportation> getTRANSPORTATION() {
@@ -144,7 +144,7 @@ public class Group {
 	public String toString() {
 		return "Group [name=" + name + ", creator=" + creator + ", motivation=" + motivation + ", expectedDate="
 				+ expectedDate + ", members=" + members + ", numberOfMembers=" + numberOfMembers + ", travelList="
-				+ RESTAURANT + ", accomodationList=" + ACCOMODATION + ", transportationList=" + TRANSPORTATION
+				+ RESTAURANT + ", accommodationList=" + ACCOMMODATION + ", transportationList=" + TRANSPORTATION
 				+ ", totalPrice=" + totalPrice + "]";
 	}
 

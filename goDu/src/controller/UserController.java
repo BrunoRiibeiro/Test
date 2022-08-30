@@ -4,7 +4,6 @@ import javax.swing.DefaultListModel;
 
 import model.User;
 import model.database.DatabaseProvider;
-import view.EditUser;
 import view.Home;
 import view.RegisterUser;
 import view.ShowUser;
@@ -60,7 +59,7 @@ public class UserController {
 		String pickedName = view.getFieldUser().getSelectedValue();
 
 		if (pickedName != null) {
-			pickedUser = searchForPickedUser(pickedName);
+			User pickedUser = searchForPickedUser(pickedName);
 			DatabaseProvider.getUsers().remove(pickedUser);
 		}
 

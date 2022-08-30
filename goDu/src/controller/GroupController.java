@@ -26,8 +26,8 @@ public class GroupController {
 		} else if (source == view.getButtonEdit()) {
 			nameGroupEdit = view.getFieldGroups().getSelectedValue();
       
-			if (pickedName != null) {
-				pickedGroup = searchForPickedGroup(pickedName);
+			if (nameGroupEdit != null) {
+				pickedGroup = searchForPickedGroup(nameGroupEdit);
 				new EditGroup();
 			}
 		} else if (source == view.getButtonNewGroup()) {
