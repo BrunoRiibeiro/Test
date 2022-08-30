@@ -4,7 +4,6 @@ import javax.swing.DefaultListModel;
 
 import model.User;
 import model.database.DatabaseProvider;
-import view.EditUser;
 import view.Home;
 import view.RegisterUser;
 import view.ShowUser;
@@ -63,6 +62,18 @@ public class UserController {
 			}
 		}
 		return null;
+	}
+
+	public void deletePickedUser() {
+		String pickedName = view.getFieldUser().getSelectedValue();
+
+		if (pickedName != null) {
+			User pickedUser = searchForPickedUser(pickedName);
+			DatabaseProvider.getUsers().remove(pickedUser);
+		}
+
+		System.out.println(DatabaseProvider.getUsers());
+		new ShowUser();
 	}
 
 	/**

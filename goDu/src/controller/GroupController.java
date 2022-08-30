@@ -29,9 +29,9 @@ public class GroupController {
 			new Home();
 		} else if (source == view.getButtonEdit()) {
 			nameGroupEdit = view.getFieldGroups().getSelectedValue();
-
+      
 			if (nameGroupEdit != null) {
-				pickedGroupEdit = recoverPickedGroup(nameGroupEdit);
+				pickedGroup = searchForPickedGroup(nameGroupEdit);
 				new EditGroup();
 
 			}
@@ -46,7 +46,7 @@ public class GroupController {
 		return pickedGroup;
 	}
 
-	public Group recoverPickedGroup(String name) {
+	public Group searchForPickedGroup(String name) {
 		for (Group currentGroup : DatabaseProvider.getGroups()) {
 			if (name.equals(currentGroup.getNameGroup())) {
 				return currentGroup;

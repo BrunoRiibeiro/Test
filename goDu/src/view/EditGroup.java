@@ -15,7 +15,7 @@ import controller.EditGroupController;
 public class EditGroup implements ActionListener {
 
 	private final JFrame frame;
-	private final JButton buttonAccomodation, buttonRestaurant, buttonTransportation, buttonEditProfile,
+	private final JButton buttonAccommodation, buttonRestaurant, buttonTransportation, buttonEditProfile,
 			buttonBackGroup;
 	private final JPanel panel;
 	private final EditGroupController controller = new EditGroupController(this);
@@ -23,12 +23,12 @@ public class EditGroup implements ActionListener {
 	public EditGroup() {
 		frame = new JFrame();
 
-		buttonAccomodation = new JButton("Acomodação");
-		buttonAccomodation.setEnabled(true);
-		buttonAccomodation.setBackground(Color.PINK);
-		buttonAccomodation.setForeground(Color.BLACK);
-		buttonAccomodation.setBounds(280, 213, 267, 31);
-		buttonAccomodation.addActionListener(this);
+		buttonAccommodation = new JButton("Acomodação");
+		buttonAccommodation.setEnabled(true);
+		buttonAccommodation.setBackground(Color.PINK);
+		buttonAccommodation.setForeground(Color.BLACK);
+		buttonAccommodation.setBounds(280, 213, 267, 31);
+		buttonAccommodation.addActionListener(this);
 
 		buttonRestaurant = new JButton("Restaurante");
 		buttonRestaurant.setEnabled(true);
@@ -62,7 +62,7 @@ public class EditGroup implements ActionListener {
 		panel = new JPanel();
 		panel.setBorder(BorderFactory.createEmptyBorder(250, 250, 20, 31));
 		panel.setLayout(null);
-		panel.add(buttonAccomodation);
+		panel.add(buttonAccommodation);
 		panel.add(buttonRestaurant);
 		panel.add(buttonTransportation);
 		panel.add(buttonEditProfile);
@@ -81,8 +81,8 @@ public class EditGroup implements ActionListener {
 		return frame;
 	}
 
-	public JButton getButtonAccomodation() {
-		return buttonAccomodation;
+	public JButton getButtonAccommodation() {
+		return buttonAccommodation;
 	}
 
 	public JButton getButtonRestaurant() {
