@@ -15,7 +15,7 @@ import controller.TransportationController;
  * Herda a classe Jstructure que contem um fundo, titulo e dois botoes.
  * 
  */
-public class ShowTransportation extends JstructureRegisters implements ActionListener {
+public class RegisterTransportation extends JstructureRegisters implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private final JTextField fieldTransportation, fieldCost;
 	private final TransportationController controller = new TransportationController(this);
@@ -23,7 +23,7 @@ public class ShowTransportation extends JstructureRegisters implements ActionLis
 	/**
 	 * Cria o panel com os campos para cadastro.
 	 */
-	public ShowTransportation() {
+	public RegisterTransportation() {
 		super("Cadastre um novo Transporte");
 
 		JLabel labelTransportation = new JLabel("Modo de transporte:");
