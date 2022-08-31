@@ -47,14 +47,6 @@ public class Restaurant extends Arrangement {
 		this.mealPrice = mealPrice;
 	}
 
-	public void sumPrices() {
-
-	}
-
-	public int toEvaluate() {
-		return 2;
-	}
-
 	@Override
 	public String toString() {
 		return "Restaurant [name=" + name + ", stars=" + stars + ", meal=" + meal + ", mealPrice=" + mealPrice + "]";

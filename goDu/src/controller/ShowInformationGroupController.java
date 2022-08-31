@@ -114,7 +114,7 @@ public class ShowInformationGroupController {
 
 				model.append("    ____________________________________________________ \n");
 
-				for (Transportation currentTransportation : currentGroup.getTRANSPORTATION()) {
+				for (Transportation currentTransportation : currentGroup.getTransportation()) {
 					flag0 = true;
 
 					model.append("    -> ");
@@ -131,7 +131,7 @@ public class ShowInformationGroupController {
 
 				model.append("    ____________________________________________________ \n");
 
-				for (Restaurant currentRestaurant : currentGroup.getRESTAURANT()) {
+				for (Restaurant currentRestaurant : currentGroup.getRestaurant()) {
 					flag1 = true;
 
 					model.append("    -> ");
@@ -156,7 +156,7 @@ public class ShowInformationGroupController {
 
 				model.append("    ____________________________________________________ \n");
 
-				for (Accommodation currentAccommodation : currentGroup.getACCOMMODATION()) {
+				for (Accommodation currentAccommodation : currentGroup.getAccommodation()) {
 					flag2 = true;
 
 					model.append("    -> ");
