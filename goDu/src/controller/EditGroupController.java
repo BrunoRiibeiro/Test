@@ -24,7 +24,7 @@ public class EditGroupController {
 		} else if (source == view.getButton3()) {
 			new RegisterTransportation();
 		} else if (source == view.getButton4()) {
-			// new ShowUser();
+			new EditDataGroup();
 		} else if (source == view.getButtonBackGroup()) {
 			new ShowGroup();
 		}
