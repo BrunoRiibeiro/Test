@@ -2,6 +2,7 @@ package view;
 
 import java.awt.event.ActionEvent;
 
+import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -16,7 +17,8 @@ import controller.RegisterAccommodationController;
  */
 public class RegisterAccommodation extends JstructureRegisters {
 	private static final long serialVersionUID = 1L;
-	private final JTextField fieldAccommodation, fieldCost;
+	private final JTextField fieldAccommodation, fieldCost, fieldLocale;
+	private final JFormattedTextField accommodationDate;
 	private final RegisterAccommodationController controller = new RegisterAccommodationController(this);
 
 	/**
@@ -25,16 +27,28 @@ public class RegisterAccommodation extends JstructureRegisters {
 	public RegisterAccommodation() {
 		super("Cadastre uma nova Acomodação");
 
-		JLabel labelAccommodation = new JLabel("Lugar de acomodação:");
+		JLabel labelAccommodation = new JLabel("Tipo de hospedagem:");
 		labelAccommodation.setFont(JstructureRegisters.FONT);
 		labelAccommodation.setHorizontalAlignment(SwingConstants.RIGHT);
 		labelAccommodation.setBounds(169, 195, 175, 13);
 		this.add(labelAccommodation);
 
-		JLabel labelCost = new JLabel("Preço da acomodação:");
+		JLabel labelLocale = new JLabel("Local de hospedagem:");
+		labelLocale.setFont(JstructureRegisters.FONT);
+		labelLocale.setHorizontalAlignment(SwingConstants.RIGHT);
+		labelLocale.setBounds(169, 243, 175, 13);
+		this.add(labelLocale);
+
+		JLabel labelDate = new JLabel("Data de hospedagem:");
+		labelDate.setFont(JstructureRegisters.FONT);
+		labelDate.setHorizontalAlignment(SwingConstants.RIGHT);
+		labelDate.setBounds(158, 297, 186, 13);
+		this.add(labelDate);
+
+		JLabel labelCost = new JLabel("Preço da hospedagem:");
 		labelCost.setFont(JstructureRegisters.FONT);
 		labelCost.setHorizontalAlignment(SwingConstants.RIGHT);
-		labelCost.setBounds(169, 243, 175, 13);
+		labelCost.setBounds(82, 343, 262, 13);
 		this.add(labelCost);
 
 		fieldAccommodation = new JTextField();
@@ -43,10 +57,21 @@ public class RegisterAccommodation extends JstructureRegisters {
 		this.add(fieldAccommodation);
 		fieldAccommodation.setColumns(10);
 
+		fieldLocale = new JTextField();
+		labelLocale.setLabelFor(fieldLocale);
+		fieldLocale.setBounds(405, 240, 147, 21);
+		this.add(fieldLocale);
+		fieldLocale.setColumns(10);
+
+		accommodationDate = new JFormattedTextField(this.maskingDate());
+		labelDate.setLabelFor(accommodationDate);
+		accommodationDate.setBounds(405, 294, 147, 19);
+		this.add(accommodationDate);
+
 		fieldCost = new JTextField();
 		labelCost.setLabelFor(fieldCost);
-		fieldCost.setBounds(405, 240, 147, 19);
-		add(fieldCost);
+		fieldCost.setBounds(405, 343, 147, 19);
+		this.add(fieldCost);
 		fieldCost.setColumns(10);
 
 	}
@@ -58,6 +83,14 @@ public class RegisterAccommodation extends JstructureRegisters {
 	public JTextField getTextFieldCost() {
 		return fieldCost;
 
+	}
+
+	public JFormattedTextField getFieldDate() {
+		return accommodationDate;
+	}
+
+	public JTextField getFieldLocale() {
+		return fieldLocale;
 	}
 
 	public RegisterAccommodationController getController() {

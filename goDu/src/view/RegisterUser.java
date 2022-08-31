@@ -27,11 +27,11 @@ public class RegisterUser extends JstructureRegisters {
 	public RegisterUser() {
 		super("Cadastre um novo Usuário");
 
-		JLabel labelNome = new JLabel("Nome:");
-		labelNome.setFont(JstructureRegisters.FONT);
-		labelNome.setHorizontalAlignment(SwingConstants.RIGHT);
-		labelNome.setBounds(169, 195, 175, 13);
-		this.add(labelNome);
+		JLabel labelName = new JLabel("Nome:");
+		labelName.setFont(JstructureRegisters.FONT);
+		labelName.setHorizontalAlignment(SwingConstants.RIGHT);
+		labelName.setBounds(169, 195, 175, 13);
+		this.add(labelName);
 
 		JLabel labelData = new JLabel("Data de Nascimento:");
 		labelData.setFont(JstructureRegisters.FONT);
@@ -40,7 +40,7 @@ public class RegisterUser extends JstructureRegisters {
 		this.add(labelData);
 
 		fieldName = new JTextField();
-		labelNome.setLabelFor(fieldName);
+		labelName.setLabelFor(fieldName);
 		fieldName.setBounds(405, 192, 147, 19);
 		this.add(fieldName);
 		fieldName.setColumns(10);

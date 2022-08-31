@@ -8,23 +8,23 @@ import model.Restaurant;
 import model.Transportation;
 import model.User;
 import model.database.DatabaseProvider;
-import view.EditDataGroup;
+import view.RegisterEditDataGroup;
 import view.EditGroup;
 import view.Home;
 
-public class EditDataGroupController {
+public class RegisterEditDataGroupController {
 
-	private final EditDataGroup view;
+	private final RegisterEditDataGroup view;
 
-	public EditDataGroupController(EditDataGroup view) {
+	public RegisterEditDataGroupController(RegisterEditDataGroup view) {
 		super();
 		this.view = view;
 	}
 
 	public void sendAction(Object source) {
 		if (source == view.getButtonConfirm()) {
-			String pickedNameSplitted = GroupController.nameGroupEdit.substring(0,
-					GroupController.nameGroupEdit.lastIndexOf(" -"));
+			String pickedNameSplitted = ShowGroupController.nameGroupEdit.substring(0,
+					ShowGroupController.nameGroupEdit.lastIndexOf(" -"));
 			editDataGroup((pickedNameSplitted));
 			System.out.println(DatabaseProvider.getGroups());
 			new Home();

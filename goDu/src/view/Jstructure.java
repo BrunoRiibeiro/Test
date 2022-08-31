@@ -12,16 +12,17 @@ public abstract class Jstructure extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	protected static final Font FONT = new Font("Algerian", Font.PLAIN, 14);
 	private final JButton button1, button2, button3, button4;
-	
-	public Jstructure(String title, String labelButton1, String labelButton2, String labelButton3, String labelButton4) {
-		
+
+	public Jstructure(String title, String labelButton1, String labelButton2, String labelButton3,
+			String labelButton4) {
+
 		this.setBackground(new Color(255, 255, 255));
 		this.setLayout(null);
 		this.setBounds(100, 100, 830, 522);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle(title);
 		this.setVisible(true);
-		
+
 		button1 = new JButton(labelButton1);
 		button1.setEnabled(true);
 		button1.setForeground(new Color(0, 0, 0));
@@ -71,7 +72,5 @@ public abstract class Jstructure extends JFrame implements ActionListener {
 	public JButton getButton4() {
 		return button4;
 	}
-	
-	
 
 }

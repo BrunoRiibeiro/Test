@@ -7,8 +7,8 @@ public class Restaurant extends Arrangement {
 	private String meal;
 	private double mealPrice;
 
-	public Restaurant(String name, int stars, String meal, double mealPrice) {
-		super();
+	public Restaurant(String date, String locale, String name, int stars, String meal, double mealPrice) {
+		super(date, locale);
 		this.name = name;
 		this.stars = stars;
 		this.meal = meal;
@@ -48,11 +48,6 @@ public class Restaurant extends Arrangement {
 	}
 
 	@Override
-	public String toString() {
-		return "Restaurant [name=" + name + ", stars=" + stars + ", meal=" + meal + ", mealPrice=" + mealPrice + "]";
-	}
-
-	@Override
 	public void toPostpone() {
 
 	}
@@ -66,4 +61,11 @@ public class Restaurant extends Arrangement {
 	public boolean cancel() {
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Restaurant [name=" + name + ", stars=" + stars + ", meal=" + meal + ", mealPrice=" + mealPrice
+				+ ", date=" + date + ", locale=" + locale + "]";
+	}
+
 }
