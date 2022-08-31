@@ -10,12 +10,12 @@ public class Group {
 	private String motivation;
 	private String expectedDate;
 	private List<Transportation> transportation = new ArrayList<>();
-	private int numberOfMembers;
 	private List<Restaurant> restaurant = new ArrayList<>();
 	private List<Accommodation> accommodation = new ArrayList<>();
+	private int numberOfMembers;
 	private double totalPrice;
 
-	public Group(String name, User creator, String motivation, String expectedDate, List<Transportation> transportation, 
+	public Group(String name, User creator, String motivation, String expectedDate, List<Transportation> transportation,
 			int numberOfMembers, List<Restaurant> restaurant, List<Accommodation> accommodation, double totalPrice) {
 		super();
 		this.name = name;
@@ -23,9 +23,9 @@ public class Group {
 		this.motivation = motivation;
 		this.expectedDate = expectedDate;
 		this.transportation = transportation;
-		this.numberOfMembers = numberOfMembers;
 		this.restaurant = restaurant;
 		this.accommodation = accommodation;
+		this.numberOfMembers = numberOfMembers;
 		this.totalPrice = totalPrice;
 	}
 
@@ -98,17 +98,12 @@ public class Group {
 		this.totalPrice = totalPrice;
 	}
 
-	public String payPerPerson() {
-		double eachPrice = totalPrice / numberOfMembers;
-		return "Preço por participante: " + eachPrice;
-	}
-
 	@Override
 	public String toString() {
 		return "Group [name=" + name + ", creator=" + creator + ", motivation=" + motivation + ", expectedDate="
-				+ expectedDate + ", numberOfMembers=" + numberOfMembers + ", travelList="
-				+ restaurant + ", accommodationList=" + accommodation + ", transportationList=" + transportation
-				+ ", totalPrice=" + totalPrice + "]";
+				+ expectedDate + ", numberOfMembers=" + numberOfMembers + ", restaurant=" + restaurant
+				+ ", accommodationList=" + accommodation + ", transportationList=" + transportation + ", totalPrice="
+				+ totalPrice + "]";
 	}
 
 }

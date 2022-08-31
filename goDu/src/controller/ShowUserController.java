@@ -4,21 +4,21 @@ import javax.swing.DefaultListModel;
 
 import model.User;
 import model.database.DatabaseProvider;
-import view.EditUser;
+import view.RegisterEditUser;
 import view.Home;
 import view.RegisterUser;
 import view.ShowUser;
 
-public class UserController {
+public class ShowUserController {
 	private ShowUser view;
 	public static User pickedUserEdit;
 	private User pickedUserDelete;
 
-	public UserController() {
+	public ShowUserController() {
 
 	}
 
-	public UserController(ShowUser view) {
+	public ShowUserController(ShowUser view) {
 		super();
 		this.view = view;
 	}
@@ -31,7 +31,7 @@ public class UserController {
 
 			if (pickedName != null) {
 				pickedUserEdit = searchForPickedUser(pickedName);
-				new EditUser();
+				new RegisterEditUser();
 			}
 		} else if (source == view.getButtonNewUser()) {
 			new RegisterUser();

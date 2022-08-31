@@ -7,7 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.border.LineBorder;
 
-import controller.UserController;
+import controller.ShowUserController;
 
 /**
  * JPanel para selecionar grupo para a edicao.
@@ -16,7 +16,7 @@ import controller.UserController;
 public class ShowUser extends JstructureShow {
 
 	private static final long serialVersionUID = 3378863774624440091L;
-	private UserController controller = new UserController(this);
+	private ShowUserController controller = new ShowUserController(this);
 	private final JList<String> fieldUser;
 	private final JButton buttonNewUser;
 
@@ -47,7 +47,7 @@ public class ShowUser extends JstructureShow {
 		this.setVisible(true);
 	}
 
-	public UserController getController() {
+	public ShowUserController getController() {
 		return controller;
 	}
 

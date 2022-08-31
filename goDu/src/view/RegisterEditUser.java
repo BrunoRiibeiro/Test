@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import controller.EditUserController;
+import controller.RegisterEditUserController;
 
 /**
  * JPanel para cadastrar um Grupo.
@@ -15,23 +15,23 @@ import controller.EditUserController;
  * Herda a classe Jstructure que contem um fundo, titulo e dois botoes.
  * 
  */
-public class EditUser extends JstructureRegisters {
+public class RegisterEditUser extends JstructureRegisters {
 	private static final long serialVersionUID = 1L;
 	private final JTextField fieldName;
 	private final JFormattedTextField expectedDate;
-	private final EditUserController controller = new EditUserController(this);
+	private final RegisterEditUserController controller = new RegisterEditUserController(this);
 
 	/**
 	 * Cria o panel com os campos para cadastro.
 	 */
-	public EditUser() {
+	public RegisterEditUser() {
 		super("Editando Usuario");
 
-		JLabel labelNome = new JLabel("Nome:");
-		labelNome.setFont(JstructureRegisters.FONT);
-		labelNome.setHorizontalAlignment(SwingConstants.RIGHT);
-		labelNome.setBounds(169, 195, 175, 13);
-		this.add(labelNome);
+		JLabel labelName = new JLabel("Nome:");
+		labelName.setFont(JstructureRegisters.FONT);
+		labelName.setHorizontalAlignment(SwingConstants.RIGHT);
+		labelName.setBounds(169, 195, 175, 13);
+		this.add(labelName);
 
 		JLabel labelData = new JLabel("Data de Nascimento:");
 		labelData.setFont(JstructureRegisters.FONT);
@@ -40,7 +40,7 @@ public class EditUser extends JstructureRegisters {
 		this.add(labelData);
 
 		fieldName = new JTextField();
-		labelNome.setLabelFor(fieldName);
+		labelName.setLabelFor(fieldName);
 		fieldName.setBounds(405, 192, 147, 19);
 		this.add(fieldName);
 		fieldName.setColumns(10);
@@ -60,7 +60,7 @@ public class EditUser extends JstructureRegisters {
 
 	}
 
-	public EditUserController getController() {
+	public RegisterEditUserController getController() {
 		return controller;
 	}
 

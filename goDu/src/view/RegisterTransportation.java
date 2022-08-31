@@ -2,11 +2,12 @@ package view;
 
 import java.awt.event.ActionEvent;
 
+import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import controller.TransportationController;
+import controller.RegisterTransportationController;
 
 /**
  * JPanel para cadastrar um Grupo.
@@ -16,8 +17,9 @@ import controller.TransportationController;
  */
 public class RegisterTransportation extends JstructureRegisters {
 	private static final long serialVersionUID = 1L;
-	private final JTextField fieldTransportation, fieldCost;
-	private final TransportationController controller = new TransportationController(this);
+	private final JTextField fieldTransportation, fieldLocale, fieldCost;
+	private final JFormattedTextField fieldTravelDate;
+	private final RegisterTransportationController controller = new RegisterTransportationController(this);
 
 	/**
 	 * Cria o panel com os campos para cadastro.
@@ -31,10 +33,22 @@ public class RegisterTransportation extends JstructureRegisters {
 		labelTransportation.setBounds(169, 195, 175, 13);
 		this.add(labelTransportation);
 
+		JLabel labelLocale = new JLabel("Destino:");
+		labelLocale.setFont(JstructureRegisters.FONT);
+		labelLocale.setHorizontalAlignment(SwingConstants.RIGHT);
+		labelLocale.setBounds(169, 243, 175, 13);
+		this.add(labelLocale);
+
+		JLabel labelDate = new JLabel("Data de viagem:");
+		labelDate.setFont(JstructureRegisters.FONT);
+		labelDate.setHorizontalAlignment(SwingConstants.RIGHT);
+		labelDate.setBounds(158, 297, 186, 13);
+		this.add(labelDate);
+
 		JLabel labelCost = new JLabel("Preço do transporte:");
 		labelCost.setFont(JstructureRegisters.FONT);
 		labelCost.setHorizontalAlignment(SwingConstants.RIGHT);
-		labelCost.setBounds(169, 243, 175, 13);
+		labelCost.setBounds(82, 343, 262, 13);
 		this.add(labelCost);
 
 		fieldTransportation = new JTextField();
@@ -43,9 +57,20 @@ public class RegisterTransportation extends JstructureRegisters {
 		this.add(fieldTransportation);
 		fieldTransportation.setColumns(10);
 
+		fieldLocale = new JTextField();
+		labelLocale.setLabelFor(fieldLocale);
+		fieldLocale.setBounds(405, 240, 147, 21);
+		this.add(fieldLocale);
+		fieldLocale.setColumns(10);
+
+		fieldTravelDate = new JFormattedTextField(this.maskingDate());
+		labelDate.setLabelFor(fieldTravelDate);
+		fieldTravelDate.setBounds(405, 294, 147, 19);
+		this.add(fieldTravelDate);
+
 		fieldCost = new JTextField();
 		labelCost.setLabelFor(fieldCost);
-		fieldCost.setBounds(405, 240, 147, 19);
+		fieldCost.setBounds(405, 343, 147, 19);
 		add(fieldCost);
 		fieldCost.setColumns(10);
 
@@ -55,12 +80,20 @@ public class RegisterTransportation extends JstructureRegisters {
 		return fieldTransportation;
 	}
 
+	public JTextField getFieldLocale() {
+		return fieldLocale;
+	}
+
+	public JFormattedTextField getFieldTravelDate() {
+		return fieldTravelDate;
+	}
+
 	public JTextField getTextFieldCost() {
 		return fieldCost;
 
 	}
 
-	public TransportationController getController() {
+	public RegisterTransportationController getController() {
 		return controller;
 	}
 
