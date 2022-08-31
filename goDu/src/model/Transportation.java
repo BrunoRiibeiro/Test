@@ -27,10 +27,6 @@ public class Transportation extends Arrangement {
 		this.transportCost = transportCost;
 	}
 
-	public double sumPrices() {
-		return 2.3;
-	}
-
 	public void calculateCarTravelPrice(double distance, double vehicle, double gasPrice) {
 
 	}

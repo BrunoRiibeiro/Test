@@ -37,24 +37,23 @@ public class RegisterAccommodationController {
 		for (Group currentGroup : DatabaseProvider.getGroups()) {
 			if (name.equals(currentGroup.getNameGroup())) {
 
-				String accomodation = view.getTextFieldAccommodation().getText();
-				double accomodationCost = Double.parseDouble(view.getTextFieldCost().getText());
+				String accommodation = view.getTextFieldAccommodation().getText();
+				double accommodationCost = Double.parseDouble(view.getTextFieldCost().getText());
 
 				String names = currentGroup.getNameGroup();
 				User creator = currentGroup.getCreator();
 				String motivation = currentGroup.getMotivation();
 				String expectedDate = currentGroup.getExpectedDate();
-				List<User> members = currentGroup.getMembers();
-				List<Transportation> tRANSPORTATION = currentGroup.getTRANSPORTATION();
+				List<Transportation> transportation = currentGroup.getTransportation();
 				int numberOfMembers = currentGroup.getNumberOfMembers();
-				List<Restaurant> rESTAURANT = currentGroup.getRESTAURANT();
-				List<Accommodation> aCCOMMODATION = currentGroup.getACCOMMODATION();
-				double totalPrice = currentGroup.getTotalPrice();
-				Accommodation accommodations = new Accommodation(accomodation, accomodationCost);
-				aCCOMMODATION.add(accommodations);
+				List<Restaurant> restaurant = currentGroup.getRestaurant();
+				List<Accommodation> newAccommodation = currentGroup.getAccommodation();
+				double totalPrice = currentGroup.getTotalPrice() + accommodationCost;
+				Accommodation accommodations = new Accommodation(accommodation, accommodationCost);
+				newAccommodation.add(accommodations);
 
-				Group group = new Group(names, creator, motivation, expectedDate, members, tRANSPORTATION,
-						numberOfMembers, rESTAURANT, aCCOMMODATION, totalPrice);
+				Group group = new Group(names, creator, motivation, expectedDate, transportation,
+						numberOfMembers, restaurant, newAccommodation, totalPrice);
 
 				DatabaseProvider.getGroups().add(group);
 
