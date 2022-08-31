@@ -4,6 +4,7 @@ import view.Home;
 import view.RegisterGroup;
 import view.RegisterUser;
 import view.ShowGroup;
+import view.ShowInformationGroup;
 import view.ShowUser;
 
 public class HomeController {
@@ -24,6 +25,8 @@ public class HomeController {
 			new ShowGroup();
 		} else if (source == view.getButton4()) {
 			new ShowUser();
+		} else if (source == view.getButton5()) {
+			new ShowInformationGroup();
 		}
 	}
 
