@@ -1,7 +1,6 @@
 package view;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
@@ -16,11 +15,10 @@ import controller.EditDataGroupController;
  * Herda a classe Jstructure que contem um fundo, titulo e dois botoes.
  * 
  */
-public class EditDataGroup extends JstructureRegisters implements ActionListener {
+public class EditDataGroup extends JstructureRegisters {
 	private static final long serialVersionUID = 1L;
-	private final JTextField fieldName;
+	private final JTextField fieldName, fieldMotivation;
 	private JTextField fieldMembers;
-	private final JTextField fieldMotivation;
 	private final JFormattedTextField expectedDate;
 	private final EditDataGroupController controller = new EditDataGroupController(this);
 

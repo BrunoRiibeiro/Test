@@ -2,7 +2,6 @@ package view;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JList;
@@ -14,7 +13,8 @@ import controller.UserController;
  * JPanel para selecionar grupo para a edicao.
  * 
  */
-public class ShowUser extends JstructureShow implements ActionListener {
+public class ShowUser extends JstructureShow {
+	
 	private static final long serialVersionUID = 3378863774624440091L;
 	private UserController controller = new UserController(this);
 	private final JList<String> fieldUser;
