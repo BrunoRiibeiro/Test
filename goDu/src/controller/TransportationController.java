@@ -9,7 +9,6 @@ import model.Transportation;
 import model.User;
 import model.database.DatabaseProvider;
 import view.EditGroup;
-import view.Home;
 import view.RegisterTransportation;
 
 public class TransportationController {
@@ -27,7 +26,7 @@ public class TransportationController {
 					GroupController.nameGroupEdit.lastIndexOf(" -"));
 			registerNewTransport((pickedNameSplitted));
 			System.out.println(DatabaseProvider.getGroups());
-			new Home();
+			new EditGroup();
 		} else if (source == view.getButtonCancel()) {
 			new EditGroup();
 		}
@@ -38,23 +37,22 @@ public class TransportationController {
 			if (name.equals(currentGroup.getNameGroup())) {
 
 				String transportMode = view.getTextFieldTransportation().getText();
-				Double cost = Double.parseDouble(view.getTextFieldCost().getText());
+				Double transportationCost = Double.parseDouble(view.getTextFieldCost().getText());
 
 				String names = currentGroup.getNameGroup();
 				User creator = currentGroup.getCreator();
 				String motivation = currentGroup.getMotivation();
 				String expectedDate = currentGroup.getExpectedDate();
-				List<User> members = currentGroup.getMembers();
-				List<Transportation> tRANSPORTATION = currentGroup.getTRANSPORTATION();
+				List<Transportation> newTransportation = currentGroup.getTransportation();
 				int numberOfMembers = currentGroup.getNumberOfMembers();
-				List<Restaurant> rESTAURANT = currentGroup.getRESTAURANT();
-				List<Accommodation> aCCOMODATION = currentGroup.getACCOMMODATION();
-				double totalPrice = currentGroup.getTotalPrice();
-				Transportation transport = new Transportation(transportMode, cost);
-				tRANSPORTATION.add(transport);
+				List<Restaurant> restaurant = currentGroup.getRestaurant();
+				List<Accommodation> accommodation = currentGroup.getAccommodation();
+				double totalPrice = currentGroup.getTotalPrice() + transportationCost;
+				Transportation transport = new Transportation(transportMode, transportationCost);
+				newTransportation.add(transport);
 
-				Group group = new Group(names, creator, motivation, expectedDate, members, tRANSPORTATION,
-						numberOfMembers, rESTAURANT, aCCOMODATION, totalPrice);
+				Group group = new Group(names, creator, motivation, expectedDate, newTransportation,
+						numberOfMembers, restaurant, accommodation, totalPrice);
 
 				DatabaseProvider.getGroups().add(group);
 

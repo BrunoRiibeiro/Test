@@ -14,7 +14,7 @@ import controller.UserController;
  * 
  */
 public class ShowUser extends JstructureShow {
-	
+
 	private static final long serialVersionUID = 3378863774624440091L;
 	private UserController controller = new UserController(this);
 	private final JList<String> fieldUser;

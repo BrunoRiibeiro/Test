@@ -9,26 +9,23 @@ public class Group {
 	private User creator;
 	private String motivation;
 	private String expectedDate;
-	private List<User> members = new ArrayList<>();
-	private List<Transportation> TRANSPORTATION = new ArrayList<>();
+	private List<Transportation> transportation = new ArrayList<>();
 	private int numberOfMembers;
-	private List<Restaurant> RESTAURANT = new ArrayList<>();
-	private List<Accommodation> ACCOMMODATION = new ArrayList<>();
+	private List<Restaurant> restaurant = new ArrayList<>();
+	private List<Accommodation> accommodation = new ArrayList<>();
 	private double totalPrice;
 
-	public Group(String name, User creator, String motivation, String expectedDate, List<User> members,
-			List<Transportation> tRANSPORTATION, int numberOfMembers, List<Restaurant> rESTAURANT,
-			List<Accommodation> aCCOMMODATION, double totalPrice) {
+	public Group(String name, User creator, String motivation, String expectedDate, List<Transportation> transportation, 
+			int numberOfMembers, List<Restaurant> restaurant, List<Accommodation> accommodation, double totalPrice) {
 		super();
 		this.name = name;
 		this.creator = creator;
 		this.motivation = motivation;
 		this.expectedDate = expectedDate;
-		this.members = members;
-		TRANSPORTATION = tRANSPORTATION;
+		this.transportation = transportation;
 		this.numberOfMembers = numberOfMembers;
-		RESTAURANT = rESTAURANT;
-		ACCOMMODATION = aCCOMMODATION;
+		this.restaurant = restaurant;
+		this.accommodation = accommodation;
 		this.totalPrice = totalPrice;
 	}
 
@@ -73,14 +70,6 @@ public class Group {
 		this.creator = creator;
 	}
 
-	public List<User> getMembers() {
-		return members;
-	}
-
-	public void setMembers(List<User> members) {
-		this.members = members;
-	}
-
 	public int getNumberOfMembers() {
 		return numberOfMembers;
 	}
@@ -89,16 +78,16 @@ public class Group {
 		this.numberOfMembers = numberOfMembers;
 	}
 
-	public List<Restaurant> getRESTAURANT() {
-		return RESTAURANT;
+	public List<Restaurant> getRestaurant() {
+		return restaurant;
 	}
 
-	public List<Accommodation> getACCOMMODATION() {
-		return ACCOMMODATION;
+	public List<Accommodation> getAccommodation() {
+		return accommodation;
 	}
 
-	public List<Transportation> getTRANSPORTATION() {
-		return TRANSPORTATION;
+	public List<Transportation> getTransportation() {
+		return transportation;
 	}
 
 	public double getTotalPrice() {
@@ -109,32 +98,6 @@ public class Group {
 		this.totalPrice = totalPrice;
 	}
 
-	public void deleteGroup(Group group) {
-
-	}
-
-	public void editGroup() {
-
-	}
-
-	public void addTravel() {
-
-	}
-
-	public void addRestaurant() {
-
-	}
-
-	public void addMembers(User member) {
-		members.add(member);
-		numberOfMembers++;
-	}
-
-	public void removeMembers(User member) {
-		members.remove(members.indexOf(member));
-		numberOfMembers--;
-	}
-
 	public String payPerPerson() {
 		double eachPrice = totalPrice / numberOfMembers;
 		return "Preço por participante: " + eachPrice;
@@ -143,8 +106,8 @@ public class Group {
 	@Override
 	public String toString() {
 		return "Group [name=" + name + ", creator=" + creator + ", motivation=" + motivation + ", expectedDate="
-				+ expectedDate + ", members=" + members + ", numberOfMembers=" + numberOfMembers + ", travelList="
-				+ RESTAURANT + ", accommodationList=" + ACCOMMODATION + ", transportationList=" + TRANSPORTATION
+				+ expectedDate + ", numberOfMembers=" + numberOfMembers + ", travelList="
+				+ restaurant + ", accommodationList=" + accommodation + ", transportationList=" + transportation
 				+ ", totalPrice=" + totalPrice + "]";
 	}
 
