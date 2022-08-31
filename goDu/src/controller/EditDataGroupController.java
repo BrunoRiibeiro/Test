@@ -38,16 +38,33 @@ public class EditDataGroupController {
 			if (name.equals(currentGroup.getNameGroup())) {
 
 				String names;
+				String motivation;
+				String expectedDate;
+				Integer numberOfMembers;
 
-				if (view.getFieldName().getText().length() == 0) {
+				if (view.getFieldName().getText().isEmpty()) {
 					names = currentGroup.getNameGroup();
 				} else {
 					names = view.getFieldName().getText();
 				}
 
-				String motivation = view.getFieldMotivation().getText();
-				String expectedDate = view.getFieldData().getText();
-				Integer numberOfMembers = Integer.parseInt(view.getFieldMembers().getText());
+				if (view.getFieldMotivation().getText().isEmpty()) {
+					motivation = currentGroup.getMotivation();
+				} else {
+					motivation = view.getFieldMotivation().getText();
+				}
+
+				if (view.getFieldData().getText() == "__/__/____") {
+					expectedDate = currentGroup.getExpectedDate();
+				} else {
+					expectedDate = view.getFieldData().getText();
+				}
+
+				if (view.getFieldMembers().getText().length() == 0) {
+					numberOfMembers = currentGroup.getNumberOfMembers();
+				} else {
+					numberOfMembers = Integer.parseInt(view.getFieldMembers().getText());
+				}
 
 				User creator = currentGroup.getCreator();
 				List<User> members = currentGroup.getMembers();

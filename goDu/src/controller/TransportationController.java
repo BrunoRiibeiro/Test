@@ -9,7 +9,6 @@ import model.Transportation;
 import model.User;
 import model.database.DatabaseProvider;
 import view.EditGroup;
-import view.Home;
 import view.RegisterTransportation;
 
 public class TransportationController {
@@ -27,7 +26,7 @@ public class TransportationController {
 					GroupController.nameGroupEdit.lastIndexOf(" -"));
 			registerNewTransport((pickedNameSplitted));
 			System.out.println(DatabaseProvider.getGroups());
-			new Home();
+			new EditGroup();
 		} else if (source == view.getButtonCancel()) {
 			new EditGroup();
 		}
