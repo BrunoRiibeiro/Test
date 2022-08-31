@@ -1,13 +1,9 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class User {
 
 	private String name;
 	private String birthday;
-	private List<Group> yourGroups = new ArrayList<>();
 	private double balance;
 
 	public User(String name, String birthday) {
@@ -30,14 +26,6 @@ public class User {
 
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
-	}
-
-	public List<Group> getYourGroups() {
-		return yourGroups;
-	}
-
-	public void setYourGroups(List<Group> yourGroups) {
-		this.yourGroups = yourGroups;
 	}
 
 	public double getBalance() {
@@ -67,8 +55,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [name=" + name + ", birthday=" + birthday + ", yourGroups=" + yourGroups
-				+ ", balance=" + balance + "]";
+		return "User [name=" + name + ", birthday=" + birthday + ", balance=" + balance + "]";
 	}
 
 }

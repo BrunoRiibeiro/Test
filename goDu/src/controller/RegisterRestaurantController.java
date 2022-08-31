@@ -39,23 +39,22 @@ public class RegisterRestaurantController {
 				String nameRestaurant = view.getTextFieldRestaurant().getText();
 				Integer stars = Integer.parseInt(view.getFieldStars().getText());
 				String meal = view.getFieldMeal().getText();
-				double MealCost = Double.parseDouble(view.getTextFieldCost().getText());
+				double mealCost = Double.parseDouble(view.getTextFieldCost().getText());
 
 				String names = currentGroup.getNameGroup();
 				User creator = currentGroup.getCreator();
 				String motivation = currentGroup.getMotivation();
 				String expectedDate = currentGroup.getExpectedDate();
-				List<User> members = currentGroup.getMembers();
-				List<Transportation> tRANSPORTATION = currentGroup.getTRANSPORTATION();
+				List<Transportation> transportation = currentGroup.getTransportation();
 				int numberOfMembers = currentGroup.getNumberOfMembers();
-				List<Restaurant> rESTAURANT = currentGroup.getRESTAURANT();
-				List<Accommodation> aCCOMMODATION = currentGroup.getACCOMMODATION();
-				double totalPrice = currentGroup.getTotalPrice();
-				Restaurant restaurant = new Restaurant(nameRestaurant, stars, meal, MealCost);
-				rESTAURANT.add(restaurant);
+				List<Restaurant> newRestaurant = currentGroup.getRestaurant();
+				List<Accommodation> accommodation = currentGroup.getAccommodation();
+				double totalPrice = currentGroup.getTotalPrice() + mealCost;
+				Restaurant restaurant = new Restaurant(nameRestaurant, stars, meal, mealCost);
+				newRestaurant.add(restaurant);
 
-				Group group = new Group(names, creator, motivation, expectedDate, members, tRANSPORTATION,
-						numberOfMembers, rESTAURANT, aCCOMMODATION, totalPrice);
+				Group group = new Group(names, creator, motivation, expectedDate, transportation,
+						numberOfMembers, newRestaurant, accommodation, totalPrice);
 
 				DatabaseProvider.getGroups().add(group);
 

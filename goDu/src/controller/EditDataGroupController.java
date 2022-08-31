@@ -67,14 +67,13 @@ public class EditDataGroupController {
 				}
 
 				User creator = currentGroup.getCreator();
-				List<User> members = currentGroup.getMembers();
-				List<Transportation> tRANSPORTATION = currentGroup.getTRANSPORTATION();
-				List<Restaurant> rESTAURANT = currentGroup.getRESTAURANT();
-				List<Accommodation> aCCOMMODATION = currentGroup.getACCOMMODATION();
+				List<Transportation> transportation = currentGroup.getTransportation();
+				List<Restaurant> restaurant = currentGroup.getRestaurant();
+				List<Accommodation> accommodation = currentGroup.getAccommodation();
 				double totalPrice = currentGroup.getTotalPrice();
 
-				Group group = new Group(names, creator, motivation, expectedDate, members, tRANSPORTATION,
-						numberOfMembers, rESTAURANT, aCCOMMODATION, totalPrice);
+				Group group = new Group(names, creator, motivation, expectedDate, transportation,
+						numberOfMembers, restaurant, accommodation, totalPrice);
 
 				DatabaseProvider.getGroups().add(group);
 
