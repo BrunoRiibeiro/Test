@@ -22,8 +22,8 @@ public class RegisterAccommodationController {
 
 	public void sendAction(Object source) {
 		if (source == view.getButtonConfirm()) {
-			String pickedNameSplitted = GroupController.nameGroupEdit.substring(0,
-					GroupController.nameGroupEdit.lastIndexOf(" -"));
+			String pickedNameSplitted = ShowGroupController.nameGroupEdit.substring(0,
+					ShowGroupController.nameGroupEdit.lastIndexOf(" -"));
 			registerNewAccommodation((pickedNameSplitted));
 			System.out.println(DatabaseProvider.getGroups());
 			new EditGroup();
@@ -36,6 +36,8 @@ public class RegisterAccommodationController {
 		for (Group currentGroup : DatabaseProvider.getGroups()) {
 			if (name.equals(currentGroup.getNameGroup())) {
 
+				String date = view.getFieldDate().getText();
+				String locale = view.getFieldLocale().getText();
 				String accommodation = view.getTextFieldAccommodation().getText();
 				double accommodationCost = Double.parseDouble(view.getTextFieldCost().getText());
 
@@ -48,11 +50,11 @@ public class RegisterAccommodationController {
 				List<Restaurant> restaurant = currentGroup.getRestaurant();
 				List<Accommodation> newAccommodation = currentGroup.getAccommodation();
 				double totalPrice = currentGroup.getTotalPrice() + accommodationCost;
-				Accommodation accommodations = new Accommodation(accommodation, accommodationCost);
+				Accommodation accommodations = new Accommodation(date, locale, accommodation, accommodationCost);
 				newAccommodation.add(accommodations);
 
-				Group group = new Group(names, creator, motivation, expectedDate, transportation,
-						numberOfMembers, restaurant, newAccommodation, totalPrice);
+				Group group = new Group(names, creator, motivation, expectedDate, transportation, numberOfMembers,
+						restaurant, newAccommodation, totalPrice);
 
 				DatabaseProvider.getGroups().add(group);
 

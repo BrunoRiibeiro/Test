@@ -5,8 +5,8 @@ public class Transportation extends Arrangement {
 	private String transportMode;
 	private double transportCost;
 
-	public Transportation(String transportMode, double cost) {
-		super();
+	public Transportation(String date, String locale, String transportMode, double cost) {
+		super(date, locale);
 		this.transportMode = transportMode;
 		this.transportCost = cost;
 	}
@@ -48,7 +48,8 @@ public class Transportation extends Arrangement {
 
 	@Override
 	public String toString() {
-		return "Transportation [transportMode=" + transportMode + ", transportCost=" + transportCost + "]";
+		return "Transportation [transportMode=" + transportMode + ", transportCost=" + transportCost + ", date=" + date
+				+ ", locale=" + locale + "]";
 	}
 
 }

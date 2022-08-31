@@ -7,7 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.border.LineBorder;
 
-import controller.GroupController;
+import controller.ShowGroupController;
 
 /**
  * JPanel para selecionar grupo para a edicao.
@@ -15,7 +15,7 @@ import controller.GroupController;
  */
 public class ShowGroup extends JstructureShow {
 	private static final long serialVersionUID = 3378863774624440091L;
-	private GroupController controller = new GroupController(this);
+	private ShowGroupController controller = new ShowGroupController(this);
 	private final JList<String> fieldGroups;
 	private final JButton buttonNewGroup;
 
@@ -46,7 +46,7 @@ public class ShowGroup extends JstructureShow {
 		this.setVisible(true);
 	}
 
-	public GroupController getController() {
+	public ShowGroupController getController() {
 		return controller;
 	}
 

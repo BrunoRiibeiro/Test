@@ -11,19 +11,19 @@ import model.database.DatabaseProvider;
 import view.EditGroup;
 import view.RegisterTransportation;
 
-public class TransportationController {
+public class RegisterTransportationController {
 
 	private final RegisterTransportation view;
 
-	public TransportationController(RegisterTransportation view) {
+	public RegisterTransportationController(RegisterTransportation view) {
 		super();
 		this.view = view;
 	}
 
 	public void sendAction(Object source) {
 		if (source == view.getButtonConfirm()) {
-			String pickedNameSplitted = GroupController.nameGroupEdit.substring(0,
-					GroupController.nameGroupEdit.lastIndexOf(" -"));
+			String pickedNameSplitted = ShowGroupController.nameGroupEdit.substring(0,
+					ShowGroupController.nameGroupEdit.lastIndexOf(" -"));
 			registerNewTransport((pickedNameSplitted));
 			System.out.println(DatabaseProvider.getGroups());
 			new EditGroup();
@@ -36,6 +36,8 @@ public class TransportationController {
 		for (Group currentGroup : DatabaseProvider.getGroups()) {
 			if (name.equals(currentGroup.getNameGroup())) {
 
+				String date = view.getFieldTravelDate().getText();
+				String locale = view.getFieldLocale().getText();
 				String transportMode = view.getTextFieldTransportation().getText();
 				Double transportationCost = Double.parseDouble(view.getTextFieldCost().getText());
 
@@ -48,11 +50,11 @@ public class TransportationController {
 				List<Restaurant> restaurant = currentGroup.getRestaurant();
 				List<Accommodation> accommodation = currentGroup.getAccommodation();
 				double totalPrice = currentGroup.getTotalPrice() + transportationCost;
-				Transportation transport = new Transportation(transportMode, transportationCost);
+				Transportation transport = new Transportation(date, locale, transportMode, transportationCost);
 				newTransportation.add(transport);
 
-				Group group = new Group(names, creator, motivation, expectedDate, newTransportation,
-						numberOfMembers, restaurant, accommodation, totalPrice);
+				Group group = new Group(names, creator, motivation, expectedDate, newTransportation, numberOfMembers,
+						restaurant, accommodation, totalPrice);
 
 				DatabaseProvider.getGroups().add(group);
 

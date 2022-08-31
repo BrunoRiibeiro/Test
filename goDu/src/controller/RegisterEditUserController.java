@@ -2,15 +2,15 @@ package controller;
 
 import model.User;
 import model.database.DatabaseProvider;
-import view.EditUser;
+import view.RegisterEditUser;
 import view.Home;
 import view.ShowUser;
 
-public class EditUserController {
+public class RegisterEditUserController {
 
-	private final EditUser view;
+	private final RegisterEditUser view;
 
-	public EditUserController(EditUser view) {
+	public RegisterEditUserController(RegisterEditUser view) {
 		super();
 		this.view = view;
 	}
@@ -30,7 +30,7 @@ public class EditUserController {
 		String birthday = view.getTextFieldBirthday().getText();
 		User user = new User(name, birthday);
 
-		User oldUser = UserController.pickedUserEdit;
+		User oldUser = ShowUserController.pickedUserEdit;
 
 		DatabaseProvider.getUsers().add(user);
 		DatabaseProvider.getUsers().remove(oldUser);

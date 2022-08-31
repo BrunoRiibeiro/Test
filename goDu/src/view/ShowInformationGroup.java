@@ -29,9 +29,9 @@ public class ShowInformationGroup extends JFrame implements ActionListener {
 	private JComboBox<Object> fieldGroup;
 	private JTextArea fieldReport;
 	private JButton buttonBack;
+	private JScrollPane scrollPane;
 	private static final Font FONT = new Font("Algerian", Font.PLAIN, 14);
 	private ShowInformationGroupController controller = new ShowInformationGroupController(this);
-	private JScrollPane scrollPane;
 
 	/**
 	 * Cria o panel com os campos para o relatorio.
@@ -44,11 +44,11 @@ public class ShowInformationGroup extends JFrame implements ActionListener {
 		this.setTitle("Relatorio do grupo");
 		this.setVisible(true);
 
-		JLabel labelTitulo = new JLabel("Informações do grupo");
-		labelTitulo.setFont(FONT);
-		labelTitulo.setHorizontalAlignment(SwingConstants.CENTER);
-		labelTitulo.setBounds(51, 59, 725, 13);
-		this.add(labelTitulo);
+		JLabel labelTitle = new JLabel("Informações do grupo");
+		labelTitle.setFont(FONT);
+		labelTitle.setHorizontalAlignment(SwingConstants.CENTER);
+		labelTitle.setBounds(51, 59, 725, 13);
+		this.add(labelTitle);
 
 		JLabel lblNewLabel = new JLabel("Escolha um grupo");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -56,15 +56,15 @@ public class ShowInformationGroup extends JFrame implements ActionListener {
 		lblNewLabel.setBounds(49, 135, 162, 21);
 		this.add(lblNewLabel);
 
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(221, 109, 512, 295);
+		this.add(scrollPane);
+
 		fieldGroup = new JComboBox<>();
 		fieldGroup.addActionListener(this);
 		fieldGroup.setBounds(71, 168, 113, 21);
 		fieldGroup.setModel(controller.updateModel());
 		this.add(fieldGroup);
-
-		scrollPane = new JScrollPane();
-		scrollPane.setBounds(221, 109, 512, 295);
-		this.add(scrollPane);
 
 		fieldReport = new JTextArea();
 		fieldReport.setFont(new Font("Algerian", Font.PLAIN, 12));
