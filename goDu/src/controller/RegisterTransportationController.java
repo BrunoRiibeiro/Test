@@ -30,6 +30,8 @@ public class RegisterTransportationController {
 		} else if (source == view.getButtonCancel()) {
 			new EditGroup();
 		}
+
+		view.dispose();
 	}
 
 	public void registerNewTransport(String name) {

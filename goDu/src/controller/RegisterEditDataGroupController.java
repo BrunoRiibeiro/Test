@@ -8,9 +8,9 @@ import model.Restaurant;
 import model.Transportation;
 import model.User;
 import model.database.DatabaseProvider;
-import view.RegisterEditDataGroup;
 import view.EditGroup;
 import view.Home;
+import view.RegisterEditDataGroup;
 
 public class RegisterEditDataGroupController {
 
@@ -31,6 +31,8 @@ public class RegisterEditDataGroupController {
 		} else if (source == view.getButtonCancel()) {
 			new EditGroup();
 		}
+
+		view.dispose();
 	}
 
 	private void editDataGroup(String name) {
@@ -72,8 +74,8 @@ public class RegisterEditDataGroupController {
 				List<Accommodation> accommodation = currentGroup.getAccommodation();
 				double totalPrice = currentGroup.getTotalPrice();
 
-				Group group = new Group(names, creator, motivation, expectedDate, transportation,
-						numberOfMembers, restaurant, accommodation, totalPrice);
+				Group group = new Group(names, creator, motivation, expectedDate, transportation, numberOfMembers,
+						restaurant, accommodation, totalPrice);
 
 				DatabaseProvider.getGroups().add(group);
 

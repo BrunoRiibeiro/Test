@@ -1,8 +1,8 @@
 package controller;
 
-import view.RegisterEditDataGroup;
 import view.EditGroup;
 import view.RegisterAccommodation;
+import view.RegisterEditDataGroup;
 import view.RegisterRestaurant;
 import view.RegisterTransportation;
 import view.ShowGroup;
@@ -28,6 +28,8 @@ public class EditGroupController {
 		} else if (source == view.getButtonBackGroup()) {
 			new ShowGroup();
 		}
+
+		view.dispose();
 	}
 
 }

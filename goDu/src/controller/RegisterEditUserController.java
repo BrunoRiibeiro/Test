@@ -2,8 +2,8 @@ package controller;
 
 import model.User;
 import model.database.DatabaseProvider;
-import view.RegisterEditUser;
 import view.Home;
+import view.RegisterEditUser;
 import view.ShowUser;
 
 public class RegisterEditUserController {
@@ -23,6 +23,8 @@ public class RegisterEditUserController {
 		} else if (source == view.getButtonCancel()) {
 			new ShowUser();
 		}
+
+		view.dispose();
 	}
 
 	private void editUser() {

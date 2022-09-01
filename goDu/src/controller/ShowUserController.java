@@ -4,8 +4,8 @@ import javax.swing.DefaultListModel;
 
 import model.User;
 import model.database.DatabaseProvider;
-import view.RegisterEditUser;
 import view.Home;
+import view.RegisterEditUser;
 import view.RegisterUser;
 import view.ShowUser;
 
@@ -44,6 +44,8 @@ public class ShowUserController {
 			}
 			new ShowUser();
 		}
+
+		view.dispose();
 	}
 
 	public User getPickedUserDelete() {

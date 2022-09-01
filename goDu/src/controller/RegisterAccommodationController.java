@@ -30,6 +30,8 @@ public class RegisterAccommodationController {
 		} else if (source == view.getButtonCancel()) {
 			new EditGroup();
 		}
+
+		view.dispose();
 	}
 
 	public void registerNewAccommodation(String name) {

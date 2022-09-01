@@ -28,6 +28,8 @@ public class HomeController {
 		} else if (source == view.getButton5()) {
 			new ShowInformationGroup();
 		}
+
+		view.dispose();
 	}
 
 }
