@@ -50,11 +50,11 @@ public class ShowInformationGroup extends JFrame implements ActionListener {
 		labelTitle.setBounds(51, 59, 725, 13);
 		this.add(labelTitle);
 
-		JLabel lblNewLabel = new JLabel("Escolha um grupo");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(FONT);
-		lblNewLabel.setBounds(49, 135, 162, 21);
-		this.add(lblNewLabel);
+		JLabel labelChooseGroup = new JLabel("Escolha um grupo");
+		labelChooseGroup.setHorizontalAlignment(SwingConstants.CENTER);
+		labelChooseGroup.setFont(FONT);
+		labelChooseGroup.setBounds(49, 135, 162, 21);
+		this.add(labelChooseGroup);
 
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(221, 109, 512, 295);
@@ -93,12 +93,12 @@ public class ShowInformationGroup extends JFrame implements ActionListener {
 		return fieldReport;
 	}
 
-	public ShowInformationGroupController getController() {
-		return controller;
-	}
-
 	public JButton getButtonBack() {
 		return buttonBack;
+	}
+	
+	public ShowInformationGroupController getController() {
+		return controller;
 	}
 
 	/**

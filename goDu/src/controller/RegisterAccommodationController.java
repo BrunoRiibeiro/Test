@@ -40,8 +40,8 @@ public class RegisterAccommodationController {
 
 				String date = view.getFieldDate().getText();
 				String locale = view.getFieldLocale().getText();
-				String accommodation = view.getTextFieldAccommodation().getText();
-				double accommodationCost = Double.parseDouble(view.getTextFieldCost().getText());
+				String accommodation = view.getFieldAccommodation().getText();
+				double accommodationCost = Double.parseDouble(view.getFieldCost().getText());
 
 				String names = currentGroup.getNameGroup();
 				User creator = currentGroup.getCreator();

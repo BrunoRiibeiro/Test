@@ -28,8 +28,8 @@ public class RegisterEditUserController {
 	}
 
 	private void editUser() {
-		String name = view.getTextFieldName().getText();
-		String birthday = view.getTextFieldBirthday().getText();
+		String name = view.getFieldName().getText();
+		String birthday = view.getFieldBirthday().getText();
 		User user = new User(name, birthday);
 
 		User oldUser = ShowUserController.pickedUserEdit;

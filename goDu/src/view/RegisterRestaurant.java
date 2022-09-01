@@ -101,7 +101,7 @@ public class RegisterRestaurant extends JstructureRegisters {
 
 	}
 
-	public JTextField getTextFieldRestaurant() {
+	public JTextField getFieldRestaurant() {
 		return fieldRestaurant;
 	}
 
@@ -121,7 +121,7 @@ public class RegisterRestaurant extends JstructureRegisters {
 		return fieldMeal;
 	}
 
-	public JTextField getTextFieldCost() {
+	public JTextField getFieldCost() {
 		return fieldCost;
 
 	}
