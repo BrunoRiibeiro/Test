@@ -24,8 +24,8 @@ class DeletingTests {
 	void tryToDeleteAUser() {
 		var userTest = new RegisterUser();
 
-		userTest.getTextFieldName().setText("Leo King");
-		userTest.getTextFieldBirthday().setText("03/07/2002");
+		userTest.getFieldName().setText("Leo King");
+		userTest.getFieldBirthday().setText("03/07/2002");
 
 		assertTrue(DatabaseProvider.getUsers().isEmpty());
 
@@ -45,8 +45,8 @@ class DeletingTests {
 	void tryToDeleteAGroup() {
 		var userTest = new RegisterUser();
 
-		userTest.getTextFieldName().setText("Leo King");
-		userTest.getTextFieldBirthday().setText("03/07/2002");
+		userTest.getFieldName().setText("Leo King");
+		userTest.getFieldBirthday().setText("03/07/2002");
 
 		userTest.getButtonConfirm().doClick();
 

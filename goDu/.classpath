@@ -7,7 +7,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" output="bin_test" path="testes">
+	<classpathentry kind="src" output="bin_test" path="tests">
 		<attributes>
 			<attribute name="test" value="true"/>
 		</attributes>

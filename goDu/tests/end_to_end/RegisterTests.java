@@ -24,8 +24,8 @@ class RegisterTests {
 	void tryToRegisterANewUser() {
 		var userTest = new RegisterUser();
 
-		userTest.getTextFieldName().setText("Leo King");
-		userTest.getTextFieldBirthday().setText("03/07/2002");
+		userTest.getFieldName().setText("Leo King");
+		userTest.getFieldBirthday().setText("03/07/2002");
 
 		assertTrue(DatabaseProvider.getUsers().isEmpty());
 
@@ -43,8 +43,8 @@ class RegisterTests {
 	void tryToRegisterANewGroup() {
 		var userTest = new RegisterUser();
 
-		userTest.getTextFieldName().setText("Leo King");
-		userTest.getTextFieldBirthday().setText("03/07/2002");
+		userTest.getFieldName().setText("Leo King");
+		userTest.getFieldBirthday().setText("03/07/2002");
 		userTest.getButtonConfirm().doClick();
 
 		var groupTest = new RegisterGroup();
@@ -73,8 +73,8 @@ class RegisterTests {
 	void tryToEditGroup() {
 		var userTest = new RegisterUser();
 
-		userTest.getTextFieldName().setText("Leo King");
-		userTest.getTextFieldBirthday().setText("03/07/2002");
+		userTest.getFieldName().setText("Leo King");
+		userTest.getFieldBirthday().setText("03/07/2002");
 
 		userTest.getButtonConfirm().doClick();
 
@@ -94,30 +94,30 @@ class RegisterTests {
 
 		var addRestaurant = new RegisterRestaurant();
 
-		addRestaurant.getTextFieldRestaurant().setText("Leo Bomba");
+		addRestaurant.getFieldRestaurant().setText("Leo Bomba");
 		addRestaurant.getFieldlocale().setText("Taguatinga Sul");
 		addRestaurant.getFieldDate().setText("03/07/2023");
 		addRestaurant.getFieldStars().setText("4");
 		addRestaurant.getFieldMeal().setText("Trio Leo Tudo");
-		addRestaurant.getTextFieldCost().setText("13");
+		addRestaurant.getFieldCost().setText("13");
 
 		addRestaurant.getButtonConfirm().doClick();
 
 //		var addAccommodation = new RegisterAccommodation();
 //
-//		addAccommodation.getTextFieldAccommodation().setText("Motel");
+//		addAccommodation.getFieldAccommodation().setText("Motel");
 //		addAccommodation.getFieldLocale().setText("Taguatinga Sul");
 //		addAccommodation.getFieldDate().setText("03/07/2023");
-//		addAccommodation.getTextFieldCost().setText("67.9");
+//		addAccommodation.getFieldCost().setText("67.9");
 //
 //		addAccommodation.getButtonConfirm().doClick();
 //
 //		var addTransportation = new RegisterTransportation();
 //
-//		addTransportation.getTextFieldTransportation().setText("Carroagem");
+//		addTransportation.getFieldTransportation().setText("Carroagem");
 //		addTransportation.getFieldLocale().setText("Taguatinga Sul");
 //		addTransportation.getFieldTravelDate().setText("03/07/2023");
-//		addTransportation.getTextFieldCost().setText("23.6");
+//		addTransportation.getFieldCost().setText("23.6");
 //
 //		addTransportation.getButtonConfirm().doClick();
 
