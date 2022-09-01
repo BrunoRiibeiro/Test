@@ -64,6 +64,8 @@ public class RegisterEditDataGroupController {
 
 				if (view.getFieldMembers().getText().length() == 0) {
 					numberOfMembers = currentGroup.getNumberOfMembers();
+				} else if (view.getFieldMembers().getText() == "0") {
+					numberOfMembers = currentGroup.getNumberOfMembers();
 				} else {
 					numberOfMembers = Integer.parseInt(view.getFieldMembers().getText());
 				}
