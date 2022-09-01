@@ -40,10 +40,10 @@ public class RegisterRestaurantController {
 
 				String date = view.getFieldDate().getText();
 				String locale = view.getFieldlocale().getText();
-				String nameRestaurant = view.getTextFieldRestaurant().getText();
+				String nameRestaurant = view.getFieldRestaurant().getText();
 				Integer stars = Integer.parseInt(view.getFieldStars().getText());
 				String meal = view.getFieldMeal().getText();
-				double mealCost = Double.parseDouble(view.getTextFieldCost().getText());
+				double mealCost = Double.parseDouble(view.getFieldCost().getText());
 
 				String names = currentGroup.getNameGroup();
 				User creator = currentGroup.getCreator();

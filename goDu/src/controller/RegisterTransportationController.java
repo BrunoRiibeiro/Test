@@ -40,7 +40,7 @@ public class RegisterTransportationController {
 
 				String date = view.getFieldTravelDate().getText();
 				String locale = view.getFieldLocale().getText();
-				String transportMode = view.getTextFieldTransportation().getText();
+				String transportMode = view.getFieldTransportation().getText();
 				Double transportationCost = Double.parseDouble(view.getTextFieldCost().getText());
 
 				String names = currentGroup.getNameGroup();

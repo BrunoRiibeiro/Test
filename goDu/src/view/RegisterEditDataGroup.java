@@ -40,11 +40,11 @@ public class RegisterEditDataGroup extends JstructureRegisters {
 		labelMembers.setBounds(169, 243, 175, 13);
 		this.add(labelMembers);
 
-		JLabel labelData = new JLabel("Data do planejamento:");
-		labelData.setFont(JstructureRegisters.FONT);
-		labelData.setHorizontalAlignment(SwingConstants.RIGHT);
-		labelData.setBounds(158, 297, 186, 13);
-		this.add(labelData);
+		JLabel labelDate = new JLabel("Data do planejamento:");
+		labelDate.setFont(JstructureRegisters.FONT);
+		labelDate.setHorizontalAlignment(SwingConstants.RIGHT);
+		labelDate.setBounds(158, 297, 186, 13);
+		this.add(labelDate);
 
 		JLabel labelMotivation = new JLabel("Motivação do Grupo:");
 		labelMotivation.setFont(JstructureRegisters.FONT);
@@ -65,7 +65,7 @@ public class RegisterEditDataGroup extends JstructureRegisters {
 		fieldMembers.setColumns(10);
 
 		expectedDate = new JFormattedTextField(this.maskingDate());
-		labelData.setLabelFor(expectedDate);
+		labelDate.setLabelFor(expectedDate);
 		expectedDate.setBounds(405, 294, 147, 19);
 		this.add(expectedDate);
 
@@ -91,7 +91,7 @@ public class RegisterEditDataGroup extends JstructureRegisters {
 		return fieldMotivation;
 	}
 
-	public JFormattedTextField getFieldData() {
+	public JFormattedTextField getFieldDate() {
 		return expectedDate;
 	}
 
