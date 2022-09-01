@@ -40,6 +40,8 @@ public class ShowGroupController {
 		} else if (source == view.getButtonDelete()) {
 			deletePickedGroup();
 		}
+
+		view.dispose();
 	}
 
 	public Group getPickedGroup() {

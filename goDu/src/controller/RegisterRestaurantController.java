@@ -30,6 +30,8 @@ public class RegisterRestaurantController {
 		} else if (source == view.getButtonCancel()) {
 			new EditGroup();
 		}
+
+		view.dispose();
 	}
 
 	public void registerNewRestaurant(String name) {

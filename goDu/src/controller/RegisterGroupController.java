@@ -28,6 +28,8 @@ public class RegisterGroupController {
 		} else if (source == view.getButtonCancel()) {
 			new Home();
 		}
+
+		view.dispose();
 	}
 
 	private void registerNewGroup() {

@@ -22,6 +22,8 @@ public class RegisterUserController {
 		} else if (source == view.getButtonCancel()) {
 			new Home();
 		}
+
+		view.dispose();
 	}
 
 	private void registerNewUser() {
