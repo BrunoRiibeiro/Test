@@ -28,12 +28,14 @@ public class RegisterGroupController {
 		} else if (source == view.getButtonCancel()) {
 			new Home();
 		}
+
+		view.dispose();
 	}
 
 	private void registerNewGroup() {
 		String name = view.getFieldName().getText();
 		User creator = searchForPickedUser(view.getFieldCreator().getSelectedItem().toString());
-		String expectedDate = view.getFieldData().getText();
+		String expectedDate = view.getFieldDate().getText();
 		String motivation = view.getFieldMotivation().getText();
 
 		Group group = new Group(name, creator, expectedDate, motivation);

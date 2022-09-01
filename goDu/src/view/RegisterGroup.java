@@ -30,11 +30,11 @@ public class RegisterGroup extends JstructureRegisters {
 	public RegisterGroup() {
 		super("Cadastre um novo Grupo");
 
-		JLabel labelNome = new JLabel("Nome do Grupo:");
-		labelNome.setFont(JstructureRegisters.FONT);
-		labelNome.setHorizontalAlignment(SwingConstants.RIGHT);
-		labelNome.setBounds(169, 195, 175, 13);
-		this.add(labelNome);
+		JLabel labelName = new JLabel("Nome do Grupo:");
+		labelName.setFont(JstructureRegisters.FONT);
+		labelName.setHorizontalAlignment(SwingConstants.RIGHT);
+		labelName.setBounds(169, 195, 175, 13);
+		this.add(labelName);
 
 		JLabel labelCreator = new JLabel("Criador do Grupo:");
 		labelCreator.setFont(JstructureRegisters.FONT);
@@ -42,11 +42,11 @@ public class RegisterGroup extends JstructureRegisters {
 		labelCreator.setBounds(169, 243, 175, 13);
 		this.add(labelCreator);
 
-		JLabel labelData = new JLabel("Data do planejamento:");
-		labelData.setFont(JstructureRegisters.FONT);
-		labelData.setHorizontalAlignment(SwingConstants.RIGHT);
-		labelData.setBounds(158, 297, 186, 13);
-		this.add(labelData);
+		JLabel labelDate = new JLabel("Data do planejamento:");
+		labelDate.setFont(JstructureRegisters.FONT);
+		labelDate.setHorizontalAlignment(SwingConstants.RIGHT);
+		labelDate.setBounds(158, 297, 186, 13);
+		this.add(labelDate);
 
 		JLabel labelMotivation = new JLabel("Motivação do Grupo:");
 		labelMotivation.setFont(JstructureRegisters.FONT);
@@ -55,7 +55,7 @@ public class RegisterGroup extends JstructureRegisters {
 		this.add(labelMotivation);
 
 		fieldName = new JTextField();
-		labelNome.setLabelFor(fieldName);
+		labelName.setLabelFor(fieldName);
 		fieldName.setBounds(405, 192, 147, 19);
 		this.add(fieldName);
 		fieldName.setColumns(10);
@@ -67,7 +67,7 @@ public class RegisterGroup extends JstructureRegisters {
 		add(fieldCreator);
 
 		expectedDate = new JFormattedTextField(this.maskingDate());
-		labelData.setLabelFor(expectedDate);
+		labelDate.setLabelFor(expectedDate);
 		expectedDate.setBounds(405, 294, 147, 19);
 		this.add(expectedDate);
 
@@ -93,7 +93,7 @@ public class RegisterGroup extends JstructureRegisters {
 		return fieldMotivation;
 	}
 
-	public JFormattedTextField getFieldData() {
+	public JFormattedTextField getFieldDate() {
 		return expectedDate;
 	}
 

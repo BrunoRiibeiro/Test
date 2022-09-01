@@ -22,24 +22,28 @@ public class RegisterRestaurantController {
 
 	public void sendAction(Object source) {
 		if (source == view.getButtonConfirm()) {
-			String pickedNameSplitted = GroupController.nameGroupEdit.substring(0,
-					GroupController.nameGroupEdit.lastIndexOf(" -"));
+			String pickedNameSplitted = ShowGroupController.nameGroupEdit.substring(0,
+					ShowGroupController.nameGroupEdit.lastIndexOf(" -"));
 			registerNewRestaurant((pickedNameSplitted));
 			System.out.println(DatabaseProvider.getGroups());
 			new EditGroup();
 		} else if (source == view.getButtonCancel()) {
 			new EditGroup();
 		}
+
+		view.dispose();
 	}
 
 	public void registerNewRestaurant(String name) {
 		for (Group currentGroup : DatabaseProvider.getGroups()) {
 			if (name.equals(currentGroup.getNameGroup())) {
 
-				String nameRestaurant = view.getTextFieldRestaurant().getText();
+				String date = view.getFieldDate().getText();
+				String locale = view.getFieldlocale().getText();
+				String nameRestaurant = view.getFieldRestaurant().getText();
 				Integer stars = Integer.parseInt(view.getFieldStars().getText());
 				String meal = view.getFieldMeal().getText();
-				double mealCost = Double.parseDouble(view.getTextFieldCost().getText());
+				double mealCost = Double.parseDouble(view.getFieldCost().getText());
 
 				String names = currentGroup.getNameGroup();
 				User creator = currentGroup.getCreator();
@@ -50,11 +54,11 @@ public class RegisterRestaurantController {
 				List<Restaurant> newRestaurant = currentGroup.getRestaurant();
 				List<Accommodation> accommodation = currentGroup.getAccommodation();
 				double totalPrice = currentGroup.getTotalPrice() + mealCost;
-				Restaurant restaurant = new Restaurant(nameRestaurant, stars, meal, mealCost);
+				Restaurant restaurant = new Restaurant(date, locale, nameRestaurant, stars, meal, mealCost);
 				newRestaurant.add(restaurant);
 
-				Group group = new Group(names, creator, motivation, expectedDate, transportation,
-						numberOfMembers, newRestaurant, accommodation, totalPrice);
+				Group group = new Group(names, creator, motivation, expectedDate, transportation, numberOfMembers,
+						newRestaurant, accommodation, totalPrice);
 
 				DatabaseProvider.getGroups().add(group);
 

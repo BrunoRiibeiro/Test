@@ -8,29 +8,31 @@ import model.Restaurant;
 import model.Transportation;
 import model.User;
 import model.database.DatabaseProvider;
-import view.EditDataGroup;
 import view.EditGroup;
 import view.Home;
+import view.RegisterEditDataGroup;
 
-public class EditDataGroupController {
+public class RegisterEditDataGroupController {
 
-	private final EditDataGroup view;
+	private final RegisterEditDataGroup view;
 
-	public EditDataGroupController(EditDataGroup view) {
+	public RegisterEditDataGroupController(RegisterEditDataGroup view) {
 		super();
 		this.view = view;
 	}
 
 	public void sendAction(Object source) {
 		if (source == view.getButtonConfirm()) {
-			String pickedNameSplitted = GroupController.nameGroupEdit.substring(0,
-					GroupController.nameGroupEdit.lastIndexOf(" -"));
+			String pickedNameSplitted = ShowGroupController.nameGroupEdit.substring(0,
+					ShowGroupController.nameGroupEdit.lastIndexOf(" -"));
 			editDataGroup((pickedNameSplitted));
 			System.out.println(DatabaseProvider.getGroups());
 			new Home();
 		} else if (source == view.getButtonCancel()) {
 			new EditGroup();
 		}
+
+		view.dispose();
 	}
 
 	private void editDataGroup(String name) {
@@ -54,13 +56,15 @@ public class EditDataGroupController {
 					motivation = view.getFieldMotivation().getText();
 				}
 
-				if (view.getFieldData().getText() == "__/__/____") {
+				if (view.getFieldDate().getText() == "__/__/____") {
 					expectedDate = currentGroup.getExpectedDate();
 				} else {
-					expectedDate = view.getFieldData().getText();
+					expectedDate = view.getFieldDate().getText();
 				}
 
 				if (view.getFieldMembers().getText().length() == 0) {
+					numberOfMembers = currentGroup.getNumberOfMembers();
+				} else if (Integer.parseInt(view.getFieldMembers().getText()) == 0) {
 					numberOfMembers = currentGroup.getNumberOfMembers();
 				} else {
 					numberOfMembers = Integer.parseInt(view.getFieldMembers().getText());
@@ -72,8 +76,8 @@ public class EditDataGroupController {
 				List<Accommodation> accommodation = currentGroup.getAccommodation();
 				double totalPrice = currentGroup.getTotalPrice();
 
-				Group group = new Group(names, creator, motivation, expectedDate, transportation,
-						numberOfMembers, restaurant, accommodation, totalPrice);
+				Group group = new Group(names, creator, motivation, expectedDate, transportation, numberOfMembers,
+						restaurant, accommodation, totalPrice);
 
 				DatabaseProvider.getGroups().add(group);
 

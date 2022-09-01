@@ -9,18 +9,18 @@ import view.Home;
 import view.RegisterGroup;
 import view.ShowGroup;
 
-public class GroupController {
+public class ShowGroupController {
 	private ShowGroup view;
 	public static Group pickedGroupEdit;
 	public static String nameGroupEdit;
 	private Group pickedGroup;
 
-	public GroupController(ShowGroup view) {
+	public ShowGroupController(ShowGroup view) {
 		super();
 		this.view = view;
 	}
 
-	public GroupController() {
+	public ShowGroupController() {
 
 	}
 
@@ -29,7 +29,7 @@ public class GroupController {
 			new Home();
 		} else if (source == view.getButtonEdit()) {
 			nameGroupEdit = view.getFieldGroups().getSelectedValue();
-      
+
 			if (nameGroupEdit != null) {
 				pickedGroup = searchForPickedGroup(nameGroupEdit);
 				new EditGroup();
@@ -40,6 +40,8 @@ public class GroupController {
 		} else if (source == view.getButtonDelete()) {
 			deletePickedGroup();
 		}
+
+		view.dispose();
 	}
 
 	public Group getPickedGroup() {
@@ -54,17 +56,16 @@ public class GroupController {
 		}
 		return null;
 	}
-	
+
 	public void deletePickedGroup() {
 		String pickedName = view.getFieldGroups().getSelectedValue();
-		String pickedNameSplitted = pickedName.substring(0,pickedName.lastIndexOf(" -"));
+		String pickedNameSplitted = pickedName.substring(0, pickedName.lastIndexOf(" -"));
 
 		if (pickedName != null) {
 			pickedGroup = searchForPickedGroup(pickedNameSplitted);
 			DatabaseProvider.getGroups().remove(pickedGroup);
 		}
 
-		System.out.println(DatabaseProvider.getGroups());
 		new ShowGroup();
 	}
 

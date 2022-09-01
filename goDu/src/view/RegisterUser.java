@@ -27,37 +27,36 @@ public class RegisterUser extends JstructureRegisters {
 	public RegisterUser() {
 		super("Cadastre um novo Usuário");
 
-		JLabel labelNome = new JLabel("Nome:");
-		labelNome.setFont(JstructureRegisters.FONT);
-		labelNome.setHorizontalAlignment(SwingConstants.RIGHT);
-		labelNome.setBounds(169, 195, 175, 13);
-		this.add(labelNome);
+		JLabel labelName = new JLabel("Nome:");
+		labelName.setFont(JstructureRegisters.FONT);
+		labelName.setHorizontalAlignment(SwingConstants.RIGHT);
+		labelName.setBounds(169, 195, 175, 13);
+		this.add(labelName);
 
-		JLabel labelData = new JLabel("Data de Nascimento:");
-		labelData.setFont(JstructureRegisters.FONT);
-		labelData.setHorizontalAlignment(SwingConstants.RIGHT);
-		labelData.setBounds(169, 243, 175, 13);
-		this.add(labelData);
+		JLabel labelBirthday = new JLabel("Data de Nascimento:");
+		labelBirthday.setFont(JstructureRegisters.FONT);
+		labelBirthday.setHorizontalAlignment(SwingConstants.RIGHT);
+		labelBirthday.setBounds(169, 243, 175, 13);
+		this.add(labelBirthday);
 
 		fieldName = new JTextField();
-		labelNome.setLabelFor(fieldName);
+		labelName.setLabelFor(fieldName);
 		fieldName.setBounds(405, 192, 147, 19);
 		this.add(fieldName);
 		fieldName.setColumns(10);
 
 		expectedDate = new JFormattedTextField(this.maskingDate());
-		labelData.setLabelFor(expectedDate);
+		labelBirthday.setLabelFor(expectedDate);
 		expectedDate.setBounds(405, 240, 147, 19);
 		this.add(expectedDate);
 	}
 
-	public JTextField getTextFieldName() {
+	public JTextField getFieldName() {
 		return fieldName;
 	}
 
-	public JFormattedTextField getTextFieldBirthday() {
+	public JFormattedTextField getFieldBirthday() {
 		return expectedDate;
-
 	}
 
 	public RegisterUserController getController() {

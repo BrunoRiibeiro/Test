@@ -16,7 +16,6 @@ import view.ShowInformationGroup;
 /**
  * Classe auxiliar que cont�m a l�gica por tr�s da classe RelatorioFilmes.
  * 
- * @author Eduardo Rodrigues
  * 
  * @see RelatorioFilmes
  * @see RelatorioFilmesHelper
@@ -45,11 +44,13 @@ public class ShowInformationGroupController {
 	public void sendAction(Object source) {
 		if (source == view.getButtonBack()) {
 			new Home();
+			view.dispose();
 		} else {
 			if (view.getFieldGroup().getSelectedItem() != null) {
 				view.getFieldReport().setText(generateReport());
 			}
 		}
+
 	}
 
 	/**
@@ -114,11 +115,19 @@ public class ShowInformationGroupController {
 
 				model.append("    ____________________________________________________ \n");
 
-				for (Transportation currentTransportation : currentGroup.getTRANSPORTATION()) {
+				for (Transportation currentTransportation : currentGroup.getTransportation()) {
 					flag0 = true;
 
 					model.append("    -> ");
 					model.append("Transporte: " + currentTransportation.getTransportMode());
+					model.append("\n");
+
+					model.append("    - ");
+					model.append("Destino: " + currentTransportation.getLocale());
+					model.append("\n");
+
+					model.append("    - ");
+					model.append("Data de viagem: " + currentTransportation.getDate());
 					model.append("\n");
 
 					model.append("    - ");
@@ -131,11 +140,19 @@ public class ShowInformationGroupController {
 
 				model.append("    ____________________________________________________ \n");
 
-				for (Restaurant currentRestaurant : currentGroup.getRESTAURANT()) {
+				for (Restaurant currentRestaurant : currentGroup.getRestaurant()) {
 					flag1 = true;
 
 					model.append("    -> ");
 					model.append("Nome do restaurante: " + currentRestaurant.getName());
+					model.append("\n");
+
+					model.append("    - ");
+					model.append("Local: " + currentRestaurant.getLocale());
+					model.append("\n");
+
+					model.append("    - ");
+					model.append("Data de encontro: " + currentRestaurant.getDate());
 					model.append("\n");
 
 					model.append("    - ");
@@ -156,11 +173,19 @@ public class ShowInformationGroupController {
 
 				model.append("    ____________________________________________________ \n");
 
-				for (Accommodation currentAccommodation : currentGroup.getACCOMMODATION()) {
+				for (Accommodation currentAccommodation : currentGroup.getAccommodation()) {
 					flag2 = true;
 
 					model.append("    -> ");
-					model.append("Lugar de acomodação: " + currentAccommodation.getAccommodation());
+					model.append("tipo de hospedagem: " + currentAccommodation.getAccommodation());
+					model.append("\n");
+
+					model.append("    - ");
+					model.append("Lugar da hospedagem: " + currentAccommodation.getLocale());
+					model.append("\n");
+
+					model.append("    - ");
+					model.append("Data de hospedagem: " + currentAccommodation.getDate());
 					model.append("\n");
 
 					model.append("    - ");

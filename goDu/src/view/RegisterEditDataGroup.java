@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import controller.EditDataGroupController;
+import controller.RegisterEditDataGroupController;
 
 /**
  * JPanel para cadastrar um Grupo.
@@ -15,24 +15,24 @@ import controller.EditDataGroupController;
  * Herda a classe Jstructure que contem um fundo, titulo e dois botoes.
  * 
  */
-public class EditDataGroup extends JstructureRegisters {
+public class RegisterEditDataGroup extends JstructureRegisters {
 	private static final long serialVersionUID = 1L;
 	private final JTextField fieldName, fieldMotivation;
 	private JTextField fieldMembers;
 	private final JFormattedTextField expectedDate;
-	private final EditDataGroupController controller = new EditDataGroupController(this);
+	private final RegisterEditDataGroupController controller = new RegisterEditDataGroupController(this);
 
 	/**
 	 * Cria o panel com os campos para cadastro.
 	 */
-	public EditDataGroup() {
+	public RegisterEditDataGroup() {
 		super("Editando um novo Grupo");
 
-		JLabel labelNome = new JLabel("Novo nome do Grupo:");
-		labelNome.setFont(JstructureRegisters.FONT);
-		labelNome.setHorizontalAlignment(SwingConstants.RIGHT);
-		labelNome.setBounds(169, 195, 175, 13);
-		this.add(labelNome);
+		JLabel labelName = new JLabel("Novo nome do Grupo:");
+		labelName.setFont(JstructureRegisters.FONT);
+		labelName.setHorizontalAlignment(SwingConstants.RIGHT);
+		labelName.setBounds(169, 195, 175, 13);
+		this.add(labelName);
 
 		JLabel labelMembers = new JLabel("Número de membros:");
 		labelMembers.setFont(JstructureRegisters.FONT);
@@ -40,11 +40,11 @@ public class EditDataGroup extends JstructureRegisters {
 		labelMembers.setBounds(169, 243, 175, 13);
 		this.add(labelMembers);
 
-		JLabel labelData = new JLabel("Data do planejamento:");
-		labelData.setFont(JstructureRegisters.FONT);
-		labelData.setHorizontalAlignment(SwingConstants.RIGHT);
-		labelData.setBounds(158, 297, 186, 13);
-		this.add(labelData);
+		JLabel labelDate = new JLabel("Data do planejamento:");
+		labelDate.setFont(JstructureRegisters.FONT);
+		labelDate.setHorizontalAlignment(SwingConstants.RIGHT);
+		labelDate.setBounds(158, 297, 186, 13);
+		this.add(labelDate);
 
 		JLabel labelMotivation = new JLabel("Motivação do Grupo:");
 		labelMotivation.setFont(JstructureRegisters.FONT);
@@ -53,7 +53,7 @@ public class EditDataGroup extends JstructureRegisters {
 		this.add(labelMotivation);
 
 		fieldName = new JTextField();
-		labelNome.setLabelFor(fieldName);
+		labelName.setLabelFor(fieldName);
 		fieldName.setBounds(405, 192, 147, 19);
 		this.add(fieldName);
 		fieldName.setColumns(10);
@@ -65,7 +65,7 @@ public class EditDataGroup extends JstructureRegisters {
 		fieldMembers.setColumns(10);
 
 		expectedDate = new JFormattedTextField(this.maskingDate());
-		labelData.setLabelFor(expectedDate);
+		labelDate.setLabelFor(expectedDate);
 		expectedDate.setBounds(405, 294, 147, 19);
 		this.add(expectedDate);
 
@@ -91,11 +91,11 @@ public class EditDataGroup extends JstructureRegisters {
 		return fieldMotivation;
 	}
 
-	public JFormattedTextField getFieldData() {
+	public JFormattedTextField getFieldDate() {
 		return expectedDate;
 	}
 
-	public EditDataGroupController getController() {
+	public RegisterEditDataGroupController getController() {
 		return controller;
 	}
 

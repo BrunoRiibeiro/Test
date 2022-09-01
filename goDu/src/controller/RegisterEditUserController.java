@@ -2,15 +2,15 @@ package controller;
 
 import model.User;
 import model.database.DatabaseProvider;
-import view.EditUser;
 import view.Home;
+import view.RegisterEditUser;
 import view.ShowUser;
 
-public class EditUserController {
+public class RegisterEditUserController {
 
-	private final EditUser view;
+	private final RegisterEditUser view;
 
-	public EditUserController(EditUser view) {
+	public RegisterEditUserController(RegisterEditUser view) {
 		super();
 		this.view = view;
 	}
@@ -23,14 +23,16 @@ public class EditUserController {
 		} else if (source == view.getButtonCancel()) {
 			new ShowUser();
 		}
+
+		view.dispose();
 	}
 
 	private void editUser() {
-		String name = view.getTextFieldName().getText();
-		String birthday = view.getTextFieldBirthday().getText();
+		String name = view.getFieldName().getText();
+		String birthday = view.getFieldBirthday().getText();
 		User user = new User(name, birthday);
 
-		User oldUser = UserController.pickedUserEdit;
+		User oldUser = ShowUserController.pickedUserEdit;
 
 		DatabaseProvider.getUsers().add(user);
 		DatabaseProvider.getUsers().remove(oldUser);
