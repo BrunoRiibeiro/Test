@@ -16,7 +16,6 @@ import view.ShowInformationGroup;
 /**
  * Classe auxiliar que cont�m a l�gica por tr�s da classe RelatorioFilmes.
  * 
- * @author Eduardo Rodrigues
  * 
  * @see RelatorioFilmes
  * @see RelatorioFilmesHelper
@@ -45,11 +44,13 @@ public class ShowInformationGroupController {
 	public void sendAction(Object source) {
 		if (source == view.getButtonBack()) {
 			new Home();
+			view.dispose();
 		} else {
 			if (view.getFieldGroup().getSelectedItem() != null) {
 				view.getFieldReport().setText(generateReport());
 			}
 		}
+
 	}
 
 	/**
