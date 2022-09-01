@@ -46,16 +46,16 @@ public class ShowGroup extends JstructureShow {
 		this.setVisible(true);
 	}
 
-	public ShowGroupController getController() {
-		return controller;
+	public JList<String> getFieldGroups() {
+		return fieldGroups;
 	}
 
 	public JButton getButtonNewGroup() {
 		return buttonNewGroup;
 	}
-
-	public JList<String> getFieldGroups() {
-		return fieldGroups;
+	
+	public ShowGroupController getController() {
+		return controller;
 	}
 
 	/**

@@ -76,13 +76,12 @@ public class RegisterAccommodation extends JstructureRegisters {
 
 	}
 
-	public JTextField getTextFieldAccommodation() {
+	public JTextField getFieldAccommodation() {
 		return fieldAccommodation;
 	}
 
-	public JTextField getTextFieldCost() {
+	public JTextField getFieldCost() {
 		return fieldCost;
-
 	}
 
 	public JFormattedTextField getFieldDate() {

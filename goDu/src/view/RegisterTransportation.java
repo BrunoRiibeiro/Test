@@ -76,7 +76,7 @@ public class RegisterTransportation extends JstructureRegisters {
 
 	}
 
-	public JTextField getTextFieldTransportation() {
+	public JTextField getFieldTransportation() {
 		return fieldTransportation;
 	}
 
@@ -90,7 +90,6 @@ public class RegisterTransportation extends JstructureRegisters {
 
 	public JTextField getTextFieldCost() {
 		return fieldCost;
-
 	}
 
 	public RegisterTransportationController getController() {
