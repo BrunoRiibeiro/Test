@@ -10,8 +10,12 @@ import javax.swing.border.LineBorder;
 import controller.ShowUserController;
 
 /**
- * JPanel para selecionar grupo para a edicao.
+ * Classe herdeira de JstructureShow, a qual lista todos os usuários existentes.
  * 
+ * @see JstructureShow
+ * 
+ * @author Bruno Ribeiro
+ * @author Igor Penha
  */
 public class ShowUser extends JstructureShow {
 
@@ -21,8 +25,9 @@ public class ShowUser extends JstructureShow {
 	private final JButton buttonNewUser;
 
 	/**
-	 * Cria o panel com uma lista com bot�o, um bot�o para cadastrar um novo grupo e
-	 * um bot�o para finalizar o cadastro.
+	 * A classe constroi um novo botão para sua tela e "setting" os paramêtros da classe mãe.
+	 * 
+	 * @param buttonNewUser
 	 */
 	public ShowUser() {
 		super("Usuários", "Usuarios cadastrados:", "Lista:");
@@ -60,9 +65,7 @@ public class ShowUser extends JstructureShow {
 	}
 
 	/**
-	 * Executa o comando para o bot�o selecionado.
-	 * 
-	 * implementa��o da interface ActionListener
+	 * Método herdado de ActionListner, o qual sinconiza a view com sua respectiva controller.
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
