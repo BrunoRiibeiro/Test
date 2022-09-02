@@ -9,25 +9,31 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.text.MaskFormatter;
 
-
 /**
- * Classe molde para as telas de cadastro comuns, possui uma constante para
- * definir a fonte do texto no aplicativo.
+ * Classe abstrata a qual herda de JFrame e implementa ActionListener, por meio das bibliotecas Java AWT e Java Swing.
+ * A classe molde para as telas de registro comuns e possui uma constante para definir a fonte de texto comum.
  * 
+ * @see java.awt
+ * @see java.swing
+ * @see JFrame
+ * @see ActionListener
+ * 
+ * @author Bruno Ribeiro
+ * @author Igor Penha
  */
 public abstract class JstructureRegisters extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
-	protected static final Font FONT = new Font("Algerian", Font.PLAIN, 14);
+	protected static final Font FONT = new Font("Algerian", Font.PLAIN, 12);
 	private final JButton buttonConfirm, buttonCancel;
 
-	/**
-	 * Gera um panel com um fundo branco, um titulo e dois botoes, confirma e
-	 * cancela.
-	 * 
-	 * O titulo da tela para ser mostrado no topo
-	 */
 
+	/**
+	 * Gera um frame com um fundo branco, um titulo e dois botões, confirmar e
+	 * cancelar. Recebe uma String como paramêtro para atribuição do título da página.
+	 *  
+	 * @param title
+	 */
 	public JstructureRegisters(String title) {
 
 		this.setBackground(new Color(255, 255, 255));
@@ -62,13 +68,17 @@ public abstract class JstructureRegisters extends JFrame implements ActionListen
 	public JButton getButtonCancel() {
 		return buttonCancel;
 	}
-	
+	/**
+	 * Método para formatar os layouts das datas apresentadas nas telas.
+	 * 
+	 * @return uma String no padrão dd/MM/yyyy.
+	 */
 	public MaskFormatter maskingDate() {
 		MaskFormatter maskDate = null;
 		try {
 			maskDate = new MaskFormatter("##/##/####");
 		} catch (ParseException ignore) {
-			//
+
 		}
 		if (maskDate != null) {
 			maskDate.setPlaceholderCharacter('_');

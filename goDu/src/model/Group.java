@@ -3,6 +3,12 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Classe que armazena as informações de cada grupo.
+ * 
+ * @author Bruno Ribeiro
+ * @author Igora Penha
+ */
 public class Group {
 
 	private String name;
@@ -15,6 +21,19 @@ public class Group {
 	private int numberOfMembers;
 	private double totalPrice;
 
+	/**
+	 * Construtor para alteração de dados do grupo.
+	 * 
+	 * @param name
+	 * @param creator
+	 * @param motivation
+	 * @param expectedDate
+	 * @param transportation
+	 * @param numberOfMembers
+	 * @param restaurant
+	 * @param accommodation
+	 * @param totalPrice
+	 */
 	public Group(String name, User creator, String motivation, String expectedDate, List<Transportation> transportation,
 			int numberOfMembers, List<Restaurant> restaurant, List<Accommodation> accommodation, double totalPrice) {
 		super();
@@ -29,6 +48,14 @@ public class Group {
 		this.totalPrice = totalPrice;
 	}
 
+	/**
+	 * Contrutor para registro de grupo da tela RegisterGroup.
+	 * 
+	 * @param name
+	 * @param creator
+	 * @param expectedDate
+	 * @param motivation
+	 */
 	public Group(String name, User creator, String expectedDate, String motivation) {
 		super();
 		this.name = name;
