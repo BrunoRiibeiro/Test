@@ -43,7 +43,7 @@ class InformationGroupsTest {
 		var informationGroupTest = new ShowInformationGroup();
 //		var controllerGroupTest = new ShowInformationGroupController(informationGroupTest);
 
-		informationGroupTest.getFieldGroup().setSelectedItem(groupTest);
+		informationGroupTest.getFieldGroup().setSelectedItem(DatabaseProvider.getGroups().get(0));
 
 		assertEquals(
 				"    - Nome do grupo: Amigos do Leo\n" + "    - Criador: Leo King\n" + "    - Motivação: Niver\n"
