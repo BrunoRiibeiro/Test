@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import controller.RegisterRestaurantController;
+import model.Group;
 
 /**
  * Classe herdeira de JstructureRegisters, a qual tem frame para registrar um novo restaurante em cada grupo.
@@ -21,6 +22,7 @@ public class RegisterRestaurant extends JstructureRegisters {
 	private static final long serialVersionUID = 1L;
 	private final JTextField fieldRestaurant, fieldlocale, fieldStars, fieldMeal, fieldCost;
 	private final JFormattedTextField fieldDate;
+	private Group pickedGroupEdit;
 	private final RegisterRestaurantController controller = new RegisterRestaurantController(this);
 
 	/**
@@ -35,8 +37,10 @@ public class RegisterRestaurant extends JstructureRegisters {
 	 * @param fieldCost
 	 * @param fieldDate
 	 */
-	public RegisterRestaurant() {
+	public RegisterRestaurant(Group pickedGroupEdit) {
 		super("Cadastre um novo Restaurante");
+
+		this.pickedGroupEdit = pickedGroupEdit;
 
 		JLabel labelRestaurant = new JLabel("Restaurante:");
 		labelRestaurant.setFont(JstructureRegisters.FONT);
@@ -137,6 +141,10 @@ public class RegisterRestaurant extends JstructureRegisters {
 
 	}
 
+	public Group getPickedGroupEdit() {
+		return pickedGroupEdit;
+	}
+
 	public RegisterRestaurantController getController() {
 		return controller;
 	}
@@ -148,4 +156,5 @@ public class RegisterRestaurant extends JstructureRegisters {
 	public void actionPerformed(ActionEvent e) {
 		controller.sendAction(e.getSource());
 	}
+
 }

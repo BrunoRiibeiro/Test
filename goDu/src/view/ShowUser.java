@@ -51,7 +51,7 @@ public class ShowUser extends JstructureShow {
 
 		this.setVisible(true);
 	}
-	
+
 	public JList<String> getFieldUser() {
 		return fieldUser;
 	}
@@ -59,7 +59,7 @@ public class ShowUser extends JstructureShow {
 	public JButton getButtonNewUser() {
 		return buttonNewUser;
 	}
-	
+
 	public ShowUserController getController() {
 		return controller;
 	}

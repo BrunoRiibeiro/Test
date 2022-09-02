@@ -25,7 +25,7 @@ import view.ShowUser;
  */
 public class ShowUserController {
 	private ShowUser view;
-	public static User pickedUserEdit;
+	private User pickedUserEdit;
 	private User pickedUserDelete;
 
 	public ShowUserController() {
@@ -61,7 +61,7 @@ public class ShowUserController {
 
 			if (pickedName != null) {
 				pickedUserEdit = searchForPickedUser(pickedName);
-				new RegisterEditUser();
+				new RegisterEditUser(pickedUserEdit);
 			}
 		} else if (source == view.getButtonNewUser()) {
 			new RegisterUser();

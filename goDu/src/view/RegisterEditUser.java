@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import controller.RegisterEditUserController;
+import model.User;
 
 /**
  * Classe herdeira de JstructureRegisters, a qual tem frame para editar as informações de um usuário.
@@ -21,6 +22,7 @@ public class RegisterEditUser extends JstructureRegisters {
 	private static final long serialVersionUID = 1L;
 	private final JTextField fieldName;
 	private final JFormattedTextField expectedDate;
+	private User pickedUserEdit;
 	private final RegisterEditUserController controller = new RegisterEditUserController(this);
 
 	/**
@@ -29,8 +31,10 @@ public class RegisterEditUser extends JstructureRegisters {
 	 * @param fieldName
 	 * @param expectedDate
 	 */
-	public RegisterEditUser() {
+	public RegisterEditUser(User pickedUserEdit) {
 		super("Editando Usuario");
+
+		this.pickedUserEdit = pickedUserEdit;
 
 		JLabel labelName = new JLabel("Nome:");
 		labelName.setFont(JstructureRegisters.FONT);
@@ -66,6 +70,10 @@ public class RegisterEditUser extends JstructureRegisters {
 
 	public RegisterEditUserController getController() {
 		return controller;
+	}
+
+	public User getPickedUserEdit() {
+		return pickedUserEdit;
 	}
 
 	/**

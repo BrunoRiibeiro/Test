@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import controller.RegisterTransportationController;
+import model.Group;
 
 /**
  * Classe herdeira de JstructureRegisters, a qual tem frame para registrar um novo transporte em cada grupo.
@@ -21,6 +22,7 @@ public class RegisterTransportation extends JstructureRegisters {
 	private static final long serialVersionUID = 1L;
 	private final JTextField fieldTransportation, fieldLocale, fieldCost;
 	private final JFormattedTextField fieldTravelDate;
+	private Group pickedGroupEdit;
 	private final RegisterTransportationController controller = new RegisterTransportationController(this);
 
 	/**
@@ -32,8 +34,10 @@ public class RegisterTransportation extends JstructureRegisters {
 	 * @param fieldCost
 	 * @param fieldTravelDate
 	 */
-	public RegisterTransportation() {
+	public RegisterTransportation(Group pickedGroupEdit) {
 		super("Cadastre um novo Transporte");
+
+		this.pickedGroupEdit = pickedGroupEdit;
 
 		JLabel labelTransportation = new JLabel("Modo de transporte:");
 		labelTransportation.setFont(JstructureRegisters.FONT);
@@ -100,6 +104,10 @@ public class RegisterTransportation extends JstructureRegisters {
 		return fieldCost;
 	}
 
+	public Group getPickedGroupEdit() {
+		return pickedGroupEdit;
+	}
+
 	public RegisterTransportationController getController() {
 		return controller;
 	}
@@ -111,4 +119,5 @@ public class RegisterTransportation extends JstructureRegisters {
 	public void actionPerformed(ActionEvent e) {
 		controller.sendAction(e.getSource());
 	}
+
 }

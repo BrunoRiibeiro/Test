@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import controller.RegisterAccommodationController;
+import model.Group;
 
 /**
  * Classe herdeira de JstructureRegisters, a qual tem frame para registrar uma nova acomodação em cada grupo.
@@ -21,6 +22,7 @@ public class RegisterAccommodation extends JstructureRegisters {
 	private static final long serialVersionUID = 1L;
 	private final JTextField fieldAccommodation, fieldCost, fieldLocale;
 	private final JFormattedTextField accommodationDate;
+	private Group pickedGroupEdit;
 	private final RegisterAccommodationController controller = new RegisterAccommodationController(this);
 
 	/**
@@ -32,8 +34,10 @@ public class RegisterAccommodation extends JstructureRegisters {
 	 * @param fieldCost
 	 * @param accommodationDate
 	 */
-	public RegisterAccommodation() {
+	public RegisterAccommodation(Group pickedGroupEdit) {
 		super("Cadastre uma nova Acomodação");
+
+		this.pickedGroupEdit = pickedGroupEdit;
 
 		JLabel labelAccommodation = new JLabel("Tipo de hospedagem:");
 		labelAccommodation.setFont(JstructureRegisters.FONT);
@@ -110,5 +114,9 @@ public class RegisterAccommodation extends JstructureRegisters {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		controller.sendAction(e.getSource());
+	}
+
+	public Group getPickedGroupEdit() {
+		return pickedGroupEdit;
 	}
 }

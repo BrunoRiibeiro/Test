@@ -92,7 +92,7 @@ class RegisterTests {
 		showGroup.getFieldGroups().setSelectedValue(DatabaseProvider.getGroups().get(0).getNameGroup(), true);
 		showGroup.getButtonEdit().doClick();
 
-		var addRestaurant = new RegisterRestaurant();
+		var addRestaurant = new RegisterRestaurant(DatabaseProvider.getGroups().get(0));
 
 		addRestaurant.getFieldRestaurant().setText("Leo Bomba");
 		addRestaurant.getFieldlocale().setText("Taguatinga Sul");
