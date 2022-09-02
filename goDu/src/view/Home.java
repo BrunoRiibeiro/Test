@@ -7,12 +7,25 @@ import javax.swing.JButton;
 
 import controller.HomeController;
 
+/**
+ * Classe herdeira de Jstructure, sendo a tela inicial do projeto.
+ * 
+ * @see Jstructure
+ * 
+ * @author Bruno Ribeiro
+ * @author Igor Penha
+ */
 public class Home extends Jstructure {
 
 	private static final long serialVersionUID = 9127820873016844085L;
 	private final HomeController controller = new HomeController(this);
 	private JButton button5;
 
+	/**
+	 * A classe constroi um novo botão para sua tela e "setting" os paramêtros da classe mãe.
+	 * 
+	 * @param button5
+	 */
 	public Home() {
 		super("goDu", "Cadastrar Usuário", "Cadastrar Grupo", "Grupos", "Usuarios");
 
@@ -35,6 +48,9 @@ public class Home extends Jstructure {
 		return controller;
 	}
 
+	/**
+	 * Método herdado de ActionListner, o qual sinconiza a view com sua respectiva controller.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		controller.sendAction(e.getSource());
