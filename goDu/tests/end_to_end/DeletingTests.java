@@ -65,7 +65,8 @@ class DeletingTests {
 
 		var deleteGroupTest = new ShowGroup();
 
-		deleteGroupTest.getFieldGroups().setSelectedValue(DatabaseProvider.getGroups().get(0).getNameGroup(), true);
+		deleteGroupTest.getFieldGroups().setSelectedValue(DatabaseProvider.getGroups().get(0).getNameGroup()
+				+ " - Preço total: " + DatabaseProvider.getGroups().get(0).getTotalPrice(), true);
 		deleteGroupTest.getButtonDelete().doClick();
 
 		assertEquals(0, DatabaseProvider.getGroups().size());

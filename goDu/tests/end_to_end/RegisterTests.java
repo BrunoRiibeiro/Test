@@ -7,8 +7,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import model.database.DatabaseProvider;
+import view.RegisterAccommodation;
 import view.RegisterGroup;
 import view.RegisterRestaurant;
+import view.RegisterTransportation;
 import view.RegisterUser;
 import view.ShowGroup;
 
@@ -78,6 +80,8 @@ class RegisterTests {
 
 		userTest.getButtonConfirm().doClick();
 
+		assertTrue(DatabaseProvider.getGroups().isEmpty());
+
 		var groupTest = new RegisterGroup();
 
 		groupTest.getFieldName().setText("Amigos do Leo");
@@ -89,7 +93,8 @@ class RegisterTests {
 
 		var showGroup = new ShowGroup();
 
-		showGroup.getFieldGroups().setSelectedValue(DatabaseProvider.getGroups().get(0).getNameGroup(), true);
+		showGroup.getFieldGroups().setSelectedValue(DatabaseProvider.getGroups().get(0).getNameGroup()
+				+ " - Preço total: " + DatabaseProvider.getGroups().get(0).getTotalPrice(), true);
 		showGroup.getButtonEdit().doClick();
 
 		var addRestaurant = new RegisterRestaurant(DatabaseProvider.getGroups().get(0));
@@ -103,44 +108,42 @@ class RegisterTests {
 
 		addRestaurant.getButtonConfirm().doClick();
 
-//		var addAccommodation = new RegisterAccommodation();
-//
-//		addAccommodation.getFieldAccommodation().setText("Motel");
-//		addAccommodation.getFieldLocale().setText("Taguatinga Sul");
-//		addAccommodation.getFieldDate().setText("03/07/2023");
-//		addAccommodation.getFieldCost().setText("67.9");
-//
-//		addAccommodation.getButtonConfirm().doClick();
-//
-//		var addTransportation = new RegisterTransportation();
-//
-//		addTransportation.getFieldTransportation().setText("Carroagem");
-//		addTransportation.getFieldLocale().setText("Taguatinga Sul");
-//		addTransportation.getFieldTravelDate().setText("03/07/2023");
-//		addTransportation.getFieldCost().setText("23.6");
-//
-//		addTransportation.getButtonConfirm().doClick();
+		var addAccommodation = new RegisterAccommodation(DatabaseProvider.getGroups().get(0));
+
+		addAccommodation.getFieldAccommodation().setText("Motel");
+		addAccommodation.getFieldLocale().setText("Taguatinga Sul");
+		addAccommodation.getFieldDate().setText("03/07/2023");
+		addAccommodation.getFieldCost().setText("67.9");
+
+		addAccommodation.getButtonConfirm().doClick();
+
+		var addTransportation = new RegisterTransportation(DatabaseProvider.getGroups().get(0));
+
+		addTransportation.getFieldTransportation().setText("Carroagem");
+		addTransportation.getFieldLocale().setText("Taguatinga Sul");
+		addTransportation.getFieldTravelDate().setText("03/07/2023");
+		addTransportation.getTextFieldCost().setText("23.6");
+
+		addTransportation.getButtonConfirm().doClick();
 
 		assertEquals(1, DatabaseProvider.getGroups().size());
 
-		var savedGroup = DatabaseProvider.getGroups().get(0);
+		assertEquals("Leo Bomba", DatabaseProvider.getGroups().get(0).getRestaurant().get(0).getName());
+		assertEquals("Taguatinga Sul", DatabaseProvider.getGroups().get(0).getRestaurant().get(0).getLocale());
+		assertEquals("03/07/2023", DatabaseProvider.getGroups().get(0).getRestaurant().get(0).getDate());
+		assertEquals(4, DatabaseProvider.getGroups().get(0).getRestaurant().get(0).getStars());
+		assertEquals("Trio Leo Tudo", DatabaseProvider.getGroups().get(0).getRestaurant().get(0).getMeal());
+		assertEquals(13.00, DatabaseProvider.getGroups().get(0).getRestaurant().get(0).getMealPrice());
 
-		assertEquals("Leo Bomba", savedGroup.getRestaurant().get(0).getName());
-		assertEquals("Taguatinga Sul", savedGroup.getRestaurant().get(0).getLocale());
-		assertEquals("03/07/2023", savedGroup.getRestaurant().get(0).getDate());
-		assertEquals("4", savedGroup.getRestaurant().get(0).getStars());
-		assertEquals("Trio Leo Tudo", savedGroup.getRestaurant().get(0).getMeal());
-		assertEquals("13", savedGroup.getRestaurant().get(0).getMealPrice());
-//
-//		assertEquals("Motel", savedGroup.getAccommodation().get(0).getAccommodation());
-//		assertEquals("Taguatinga Sul", savedGroup.getAccommodation().get(0).getLocale());
-//		assertEquals("03/07/2023", savedGroup.getAccommodation().get(0).getDate());
-//		assertEquals("67.9", savedGroup.getAccommodation().get(0).getAccommodationCost());
-//
-//		assertEquals("Carroagem", savedGroup.getTransportation().get(0).getTransportMode());
-//		assertEquals("Taguatinga Sul", savedGroup.getTransportation().get(0).getLocale());
-//		assertEquals("03/07/2023", savedGroup.getTransportation().get(0).getDate());
-//		assertEquals("23.6", savedGroup.getTransportation().get(0).getTransportCost());
+		assertEquals("Motel", DatabaseProvider.getGroups().get(0).getAccommodation().get(0).getAccommodation());
+		assertEquals("Taguatinga Sul", DatabaseProvider.getGroups().get(0).getAccommodation().get(0).getLocale());
+		assertEquals("03/07/2023", DatabaseProvider.getGroups().get(0).getAccommodation().get(0).getDate());
+		assertEquals(67.90, DatabaseProvider.getGroups().get(0).getAccommodation().get(0).getAccommodationCost());
+
+		assertEquals("Carroagem", DatabaseProvider.getGroups().get(0).getTransportation().get(0).getTransportMode());
+		assertEquals("Taguatinga Sul", DatabaseProvider.getGroups().get(0).getTransportation().get(0).getLocale());
+		assertEquals("03/07/2023", DatabaseProvider.getGroups().get(0).getTransportation().get(0).getDate());
+		assertEquals(23.60, DatabaseProvider.getGroups().get(0).getTransportation().get(0).getTransportCost());
 
 	}
 
