@@ -26,7 +26,7 @@ import javax.swing.SwingConstants;
 public abstract class JstructureShow extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
-	protected static final Font FONT = new Font("Algerian", Font.PLAIN, 14);
+	protected static final Font FONT = new Font("Algerian", Font.PLAIN, 12);
 	private final JButton buttonBack, buttonEdit, buttonDelete;
 	
 	/**
