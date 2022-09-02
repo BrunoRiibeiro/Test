@@ -30,16 +30,20 @@ public class RegisterEditUserController {
 	private void editUser() {
 
 		String name;
+		String birthday;
 
 		if (view.getFieldName().getText().isEmpty()) {
 			name = view.getPickedUserEdit().getName();
 		} else {
 			name = view.getFieldName().getText();
 		}
+		if (view.getFieldBirthday().getText().matches("__/__/____")) {
+			birthday = view.getPickedUserEdit().getBirthday();
+		} else {
+			birthday = view.getFieldBirthday().getText();
+		}
 
-		String birthday = view.getFieldBirthday().getText();
 		User user = new User(name, birthday);
-
 		User oldUser = view.getPickedUserEdit();
 
 		DatabaseProvider.getUsers().add(user);
