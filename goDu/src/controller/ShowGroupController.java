@@ -11,8 +11,8 @@ import view.ShowGroup;
 
 public class ShowGroupController {
 	private ShowGroup view;
-	public static Group pickedGroupEdit;
-	public static String nameGroupEdit;
+	private Group pickedGroupEdit;
+	private String nameGroupEdit;
 	private Group pickedGroup;
 
 	public ShowGroupController(ShowGroup view) {
@@ -31,8 +31,9 @@ public class ShowGroupController {
 			nameGroupEdit = view.getFieldGroups().getSelectedValue();
 
 			if (nameGroupEdit != null) {
-				pickedGroup = searchForPickedGroup(nameGroupEdit);
-				new EditGroup();
+
+				pickedGroupEdit = searchForPickedGroup(nameGroupEdit.substring(0, nameGroupEdit.lastIndexOf(" -")));
+				new EditGroup(pickedGroupEdit);
 
 			}
 		} else if (source == view.getButtonNewGroup()) {

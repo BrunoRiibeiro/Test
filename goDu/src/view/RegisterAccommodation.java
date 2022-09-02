@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import controller.RegisterAccommodationController;
+import model.Group;
 
 /**
  * JPanel para cadastrar um Grupo.
@@ -19,13 +20,16 @@ public class RegisterAccommodation extends JstructureRegisters {
 	private static final long serialVersionUID = 1L;
 	private final JTextField fieldAccommodation, fieldCost, fieldLocale;
 	private final JFormattedTextField accommodationDate;
+	private Group pickedGroupEdit;
 	private final RegisterAccommodationController controller = new RegisterAccommodationController(this);
 
 	/**
 	 * Cria o panel com os campos para cadastro.
 	 */
-	public RegisterAccommodation() {
+	public RegisterAccommodation(Group pickedGroupEdit) {
 		super("Cadastre uma nova Acomodação");
+
+		this.pickedGroupEdit = pickedGroupEdit;
 
 		JLabel labelAccommodation = new JLabel("Tipo de hospedagem:");
 		labelAccommodation.setFont(JstructureRegisters.FONT);
@@ -104,5 +108,9 @@ public class RegisterAccommodation extends JstructureRegisters {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		controller.sendAction(e.getSource());
+	}
+
+	public Group getPickedGroupEdit() {
+		return pickedGroupEdit;
 	}
 }

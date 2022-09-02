@@ -6,15 +6,19 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 
 import controller.EditGroupController;
+import model.Group;
 
 public class EditGroup extends Jstructure {
 
 	private static final long serialVersionUID = -7401111180569084823L;
 	private final JButton buttonBackGroup;
+	private Group pickedGroupEdit;
 	private final EditGroupController controller = new EditGroupController(this);
 
-	public EditGroup() {
+	public EditGroup(Group pickedGroupEdit) {
 		super("Editar Grupos", "Acomodação", "Restaurante", "Transporte", "Editar Dados do Grupo");
+
+		this.pickedGroupEdit = pickedGroupEdit;
 
 		buttonBackGroup = new JButton("Voltar");
 		buttonBackGroup.setFont(Jstructure.FONT);
@@ -24,7 +28,7 @@ public class EditGroup extends Jstructure {
 		buttonBackGroup.setEnabled(true);
 		buttonBackGroup.addActionListener(this);
 		this.add(buttonBackGroup);
-		
+
 		this.setVisible(true);
 	}
 
@@ -40,5 +44,9 @@ public class EditGroup extends Jstructure {
 	public void actionPerformed(ActionEvent e) {
 		controller.sendAction(e.getSource());
 	}
-	
+
+	public Group getPickedGroupEdit() {
+		return pickedGroupEdit;
+	}
+
 }

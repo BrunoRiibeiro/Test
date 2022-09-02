@@ -9,7 +9,7 @@ import view.ShowGroup;
 
 public class EditGroupController {
 
-	private final EditGroup view;
+	private EditGroup view;
 
 	public EditGroupController(EditGroup view) {
 		super();
@@ -18,13 +18,13 @@ public class EditGroupController {
 
 	public void sendAction(Object source) {
 		if (source == view.getButton1()) {
-			new RegisterAccommodation();
+			new RegisterAccommodation(view.getPickedGroupEdit());
 		} else if (source == view.getButton2()) {
-			new RegisterRestaurant();
+			new RegisterRestaurant(view.getPickedGroupEdit());
 		} else if (source == view.getButton3()) {
-			new RegisterTransportation();
+			new RegisterTransportation(view.getPickedGroupEdit());
 		} else if (source == view.getButton4()) {
-			new RegisterEditDataGroup();
+			new RegisterEditDataGroup(view.getPickedGroupEdit());
 		} else if (source == view.getButtonBackGroup()) {
 			new ShowGroup();
 		}
