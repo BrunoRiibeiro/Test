@@ -1,7 +1,9 @@
 package view;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
@@ -22,6 +24,7 @@ public class RegisterGroup extends JstructureRegisters {
 	private JComboBox<Object> fieldCreator;
 	private final JTextField fieldMotivation;
 	private final JFormattedTextField expectedDate;
+	private final JButton buttonNewUser;
 	private final RegisterGroupController controller = new RegisterGroupController(this);
 
 	/**
@@ -76,9 +79,21 @@ public class RegisterGroup extends JstructureRegisters {
 		fieldMotivation.setBounds(405, 343, 147, 19);
 		this.add(fieldMotivation);
 		fieldMotivation.setColumns(10);
+		
+		buttonNewUser = new JButton("Novo usuário");
+		buttonNewUser.addActionListener(this);
+		buttonNewUser.setForeground(new Color(110, 24, 196));
+		buttonNewUser.setBackground(Color.LIGHT_GRAY);
+		buttonNewUser.setFont(FONT);
+		buttonNewUser.setBounds(363, 457, 119, 21);
+		this.add(buttonNewUser);
 
 		this.setVisible(true);
 
+	}
+
+	public JButton getButtonNewUser() {
+		return buttonNewUser;
 	}
 
 	public JTextField getFieldName() {

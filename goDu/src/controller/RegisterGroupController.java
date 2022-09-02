@@ -10,6 +10,7 @@ import model.User;
 import model.database.DatabaseProvider;
 import view.Home;
 import view.RegisterGroup;
+import view.RegisterUser;
 
 public class RegisterGroupController {
 
@@ -27,6 +28,8 @@ public class RegisterGroupController {
 			new Home();
 		} else if (source == view.getButtonCancel()) {
 			new Home();
+		} else if (source == view.getButtonNewUser()) {
+			new RegisterUser();
 		}
 
 		view.dispose();
