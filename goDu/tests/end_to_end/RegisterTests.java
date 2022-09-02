@@ -122,7 +122,7 @@ class RegisterTests {
 		addTransportation.getFieldTransportation().setText("Carroagem");
 		addTransportation.getFieldLocale().setText("Taguatinga Sul");
 		addTransportation.getFieldTravelDate().setText("03/07/2023");
-		addTransportation.getTextFieldCost().setText("23.6");
+		addTransportation.getFieldCost().setText("23.6");
 
 		addTransportation.getButtonConfirm().doClick();
 

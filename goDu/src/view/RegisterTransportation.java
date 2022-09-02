@@ -11,7 +11,8 @@ import controller.RegisterTransportationController;
 import model.Group;
 
 /**
- * Classe herdeira de JstructureRegisters, a qual tem frame para registrar um novo transporte em cada grupo.
+ * Classe herdeira de JstructureRegisters, a qual tem frame para registrar um
+ * novo transporte em cada grupo.
  * 
  * @see JstructureRegisters
  * 
@@ -26,8 +27,8 @@ public class RegisterTransportation extends JstructureRegisters {
 	private final RegisterTransportationController controller = new RegisterTransportationController(this);
 
 	/**
-	 * A classe recebe um modal de transporte, um local de destino, o valor de locomoção e data da viagem.
-	 * "setting" os paramêtros da classe mãe.
+	 * A classe recebe um modal de transporte, um local de destino, o valor de
+	 * locomoção e data da viagem. "setting" os paramêtros da classe mãe.
 	 * 
 	 * @param fieldTransportation
 	 * @param fieldLocale
@@ -100,7 +101,7 @@ public class RegisterTransportation extends JstructureRegisters {
 		return fieldTravelDate;
 	}
 
-	public JTextField getTextFieldCost() {
+	public JTextField getFieldCost() {
 		return fieldCost;
 	}
 
@@ -113,7 +114,8 @@ public class RegisterTransportation extends JstructureRegisters {
 	}
 
 	/**
-	 * Método herdado de ActionListner, o qual sinconiza a view com sua respectiva controller.
+	 * Método herdado de ActionListner, o qual sinconiza a view com sua respectiva
+	 * controller.
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
