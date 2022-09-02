@@ -33,9 +33,9 @@ public class ShowInformationGroup extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private JComboBox<Object> fieldGroup;
 	private JTextArea fieldReport;
-	private JButton buttonBack;
+	private JButton buttonBack, buttonNewGroup;
 	private JScrollPane scrollPane;
-	private static final Font FONT = new Font("Algerian", Font.PLAIN, 14);
+	private static final Font FONT = new Font("Algerian", Font.PLAIN, 12);
 	private ShowInformationGroupController controller = new ShowInformationGroupController(this);
 
 	/**
@@ -91,6 +91,14 @@ public class ShowInformationGroup extends JFrame implements ActionListener {
 		buttonBack.setEnabled(true);
 		buttonBack.addActionListener(this);
 		this.add(buttonBack);
+		
+		buttonNewGroup = new JButton("Novo grupo");
+		buttonNewGroup.addActionListener(this);
+		buttonNewGroup.setForeground(new Color(33, 113, 204));
+		buttonNewGroup.setBackground(Color.LIGHT_GRAY);
+		buttonNewGroup.setFont(FONT);
+		buttonNewGroup.setBounds(254, 450, 117, 21);
+		this.add(buttonNewGroup);
 
 		this.setVisible(true);
 	}
@@ -107,6 +115,14 @@ public class ShowInformationGroup extends JFrame implements ActionListener {
 		return buttonBack;
 	}
 	
+	public JButton getButtonNewGroup() {
+		return buttonNewGroup;
+	}
+
+	public void setButtonNewGroup(JButton buttonNewGroup) {
+		this.buttonNewGroup = buttonNewGroup;
+	}
+
 	public ShowInformationGroupController getController() {
 		return controller;
 	}

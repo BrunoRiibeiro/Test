@@ -90,7 +90,7 @@ public class RegisterGroup extends JstructureRegisters {
 		
 		buttonNewUser = new JButton("Novo usuário");
 		buttonNewUser.addActionListener(this);
-		buttonNewUser.setForeground(new Color(110, 24, 196));
+		buttonNewUser.setForeground(new Color(33, 113, 204));
 		buttonNewUser.setBackground(Color.LIGHT_GRAY);
 		buttonNewUser.setFont(FONT);
 		buttonNewUser.setBounds(363, 457, 119, 21);
