@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import controller.RegisterEditUserController;
+import model.User;
 
 /**
  * JPanel para cadastrar um Grupo.
@@ -19,13 +20,16 @@ public class RegisterEditUser extends JstructureRegisters {
 	private static final long serialVersionUID = 1L;
 	private final JTextField fieldName;
 	private final JFormattedTextField expectedDate;
+	private User pickedUserEdit;
 	private final RegisterEditUserController controller = new RegisterEditUserController(this);
 
 	/**
 	 * Cria o panel com os campos para cadastro.
 	 */
-	public RegisterEditUser() {
+	public RegisterEditUser(User pickedUserEdit) {
 		super("Editando Usuario");
+
+		this.pickedUserEdit = pickedUserEdit;
 
 		JLabel labelName = new JLabel("Nome:");
 		labelName.setFont(JstructureRegisters.FONT);
@@ -61,6 +65,10 @@ public class RegisterEditUser extends JstructureRegisters {
 
 	public RegisterEditUserController getController() {
 		return controller;
+	}
+
+	public User getPickedUserEdit() {
+		return pickedUserEdit;
 	}
 
 	/**

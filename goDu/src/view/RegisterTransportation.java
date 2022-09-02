@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import controller.RegisterTransportationController;
+import model.Group;
 
 /**
  * JPanel para cadastrar um Grupo.
@@ -19,13 +20,16 @@ public class RegisterTransportation extends JstructureRegisters {
 	private static final long serialVersionUID = 1L;
 	private final JTextField fieldTransportation, fieldLocale, fieldCost;
 	private final JFormattedTextField fieldTravelDate;
+	private Group pickedGroupEdit;
 	private final RegisterTransportationController controller = new RegisterTransportationController(this);
 
 	/**
 	 * Cria o panel com os campos para cadastro.
 	 */
-	public RegisterTransportation() {
+	public RegisterTransportation(Group pickedGroupEdit) {
 		super("Cadastre um novo Transporte");
+
+		this.pickedGroupEdit = pickedGroupEdit;
 
 		JLabel labelTransportation = new JLabel("Modo de transporte:");
 		labelTransportation.setFont(JstructureRegisters.FONT);
@@ -92,6 +96,10 @@ public class RegisterTransportation extends JstructureRegisters {
 		return fieldCost;
 	}
 
+	public Group getPickedGroupEdit() {
+		return pickedGroupEdit;
+	}
+
 	public RegisterTransportationController getController() {
 		return controller;
 	}
@@ -105,4 +113,5 @@ public class RegisterTransportation extends JstructureRegisters {
 	public void actionPerformed(ActionEvent e) {
 		controller.sendAction(e.getSource());
 	}
+
 }

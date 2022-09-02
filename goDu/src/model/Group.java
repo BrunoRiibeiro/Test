@@ -35,6 +35,7 @@ public class Group {
 		this.creator = creator;
 		this.expectedDate = expectedDate;
 		this.motivation = motivation;
+		this.numberOfMembers = 1;
 		this.totalPrice = 0;
 	}
 

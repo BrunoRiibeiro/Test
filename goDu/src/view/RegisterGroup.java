@@ -108,7 +108,7 @@ public class RegisterGroup extends JstructureRegisters {
 		return fieldMotivation;
 	}
 
-	public JFormattedTextField getFieldData() {
+	public JFormattedTextField getFieldDate() {
 		return expectedDate;
 	}
 

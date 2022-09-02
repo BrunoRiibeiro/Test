@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import controller.RegisterEditDataGroupController;
+import model.Group;
 
 /**
  * JPanel para cadastrar um Grupo.
@@ -20,13 +21,16 @@ public class RegisterEditDataGroup extends JstructureRegisters {
 	private final JTextField fieldName, fieldMotivation;
 	private JTextField fieldMembers;
 	private final JFormattedTextField expectedDate;
+	private Group pickedGroupEdit;
 	private final RegisterEditDataGroupController controller = new RegisterEditDataGroupController(this);
 
 	/**
 	 * Cria o panel com os campos para cadastro.
 	 */
-	public RegisterEditDataGroup() {
+	public RegisterEditDataGroup(Group pickedGroupEdit) {
 		super("Editando um novo Grupo");
+
+		this.pickedGroupEdit = pickedGroupEdit;
 
 		JLabel labelName = new JLabel("Novo nome do Grupo:");
 		labelName.setFont(JstructureRegisters.FONT);
@@ -107,5 +111,9 @@ public class RegisterEditDataGroup extends JstructureRegisters {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		controller.sendAction(e.getSource());
+	}
+
+	public Group getPickedGroupEdit() {
+		return pickedGroupEdit;
 	}
 }
