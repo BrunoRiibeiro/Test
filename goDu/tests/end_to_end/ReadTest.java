@@ -11,7 +11,7 @@ import view.RegisterGroup;
 import view.RegisterUser;
 import view.ShowInformationGroup;
 
-class InformationGroupsTest {
+class ReadTest {
 
 	@BeforeEach
 	void cleanDatabase() {
@@ -19,7 +19,7 @@ class InformationGroupsTest {
 	}
 
 	@Test
-	void tryToGetInformationOfGroups() {
+	void tryToReadGroups() {
 		var userTest = new RegisterUser();
 
 		userTest.getFieldName().setText("Leo King");
