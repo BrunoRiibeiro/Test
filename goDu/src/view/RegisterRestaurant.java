@@ -8,24 +8,39 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import controller.RegisterRestaurantController;
+import model.Group;
 
 /**
- * JPanel para cadastrar um Grupo.
+ * Classe herdeira de JstructureRegisters, a qual tem frame para registrar um novo restaurante em cada grupo.
  * 
- * Herda a classe Jstructure que contem um fundo, titulo e dois botoes.
+ * @see JstructureRegisters
  * 
+ * @author Bruno Ribeiro
+ * @author Igor Penha
  */
 public class RegisterRestaurant extends JstructureRegisters {
 	private static final long serialVersionUID = 1L;
 	private final JTextField fieldRestaurant, fieldlocale, fieldStars, fieldMeal, fieldCost;
 	private final JFormattedTextField fieldDate;
+	private Group pickedGroupEdit;
 	private final RegisterRestaurantController controller = new RegisterRestaurantController(this);
 
 	/**
-	 * Cria o panel com os campos para cadastro.
+	 * A classe recebe um restaurante, um local do esatabelecimento, o valor do prato consumido,
+	 * quantidade (int) de estrelas do estabelecimento, o prato consumido e data do acontecimento.
+	 * "setting" os paramêtros da classe mãe.
+	 * 
+	 * @param fieldRestaurant
+	 * @param fieldLocale
+	 * @param fieldStars
+	 * @param fieldMeal
+	 * @param fieldCost
+	 * @param fieldDate
 	 */
-	public RegisterRestaurant() {
+	public RegisterRestaurant(Group pickedGroupEdit) {
 		super("Cadastre um novo Restaurante");
+
+		this.pickedGroupEdit = pickedGroupEdit;
 
 		JLabel labelRestaurant = new JLabel("Restaurante:");
 		labelRestaurant.setFont(JstructureRegisters.FONT);
@@ -126,17 +141,20 @@ public class RegisterRestaurant extends JstructureRegisters {
 
 	}
 
+	public Group getPickedGroupEdit() {
+		return pickedGroupEdit;
+	}
+
 	public RegisterRestaurantController getController() {
 		return controller;
 	}
 
 	/**
-	 * Executa o comando para o botao selecionado.
-	 * 
-	 * implementacao da interface ActionListener, porem ainda nao implementado
+	 * Método herdado de ActionListner, o qual sinconiza a view com sua respectiva controller.
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		controller.sendAction(e.getSource());
 	}
+
 }

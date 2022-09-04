@@ -1,10 +1,24 @@
 package model;
 
+/**
+ * Classe que armazena as informações de cada acomodação criada pelo usuário em seu respectivo grupo.
+ * 
+ * @author Bruno Ribeiro
+ * @author Igora Penha
+ */
 public class Accommodation extends Arrangement {
 
 	private String accommodation;
 	private double accommodationCost;
 
+	/**
+	 * Construtor padrão para registrar uma hospedagem dentro do grupo.
+	 * 
+	 * @param date
+	 * @param locale
+	 * @param accommodation
+	 * @param accommodationCost
+	 */
 	public Accommodation(String date, String locale, String accommodation, double accommodationCost) {
 		super(date, locale);
 		this.accommodation = accommodation;
@@ -25,24 +39,6 @@ public class Accommodation extends Arrangement {
 
 	public void setAccommodationCost(double accommodationCost) {
 		this.accommodationCost = accommodationCost;
-	}
-
-	@Override
-	public void toPostpone() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void antecipate() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public boolean cancel() {
-		// TODO Auto-generated method stub
-		return false;
 	}
 
 	@Override

@@ -22,13 +22,12 @@ public class RegisterAccommodationController {
 
 	public void sendAction(Object source) {
 		if (source == view.getButtonConfirm()) {
-			String pickedNameSplitted = ShowGroupController.nameGroupEdit.substring(0,
-					ShowGroupController.nameGroupEdit.lastIndexOf(" -"));
-			registerNewAccommodation((pickedNameSplitted));
+			String pickedNameSplitted = view.getPickedGroupEdit().getNameGroup();
+			registerNewAccommodation(pickedNameSplitted);
 			System.out.println(DatabaseProvider.getGroups());
-			new EditGroup();
+			new EditGroup(view.getPickedGroupEdit());
 		} else if (source == view.getButtonCancel()) {
-			new EditGroup();
+			new EditGroup(view.getPickedGroupEdit());
 		}
 
 		view.dispose();

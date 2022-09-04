@@ -7,12 +7,34 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+/**
+ * Classe abstrata a qual herda de JFrame e implementa ActionListener, por meio das bibliotecas Java AWT e Java Swing.
+ * A classe molde para as telas de seleção comuns e possui uma constante para definir a fonte de texto comum.
+ * 
+ * @see java.awt
+ * @see java.swing
+ * @see JFrame
+ * @see ActionListener
+ * 
+ * @author Bruno Ribeiro
+ * @author Igor Penha
+ */
 public abstract class Jstructure extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	protected static final Font FONT = new Font("Algerian", Font.PLAIN, 14);
 	private final JButton button1, button2, button3, button4;
 
+	/**
+	 * A classe constroi um título da pagina em questão e três botões os quais são numerados em sequência de cima pra baixo na tela.
+	 * Com este construtor criamos um JFrame, setando background, um tamanho padrão, e um método de fechar a página.
+	 * 
+	 * @param title
+	 * @param labelButton1
+	 * @param labelButton2
+	 * @param labelButton3
+	 * @param labelButton4
+	 */
 	public Jstructure(String title, String labelButton1, String labelButton2, String labelButton3,
 			String labelButton4) {
 

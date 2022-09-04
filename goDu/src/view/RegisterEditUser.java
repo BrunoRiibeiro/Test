@@ -8,24 +8,33 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import controller.RegisterEditUserController;
+import model.User;
 
 /**
- * JPanel para cadastrar um Grupo.
+ * Classe herdeira de JstructureRegisters, a qual tem frame para editar as informações de um usuário.
  * 
- * Herda a classe Jstructure que contem um fundo, titulo e dois botoes.
+ * @see JstructureRegisters
  * 
+ * @author Bruno Ribeiro
+ * @author Igor Penha
  */
 public class RegisterEditUser extends JstructureRegisters {
 	private static final long serialVersionUID = 1L;
 	private final JTextField fieldName;
 	private final JFormattedTextField expectedDate;
+	private User pickedUserEdit;
 	private final RegisterEditUserController controller = new RegisterEditUserController(this);
 
 	/**
-	 * Cria o panel com os campos para cadastro.
+	 * A classe recebe um novo nome e a data de nascimento do usuário e "setting" os paramêtros da classe mãe.
+	 * 
+	 * @param fieldName
+	 * @param expectedDate
 	 */
-	public RegisterEditUser() {
+	public RegisterEditUser(User pickedUserEdit) {
 		super("Editando Usuario");
+
+		this.pickedUserEdit = pickedUserEdit;
 
 		JLabel labelName = new JLabel("Nome:");
 		labelName.setFont(JstructureRegisters.FONT);
@@ -63,10 +72,12 @@ public class RegisterEditUser extends JstructureRegisters {
 		return controller;
 	}
 
+	public User getPickedUserEdit() {
+		return pickedUserEdit;
+	}
+
 	/**
-	 * Executa o comando para o botao selecionado.
-	 * 
-	 * implementacao da interface ActionListener, porem ainda nao implementado
+	 * Método herdado de ActionListner, o qual sinconiza a view com sua respectiva controller.
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
