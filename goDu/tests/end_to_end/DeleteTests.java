@@ -12,7 +12,7 @@ import view.RegisterUser;
 import view.ShowGroup;
 import view.ShowUser;
 
-class DeletingTests {
+class DeleteTests {
 
 	@BeforeEach
 	void cleanDatabase() {
