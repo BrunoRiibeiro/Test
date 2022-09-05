@@ -123,7 +123,7 @@ public class ShowUserController {
 	}
 
 	/**
-	 * Gera um Model com o nome de todos os atores cadastrados.
+	 * Gera um Model com o nome de todos os usuarios cadastrados.
 	 * 
 	 * @return DefaultListModel
 	 */
