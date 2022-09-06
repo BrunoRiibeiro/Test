@@ -11,15 +11,46 @@ import model.database.DatabaseProvider;
 import view.EditGroup;
 import view.RegisterRestaurant;
 
+/**
+ * Classe controller da {@link view.RegisterRestaurant}, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
+ * 
+ * @see java.util.List
+ * @see model.Accommodation
+ * @see model.Group
+ * @see model.Restaurant
+ * @see model.Transportation
+ * @see model.User
+ * @see model.database.DatabaseProvider
+ * @see view.EditGroup
+ * @see view.RegisterRestaurant
+ * 
+ * @author Bruno Ribeiro
+ * @author Igor Penha
+ */
 public class RegisterRestaurantController {
 
 	private RegisterRestaurant view;
 
+	/**
+	 * Construtor recebe a view a qual irá gerenciar.
+	 * 
+	 * @param view
+	 */
 	public RegisterRestaurantController(RegisterRestaurant view) {
 		super();
 		this.view = view;
 	}
 
+	/**
+	 * Executa uma ação de acordo com o botão selecionado na view
+	 * 
+	 * Casos: 
+	 * Caso buttonConfirm: confirma os valores cadastrados registrando um novo restaurante, em seguida volta à EditGroup. 
+	 * Caso buttonCancel: cancela a operação e volta à EditGroup.
+	 * 
+	 * @see registerNewRestaurant
+	 * @param source Um botao da tela
+	 */
 	public void sendAction(Object source) {
 		if (source == view.getButtonConfirm()) {
 			String pickedNameSplitted = view.getPickedGroupEdit().getNameGroup();
@@ -33,6 +64,12 @@ public class RegisterRestaurantController {
 		view.dispose();
 	}
 
+	/**
+	 * Método busca pelo grupo em questão clona seus dados anteriores, cria um novo gurpo
+	 * com o restaurante adicionado e deleta o gurpo atual.
+	 * 
+	 * @param name
+	 */
 	public void registerNewRestaurant(String name) {
 		for (Group currentGroup : DatabaseProvider.getGroups()) {
 			if (name.equals(currentGroup.getNameGroup())) {
