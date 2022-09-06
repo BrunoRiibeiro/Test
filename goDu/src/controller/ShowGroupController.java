@@ -10,7 +10,7 @@ import view.RegisterGroup;
 import view.ShowGroup;
 
 /**
- * Classe controller da view.ShowGroup, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
+ * Classe controller da {@link view.ShowGroup}, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
  * 
  * @see javax.swing.DefaultListModel
  * @see model.Group

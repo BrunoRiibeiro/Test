@@ -10,7 +10,7 @@ import view.RegisterUser;
 import view.ShowUser;
 
 /**
- * Classe controller da view.ShowUser, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
+ * Classe controller da {@link view.ShowUser}, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
  * 
  * @see javax.swing.DefaultListModel
  * @see model.User

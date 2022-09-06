@@ -15,7 +15,7 @@ import view.RegisterGroup;
 import view.ShowInformationGroup;
 
 /**
- * Classe controller da view.ShowInformationGroup, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
+ * Classe controller da {@link view.ShowInformationGroup}, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
  * 
  * @see java.util.ArrayList
  * @see java.util.List

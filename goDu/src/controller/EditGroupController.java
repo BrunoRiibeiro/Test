@@ -8,7 +8,7 @@ import view.RegisterTransportation;
 import view.ShowGroup;
 
 /**
- * Classe controller da view.EditGroup, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
+ * Classe controller da {@link view.EditGroup}, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
  * 
  * @see view.EditGroup
  * @see view.RegisterAccommodation
