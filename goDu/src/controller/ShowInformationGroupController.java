@@ -69,7 +69,7 @@ public class ShowInformationGroupController {
 	}
 
 	/**
-	 * Metodo chama o helper para criar a array de estudios e retorna um
+	 * Método chama o helper para criar a array de estudios e retorna um
 	 * DefaultComboBoxModel com essa array.
 	 * 
 	 * @return DefaultComboBoxModel o model cadastrado para um comboBox
