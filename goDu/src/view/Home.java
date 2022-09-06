@@ -26,8 +26,6 @@ public class Home extends Jstructure {
 
 	/**
 	 * A classe constroi um novo botão para sua tela e "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param button5
 	 */
 	public Home() {
 		super("goDu", "Cadastrar Usuário", "Cadastrar Grupo", "Grupos", "Usuarios");

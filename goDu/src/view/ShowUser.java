@@ -31,8 +31,6 @@ public class ShowUser extends JstructureShow {
 
 	/**
 	 * A classe constroi um novo botão para sua tela e "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param buttonNewUser
 	 */
 	public ShowUser() {
 		super("Usuários", "Usuarios cadastrados:", "Lista:");

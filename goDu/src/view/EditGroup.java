@@ -30,8 +30,6 @@ public class EditGroup extends Jstructure {
 	/**
 	 * A classe constroi um novo botão para sua tela, permitindo que o usuário volte para a página anterior
 	 * e "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param buttonBackGroup
 	 */
 	public EditGroup(Group pickedGroupEdit) {
 		super("Editar Grupos", "Acomodação", "Restaurante", "Transporte", "Editar Dados do Grupo");

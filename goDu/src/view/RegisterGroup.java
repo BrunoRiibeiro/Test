@@ -40,11 +40,6 @@ public class RegisterGroup extends JstructureRegisters {
 	/**
 	 * A classe recebe um nome do grupo, usuário criador, motivação do grupo e data de planejamento.
 	 * "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param fieldName
-	 * @param fieldCreator
-	 * @param fieldMotivation
-	 * @param expectedDate
 	 */
 	public RegisterGroup() {
 		super("Cadastre um novo Grupo");

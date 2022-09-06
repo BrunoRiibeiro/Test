@@ -35,11 +35,6 @@ public class RegisterEditDataGroup extends JstructureRegisters {
 	/**
 	 * A classe recebe um novo nome do grupo, uma nova motivação do grupo, o número de membros pertencentes e data de planejamento.
 	 * "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param fieldName
-	 * @param fieldMotivation
-	 * @param fieldMembers
-	 * @param expectedDate
 	 */
 	public RegisterEditDataGroup(Group pickedGroupEdit) {
 		super("Editando um novo Grupo");

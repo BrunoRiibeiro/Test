@@ -12,7 +12,7 @@ import javax.swing.JFrame;
  * A classe molde para as telas de seleção comuns e possui uma constante para definir a fonte de texto comum.
  * 
  * @see java.awt
- * @see java.swing
+ * @see javax.swing
  * @see JFrame
  * @see ActionListener
  * 

@@ -16,7 +16,7 @@ import javax.swing.SwingConstants;
  * A classe molde para as telas de apresentação comuns e possui uma constante para definir a fonte de texto comum.
  * 
  * @see java.awt
- * @see java.swing
+ * @see javax.swing
  * @see JFrame
  * @see ActionListener
  * 

@@ -17,7 +17,7 @@ import model.User;
  * @see javax.swing.JFormattedTextField
  * @see javax.swing.JLabel
  * @see javax.swing.JTextField
- * @see avax.swing.SwingConstants
+ * @see javax.swing.SwingConstants
  * @see controller.RegisterEditUserController
  * @see model.Group
  * 
@@ -33,9 +33,6 @@ public class RegisterEditUser extends JstructureRegisters {
 
 	/**
 	 * A classe recebe um novo nome e a data de nascimento do usuário e "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param fieldName
-	 * @param expectedDate
 	 */
 	public RegisterEditUser(User pickedUserEdit) {
 		super("Editando Usuario");

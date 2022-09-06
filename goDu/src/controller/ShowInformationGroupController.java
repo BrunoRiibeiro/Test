@@ -23,7 +23,7 @@ import view.ShowInformationGroup;
  * @see model.Accommodation
  * @see model.Group
  * @see model.Restaurant
- * @see model.Transportationoup
+ * @see model.Transportation
  * @see model.database.DatabaseProvider
  * @see view.Home
  * @see view.ShowInformationGroup

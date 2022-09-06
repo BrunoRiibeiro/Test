@@ -17,7 +17,7 @@ import model.Group;
  * @see javax.swing.JFormattedTextField
  * @see javax.swing.JLabel
  * @see javax.swing.JTextField
- * @see avax.swing.SwingConstants
+ * @see javax.swing.SwingConstants
  * @see controller.RegisterAccommodationController
  * @see model.Group
  * 
@@ -34,11 +34,6 @@ public class RegisterAccommodation extends JstructureRegisters {
 	/**
 	 * A classe recebe um tipo de hospedagem, um local de acomodação, o valor de da estadia e data de hospedagem.
 	 * "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param fieldAccommodation
-	 * @param fieldLocale
-	 * @param fieldCost
-	 * @param accommodationDate
 	 */
 	public RegisterAccommodation(Group pickedGroupEdit) {
 		super("Cadastre uma nova Acomodação");

@@ -34,11 +34,6 @@ public class RegisterTransportation extends JstructureRegisters {
 	/**
 	 * A classe recebe um modal de transporte, um local de destino, o valor de locomoção e data da viagem.
 	 * "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param fieldTransportation
-	 * @param fieldLocale
-	 * @param fieldCost
-	 * @param fieldTravelDate
 	 */
 	public RegisterTransportation(Group pickedGroupEdit) {
 		super("Cadastre um novo Transporte");

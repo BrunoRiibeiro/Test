@@ -19,7 +19,7 @@ import view.RegisterEditDataGroup;
  * @see model.Accommodation
  * @see model.Group
  * @see model.Restaurant
- * @see vmodel.Transportation
+ * @see model.Transportation
  * @see model.User
  * @see model.database.DatabaseProvider
  * @see view.EditGroup

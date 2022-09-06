@@ -30,8 +30,6 @@ public class ShowGroup extends JstructureShow {
 
 	/**
 	 * A classe constroi um novo botão para sua tela e "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param buttonNewGroup
 	 */
 	public ShowGroup() {
 		super("Grupos", "Grupos cadastrados:", "Lista:");

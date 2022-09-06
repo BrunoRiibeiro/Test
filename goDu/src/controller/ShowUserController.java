@@ -106,7 +106,6 @@ public class ShowUserController {
 	 * Método deleta do database um usuário selecionado na tela, assim como os grupos que por esse usuário foram criados.
 	 * 
 	 * @see searchForPickedUser
-	 * @see searchForPickedGroup
 	 */
 	public void deletePickedUser() {
 		String pickedName = view.getFieldUser().getSelectedValue();

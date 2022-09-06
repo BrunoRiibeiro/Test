@@ -30,9 +30,6 @@ public class RegisterUser extends JstructureRegisters {
 
 	/**
 	 * A classe recebe o nome a data de nascimento do usuário e "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param fieldName
-	 * @param expectedDate
 	 */
 	public RegisterUser() {
 		super("Cadastre um novo Usuário");

@@ -14,7 +14,7 @@ import javax.swing.text.MaskFormatter;
  * A classe molde para as telas de registro comuns e possui uma constante para definir a fonte de texto comum.
  * 
  * @see java.awt
- * @see java.swing
+ * @see javax.swing
  * @see JFrame
  * @see ActionListener
  * 

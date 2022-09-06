@@ -35,13 +35,6 @@ public class RegisterRestaurant extends JstructureRegisters {
 	 * A classe recebe um restaurante, um local do esatabelecimento, o valor do prato consumido,
 	 * quantidade (int) de estrelas do estabelecimento, o prato consumido e data do acontecimento.
 	 * "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param fieldRestaurant
-	 * @param fieldLocale
-	 * @param fieldStars
-	 * @param fieldMeal
-	 * @param fieldCost
-	 * @param fieldDate
 	 */
 	public RegisterRestaurant(Group pickedGroupEdit) {
 		super("Cadastre um novo Restaurante");
