@@ -32,7 +32,6 @@ import view.ShowInformationGroup;
  * @author Igor Penha
  */
 public class ShowInformationGroupController {
-
 	private ShowInformationGroup view;
 
 	/**
