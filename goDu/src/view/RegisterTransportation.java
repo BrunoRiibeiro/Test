@@ -11,9 +11,15 @@ import controller.RegisterTransportationController;
 import model.Group;
 
 /**
- * Classe herdeira de JstructureRegisters, a qual tem frame para registrar um novo transporte em cada grupo.
+ * Classe herdeira de {@link JstructureRegisters}, a qual tem frame para registrar um novo transporte em cada grupo.
  * 
- * @see JstructureRegisters
+ * @see java.awt.event.ActionEvent
+ * @see javax.swing.JFormattedTextField
+ * @see javax.swing.JLabel
+ * @see javax.swing.JTextField
+ * @see javax.swing.SwingConstants
+ * @see controller.RegisterTransportationController
+ * @see model.Group
  * 
  * @author Bruno Ribeiro
  * @author Igor Penha

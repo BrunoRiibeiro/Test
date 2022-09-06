@@ -9,9 +9,13 @@ import controller.EditGroupController;
 import model.Group;
 
 /**
- * Classe herdeira de Jstructure, sendo a tela responsável pela seleção de elementos a serem editados em cada grupo.
+ * Classe herdeira de {@link Jstructure}, sendo a tela responsável pela seleção de elementos a serem editados em cada grupo.
  * 
- * @see Jstructure
+ * @see java.awt.Color
+ * @see java.awt.event.ActionEvent
+ * @see javax.swing.JButton
+ * @see controller.EditGroupController
+ * @see model.Group
  * 
  * @author Bruno Ribeiro
  * @author Igor Penha

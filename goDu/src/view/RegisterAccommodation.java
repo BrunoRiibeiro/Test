@@ -11,9 +11,15 @@ import controller.RegisterAccommodationController;
 import model.Group;
 
 /**
- * Classe herdeira de JstructureRegisters, a qual tem frame para registrar uma nova acomodação em cada grupo.
+ * Classe herdeira de {@link JstructureRegisters}, a qual tem frame para registrar uma nova acomodação em cada grupo.
  * 
- * @see JstructureRegisters
+ * @see java.awt.event.ActionEvent
+ * @see javax.swing.JFormattedTextField
+ * @see javax.swing.JLabel
+ * @see javax.swing.JTextField
+ * @see avax.swing.SwingConstants
+ * @see controller.RegisterAccommodationController
+ * @see model.Group
  * 
  * @author Bruno Ribeiro
  * @author Igor Penha

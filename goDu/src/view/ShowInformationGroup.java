@@ -17,13 +17,14 @@ import javax.swing.border.LineBorder;
 import controller.ShowInformationGroupController;
 
 /**
- * Classe herda de JFrame e implementa ActionListner , por meio das bibliotecas Java AWT e Java Swing.
+ * Classe herda de {@link JFrame} e implementa {@link ActionListener}, por meio das bibliotecas Java AWT e Java Swing.
  * Lista as informações do gurpo escolido.
  * 
  * @see java.awt
  * @see java.swing
  * @see JFrame
  * @see ActionListener
+ * @see controller.ShowInformationGroupController
  * 
  * @author Bruno Ribeiro
  * @author Igor Penha

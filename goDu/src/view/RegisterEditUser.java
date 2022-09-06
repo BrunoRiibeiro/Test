@@ -11,9 +11,15 @@ import controller.RegisterEditUserController;
 import model.User;
 
 /**
- * Classe herdeira de JstructureRegisters, a qual tem frame para editar as informações de um usuário.
+ * Classe herdeira de {@link JstructureRegisters}, a qual tem frame para editar as informações de um usuário.
  * 
- * @see JstructureRegisters
+ * @see java.awt.event.ActionEvent
+ * @see javax.swing.JFormattedTextField
+ * @see javax.swing.JLabel
+ * @see javax.swing.JTextField
+ * @see avax.swing.SwingConstants
+ * @see controller.RegisterEditUserController
+ * @see model.Group
  * 
  * @author Bruno Ribeiro
  * @author Igor Penha

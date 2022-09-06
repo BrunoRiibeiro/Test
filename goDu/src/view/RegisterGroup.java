@@ -13,10 +13,18 @@ import javax.swing.SwingConstants;
 import controller.RegisterGroupController;
 
 /**
- * Classe herdeira de JstructureRegisters, a qual tem frame para registrar um novo grupo.
+ * Classe herdeira de {@link JstructureRegisters}, a qual tem frame para registrar um novo grupo.
  * 
- * @see JstructureRegisters
- * 
+ * @see java.awt.Color
+ * @see java.awt.event.ActionEvent
+ * @see javax.swing.JButton
+ * @see javax.swing.JComboBox
+ * @see javax.swing.JFormattedTextField
+ * @see javax.swing.JLabel
+ * @see javax.swing.JTextField
+ * @see javax.swing.SwingConstants
+ * @see controller.RegisterGroupController
+ *  
  * @author Bruno Ribeiro
  * @author Igor Penha
  */

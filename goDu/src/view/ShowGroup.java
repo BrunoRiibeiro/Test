@@ -10,9 +10,14 @@ import javax.swing.border.LineBorder;
 import controller.ShowGroupController;
 
 /**
- * Classe herdeira de JstructureShow, a qual lista todos os grupos existentes.
+ * Classe herdeira de {@link JstructureShow}, a qual lista todos os grupos existentes.
  * 
- * @see JstructureShow
+ * @see java.awt.Color
+ * @see java.awt.event.ActionEvent
+ * @see javax.swing.JButton
+ * @see javax.swing.JList
+ * @see javax.swing.border.LineBorder
+ * @see controller.ShowGroupController
  * 
  * @author Bruno Ribeiro
  * @author Igor Penha

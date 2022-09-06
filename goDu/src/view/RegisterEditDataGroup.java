@@ -11,9 +11,15 @@ import controller.RegisterEditDataGroupController;
 import model.Group;
 
 /**
- * Classe herdeira de JstructureRegisters, a qual tem frame para editar iformações de cada grupo.
+ * Classe herdeira de {@link JstructureRegisters}, a qual tem frame para editar iformações de cada grupo.
  * 
- * @see JstructureRegisters
+ * @see java.awt.event.ActionEvent
+ * @see javax.swing.JFormattedTextField
+ * @see javax.swing.JLabel
+ * @see javax.swing.JTextField
+ * @see javax.swing.SwingConstants
+ * @see controller.RegisterEditDataGroupController
+ * @see model.Group
  * 
  * @author Bruno Ribeiro
  * @author Igor Penha
