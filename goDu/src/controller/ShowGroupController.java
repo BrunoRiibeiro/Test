@@ -81,7 +81,14 @@ public class ShowGroupController {
 	public Group getPickedGroup() {
 		return pickedGroup;
 	}
-
+	
+	/**
+	 * Método para a busca dentro do database um grupo selecionado na view.
+	 * Verifica por O(n) cada grupo cadastrado e se corresponde ao nome clicado na tela.
+	 * 
+	 * @param name; nome clicado na tela.
+	 * @return currentGroup/null; grupo equivalente ao nome clicado na tela / null caso nenhum grupo seja correspondente.
+	 */
 	public Group searchForPickedGroup(String name) {
 		for (Group currentGroup : DatabaseProvider.getGroups()) {
 			if (name.equals(currentGroup.getNameGroup())) {
@@ -91,6 +98,11 @@ public class ShowGroupController {
 		return null;
 	}
 
+	/**
+	 * Método deleta do database um grupo selecionado na tela.
+	 * 
+	 * @see searchForPickedGroup
+	 */
 	public void deletePickedGroup() {
 		String pickedName = view.getFieldGroups().getSelectedValue();
 		String pickedNameSplitted = pickedName.substring(0, pickedName.lastIndexOf(" -"));
@@ -103,6 +115,11 @@ public class ShowGroupController {
 		new ShowGroup();
 	}
 
+	/**
+	 * Gera um Model com o nome de todos os grupos cadastrados.
+	 * 
+	 * @return DefaultListModel
+	 */
 	public DefaultListModel<String> updateList() {
 		DefaultListModel<String> names = new DefaultListModel<>();
 

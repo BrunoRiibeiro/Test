@@ -85,7 +85,14 @@ public class ShowUserController {
 	public User getPickedUserEdit() {
 		return pickedUserEdit;
 	}
-
+	
+	/**
+	 * Método para a busca dentro do database um usuário selecionado na view.
+	 * Verifica por O(n) cada usuário cadastrado e se corresponde ao nome clicado na tela.
+	 * 
+	 * @param name; nome clicado na tela.
+	 * @return currentUser/null; usuário equivalente ao nome clicado na tela / null caso nenhum usuário seja correspondente.
+	 */
 	public User searchForPickedUser(String name) {
 		for (User currentUser : DatabaseProvider.getUsers()) {
 			if (name.equals(currentUser.getName())) {
@@ -95,6 +102,12 @@ public class ShowUserController {
 		return null;
 	}
 
+	/**
+	 * Método deleta do database um usuário selecionado na tela, assim como os grupos que por esse usuário foram criados.
+	 * 
+	 * @see searchForPickedUser
+	 * @see searchForPickedGroup
+	 */
 	public void deletePickedUser() {
 		String pickedName = view.getFieldUser().getSelectedValue();
 
@@ -106,7 +119,7 @@ public class ShowUserController {
 	}
 
 	/**
-	 * Gera um Model com o nome de todos os atores cadastrados.
+	 * Gera um Model com o nome de todos os usuários cadastrados.
 	 * 
 	 * @return DefaultListModel
 	 */
