@@ -16,7 +16,7 @@ public abstract class JstructureShow extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	protected static final Font FONT = new Font("Algerian", Font.PLAIN, 14);
 	private final JButton buttonBack, buttonEdit, buttonDelete;
-	
+
 	public JstructureShow(String pageTitle, String headTitle, String listTitle) {
 
 		this.setBackground(new Color(245, 245, 220));
@@ -25,7 +25,7 @@ public abstract class JstructureShow extends JFrame implements ActionListener {
 		this.setTitle(pageTitle);
 		this.setLayout(null);
 		this.setVisible(true);
-		
+
 		JLabel labelTitle = new JLabel(headTitle);
 		labelTitle.setFont(JstructureShow.FONT);
 		labelTitle.setHorizontalAlignment(SwingConstants.CENTER);
@@ -40,7 +40,7 @@ public abstract class JstructureShow extends JFrame implements ActionListener {
 
 		buttonBack = new JButton("Voltar");
 		buttonBack.setFont(JstructureShow.FONT);
-		buttonBack.setForeground(new Color(110, 24, 196));
+		buttonBack.setForeground(new Color(0, 0, 0));
 		buttonBack.setBackground(Color.LIGHT_GRAY);
 		buttonBack.setBounds(122, 450, 117, 21);
 		buttonBack.setEnabled(true);
@@ -77,7 +77,7 @@ public abstract class JstructureShow extends JFrame implements ActionListener {
 	public JButton getButtonDelete() {
 		return buttonDelete;
 	}
-	
+
 	public void addSourceList(JList<String> sourceList) {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(122, 110, 588, 289);
