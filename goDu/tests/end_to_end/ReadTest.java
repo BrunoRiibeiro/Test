@@ -11,7 +11,7 @@ import view.RegisterGroup;
 import view.RegisterUser;
 import view.ShowInformationGroup;
 
-class InformationGroupsTest {
+class ReadTest {
 
 	@BeforeEach
 	void cleanDatabase() {
@@ -19,13 +19,24 @@ class InformationGroupsTest {
 	}
 
 	@Test
-	void tryToGetInformationOfGroups() {
+	void tryToReadGroups() {
 		var userTest = new RegisterUser();
 
 		userTest.getFieldName().setText("Leo King");
 		userTest.getFieldBirthday().setText("03/07/2002");
 
 		userTest.getButtonConfirm().doClick();
+
+		var groupTest1 = new RegisterGroup();
+
+		groupTest1.getFieldName().setText("teste");
+		groupTest1.getFieldCreator().setSelectedItem(userTest);
+		groupTest1.getFieldDate().setText("03/07/2023");
+		groupTest1.getFieldMotivation().setText("teste");
+
+		assertTrue(DatabaseProvider.getGroups().isEmpty());
+
+		groupTest1.getButtonConfirm().doClick();
 
 		var groupTest = new RegisterGroup();
 
@@ -34,21 +45,20 @@ class InformationGroupsTest {
 		groupTest.getFieldDate().setText("03/07/2023");
 		groupTest.getFieldMotivation().setText("Niver");
 
-		assertTrue(DatabaseProvider.getGroups().isEmpty());
-
 		groupTest.getButtonConfirm().doClick();
 
-		assertEquals(1, DatabaseProvider.getGroups().size());
+		assertEquals(2, DatabaseProvider.getGroups().size());
 
 		var informationGroupTest = new ShowInformationGroup();
-//		var controllerGroupTest = new ShowInformationGroupController(informationGroupTest);
 
-		informationGroupTest.getFieldGroup().setSelectedItem(DatabaseProvider.getGroups().get(0));
+		informationGroupTest.getFieldGroup().setSelectedItem(DatabaseProvider.getGroups().get(1).getNameGroup());
+
+		informationGroupTest.getFieldReport().getText();
 
 		assertEquals(
-				"    - Nome do grupo: Amigos do Leo\n" + "    - Criador: Leo King\n" + "    - Motivação: Niver\n"
-						+ "    - Data de planejamento: 03/07/2023\n" + "    - Números de membros: 1\n"
-						+ "    - Preço Total: 0\n" + "    - Preço por Membro: 0\n"
+				"Grupo:\n    - Nome do grupo: Amigos do Leo\n" + "    - Criador: Leo King\n"
+						+ "    - Motivação: Niver\n" + "    - Data de planejamento: 03/07/2023\n"
+						+ "    - Números de membros: 1\n" + "    - Preço Total: 0.0\n" + "    - Preço por Membro: 0.0\n"
 						+ "    ____________________________________________________ \n"
 						+ "    - Não há transportes cadastrados nesse grupo \n"
 						+ "    ____________________________________________________ \n"

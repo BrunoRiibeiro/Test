@@ -11,12 +11,34 @@ import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 
+/**
+ * Classe abstrata a qual herda de JFrame e implementa ActionListener, por meio das bibliotecas Java AWT e Java Swing.
+ * A classe molde para as telas de apresentação comuns e possui uma constante para definir a fonte de texto comum.
+ * 
+ * @see java.awt
+ * @see java.swing
+ * @see JFrame
+ * @see ActionListener
+ * 
+ * @author Bruno Ribeiro
+ * @author Igor Penha
+ */
 public abstract class JstructureShow extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	protected static final Font FONT = new Font("Algerian", Font.PLAIN, 12);
 	private final JButton buttonBack, buttonEdit, buttonDelete;
+
 	
+	/**
+	 * Gera um frame com um fundo branco, três titulos (título da página, título cabeçalho e título da lista apresentada)
+	 * e três botões (voltar, etitar e deletar).
+	 * 
+	 * @param pageTitle
+	 * @param headTitle
+	 * @param listTitle
+	 */
+
 	public JstructureShow(String pageTitle, String headTitle, String listTitle) {
 
 		this.setBackground(new Color(245, 245, 220));
@@ -25,7 +47,7 @@ public abstract class JstructureShow extends JFrame implements ActionListener {
 		this.setTitle(pageTitle);
 		this.setLayout(null);
 		this.setVisible(true);
-		
+
 		JLabel labelTitle = new JLabel(headTitle);
 		labelTitle.setFont(JstructureShow.FONT);
 		labelTitle.setHorizontalAlignment(SwingConstants.CENTER);
@@ -40,7 +62,7 @@ public abstract class JstructureShow extends JFrame implements ActionListener {
 
 		buttonBack = new JButton("Voltar");
 		buttonBack.setFont(JstructureShow.FONT);
-		buttonBack.setForeground(new Color(110, 24, 196));
+		buttonBack.setForeground(new Color(0, 0, 0));
 		buttonBack.setBackground(Color.LIGHT_GRAY);
 		buttonBack.setBounds(122, 450, 117, 21);
 		buttonBack.setEnabled(true);
@@ -78,6 +100,12 @@ public abstract class JstructureShow extends JFrame implements ActionListener {
 		return buttonDelete;
 	}
 	
+	/**
+	 * Método para a construção de um scrollPane na tela.
+	 * 
+	 * @param sourceList
+	 */
+
 	public void addSourceList(JList<String> sourceList) {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(122, 110, 588, 289);

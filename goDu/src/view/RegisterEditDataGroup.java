@@ -11,10 +11,12 @@ import controller.RegisterEditDataGroupController;
 import model.Group;
 
 /**
- * JPanel para cadastrar um Grupo.
+ * Classe herdeira de JstructureRegisters, a qual tem frame para editar iformações de cada grupo.
  * 
- * Herda a classe Jstructure que contem um fundo, titulo e dois botoes.
+ * @see JstructureRegisters
  * 
+ * @author Bruno Ribeiro
+ * @author Igor Penha
  */
 public class RegisterEditDataGroup extends JstructureRegisters {
 	private static final long serialVersionUID = 1L;
@@ -25,7 +27,13 @@ public class RegisterEditDataGroup extends JstructureRegisters {
 	private final RegisterEditDataGroupController controller = new RegisterEditDataGroupController(this);
 
 	/**
-	 * Cria o panel com os campos para cadastro.
+	 * A classe recebe um novo nome do grupo, uma nova motivação do grupo, o número de membros pertencentes e data de planejamento.
+	 * "setting" os paramêtros da classe mãe.
+	 * 
+	 * @param fieldName
+	 * @param fieldMotivation
+	 * @param fieldMembers
+	 * @param expectedDate
 	 */
 	public RegisterEditDataGroup(Group pickedGroupEdit) {
 		super("Editando um novo Grupo");
@@ -104,9 +112,7 @@ public class RegisterEditDataGroup extends JstructureRegisters {
 	}
 
 	/**
-	 * Executa o comando para o botao selecionado.
-	 * 
-	 * implementacao da interface ActionListener, porem ainda nao implementado
+	 * Método herdado de ActionListner, o qual sinconiza a view com sua respectiva controller.
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {

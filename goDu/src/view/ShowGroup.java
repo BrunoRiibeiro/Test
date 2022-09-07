@@ -10,8 +10,12 @@ import javax.swing.border.LineBorder;
 import controller.ShowGroupController;
 
 /**
- * JPanel para selecionar grupo para a edicao.
+ * Classe herdeira de JstructureShow, a qual lista todos os grupos existentes.
  * 
+ * @see JstructureShow
+ * 
+ * @author Bruno Ribeiro
+ * @author Igor Penha
  */
 public class ShowGroup extends JstructureShow {
 	private static final long serialVersionUID = 3378863774624440091L;
@@ -20,8 +24,9 @@ public class ShowGroup extends JstructureShow {
 	private final JButton buttonNewGroup;
 
 	/**
-	 * Cria o panel com uma lista com bot�o, um bot�o para cadastrar um novo grupo e
-	 * um bot�o para finalizar o cadastro.
+	 * A classe constroi um novo botão para sua tela e "setting" os paramêtros da classe mãe.
+	 * 
+	 * @param buttonNewGroup
 	 */
 	public ShowGroup() {
 		super("Grupos", "Grupos cadastrados:", "Lista:");
@@ -36,7 +41,7 @@ public class ShowGroup extends JstructureShow {
 
 		buttonNewGroup = new JButton("Novo grupo");
 		buttonNewGroup.setFont(JstructureShow.FONT);
-		buttonNewGroup.setForeground(new Color(77, 112, 98));
+		buttonNewGroup.setForeground(new Color(33, 113, 204));
 		buttonNewGroup.setBackground(Color.LIGHT_GRAY);
 		buttonNewGroup.setBounds(122, 420, 117, 21);
 		buttonNewGroup.setEnabled(true);
@@ -53,17 +58,14 @@ public class ShowGroup extends JstructureShow {
 	public JButton getButtonNewGroup() {
 		return buttonNewGroup;
 	}
-	
+
 	public ShowGroupController getController() {
 		return controller;
 	}
 
 	/**
-	 * Executa o comando para o bot�o selecionado.
-	 * 
-	 * implementa��o da interface ActionListener
+	 * Método herdado de ActionListner, o qual sinconiza a view com sua respectiva controller.
 	 */
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		controller.sendAction(e.getSource());

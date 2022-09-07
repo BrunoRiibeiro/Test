@@ -1,10 +1,24 @@
 package model;
 
+/**
+ * Classe que armazena as informações de cada modal adicionado ao grupo.
+ * 
+ * @author Bruno Ribeiro
+ * @author Igor Penha
+ */
 public class Transportation extends Arrangement {
 
 	private String transportMode;
 	private double transportCost;
 
+	/**
+	 * Contrutor padrão para registrar um transporte dentro de um grupo.
+	 * 
+	 * @param date
+	 * @param locale
+	 * @param transportMode
+	 * @param cost
+	 */
 	public Transportation(String date, String locale, String transportMode, double cost) {
 		super(date, locale);
 		this.transportMode = transportMode;
@@ -25,25 +39,6 @@ public class Transportation extends Arrangement {
 
 	public void setTransportCost(double transportCost) {
 		this.transportCost = transportCost;
-	}
-
-	public void calculateCarTravelPrice(double distance, double vehicle, double gasPrice) {
-
-	}
-
-	@Override
-	public void toPostpone() {
-
-	}
-
-	@Override
-	public void antecipate() {
-
-	}
-
-	@Override
-	public boolean cancel() {
-		return true;
 	}
 
 	@Override

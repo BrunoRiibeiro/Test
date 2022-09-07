@@ -15,32 +15,44 @@ import view.RegisterGroup;
 import view.ShowInformationGroup;
 
 /**
- * Classe auxiliar que cont�m a l�gica por tr�s da classe RelatorioFilmes.
+ * Classe controller da view.ShowInformationGroup, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
  * 
+ * @see java.util.ArrayList
+ * @see java.util.List
+ * @see javax.swing.DefaultComboBoxModel
+ * @see model.Accommodation
+ * @see model.Group
+ * @see model.Restaurant
+ * @see model.Transportationoup
+ * @see model.database.DatabaseProvider
+ * @see view.Home
+ * @see view.ShowInformationGroup
  * 
- * @see RelatorioFilmes
- * @see RelatorioFilmesHelper
+ * @author Bruno Ribeiro
+ * @author Igor Penha
  */
 public class ShowInformationGroupController {
 
 	private ShowInformationGroup view;
+	private String NameInformationGroup;
 
 	/**
-	 * Inicializa view e helper.
+	 * Construtor recebe a view a qual irá gerenciar.
 	 * 
-	 * @param view A tela
+	 * @param view
 	 */
 	public ShowInformationGroupController(ShowInformationGroup view) {
 		this.view = view;
 	}
 
 	/**
-	 * Executa uma a��o de acordo com o bot�o selecionado na view
+	 * Executa uma ação de acordo com o botão selecionado na view
 	 * 
-	 * Casos: Caso bot�o cancelar: limpe as entradas e volte ao menu. Caso bot�o
-	 * ComboBox Estudio: mostre o relat�rio com esse estudio.
+	 * Casos: 
+	 * Caso buttonBack: volte à Home.
+	 * Caso ComboBox Group: mostre as informações deste grupo.
 	 * 
-	 * @param botaoFonte Um botao da tela
+	 * @param source Um botao da tela
 	 */
 	public void sendAction(Object source) {
 		if (source == view.getButtonBack()) {
@@ -49,9 +61,17 @@ public class ShowInformationGroupController {
 		} else if (source == view.getButtonNewGroup()) {
 			new RegisterGroup();
 			view.dispose();
+    } else if (source == view.getButtonSearch()) {
+			if (view.getFieldExpectedGroup().getText() != null) {
+				NameInformationGroup = view.getFieldExpectedGroup().getText();
+				view.getFieldReport().setText(generateReport());
+				view.getFieldGroup().setSelectedItem(NameInformationGroup);
+		  }
 		} else {
 			if (view.getFieldGroup().getSelectedItem() != null) {
+				NameInformationGroup = view.getFieldGroup().getSelectedItem().toString();
 				view.getFieldReport().setText(generateReport());
+				view.getFieldExpectedGroup().setText(NameInformationGroup);
 			}
 		}
 		
@@ -87,7 +107,7 @@ public class ShowInformationGroupController {
 		model.append("Grupo:\n");
 
 		for (Group currentGroup : DatabaseProvider.getGroups()) {
-			if (currentGroup.getNameGroup().equals(view.getFieldGroup().getSelectedItem())) {
+			if (currentGroup.getNameGroup().equals(NameInformationGroup)) {
 
 				model.append("    - ");
 				model.append("Nome do grupo: " + currentGroup.getNameGroup());
@@ -204,5 +224,9 @@ public class ShowInformationGroupController {
 		}
 
 		return model.toString();
+	}
+
+	public String getNameInformationGroup() {
+		return NameInformationGroup;
 	}
 }

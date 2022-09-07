@@ -11,10 +11,12 @@ import controller.RegisterAccommodationController;
 import model.Group;
 
 /**
- * JPanel para cadastrar um Grupo.
+ * Classe herdeira de JstructureRegisters, a qual tem frame para registrar uma nova acomodação em cada grupo.
  * 
- * Herda a classe Jstructure que contem um fundo, titulo e dois botoes.
+ * @see JstructureRegisters
  * 
+ * @author Bruno Ribeiro
+ * @author Igor Penha
  */
 public class RegisterAccommodation extends JstructureRegisters {
 	private static final long serialVersionUID = 1L;
@@ -24,7 +26,13 @@ public class RegisterAccommodation extends JstructureRegisters {
 	private final RegisterAccommodationController controller = new RegisterAccommodationController(this);
 
 	/**
-	 * Cria o panel com os campos para cadastro.
+	 * A classe recebe um tipo de hospedagem, um local de acomodação, o valor de da estadia e data de hospedagem.
+	 * "setting" os paramêtros da classe mãe.
+	 * 
+	 * @param fieldAccommodation
+	 * @param fieldLocale
+	 * @param fieldCost
+	 * @param accommodationDate
 	 */
 	public RegisterAccommodation(Group pickedGroupEdit) {
 		super("Cadastre uma nova Acomodação");
@@ -101,9 +109,7 @@ public class RegisterAccommodation extends JstructureRegisters {
 	}
 
 	/**
-	 * Executa o comando para o botao selecionado.
-	 * 
-	 * implementacao da interface ActionListener, porem ainda nao implementado
+	 * Método herdado de ActionListner, o qual sinconiza a view com sua respectiva controller.
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
