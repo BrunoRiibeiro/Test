@@ -61,7 +61,7 @@ public class ShowUserController {
 			String pickedName = view.getFieldUser().getSelectedValue();
 
 			if (pickedName != null) {
-				pickedUserEdit = searchForPickedUser(pickedName);
+				pickedUserEdit = model.database.DatabaseProvider.searchForPickedUser(pickedName);
 				new RegisterEditUser(pickedUserEdit);
 			}
 		} else if (source == view.getButtonNewUser()) {
@@ -70,9 +70,8 @@ public class ShowUserController {
 			String pickedName = view.getFieldUser().getSelectedValue();
 
 			if (pickedName != null) {
-				deletePickedUser();
-				System.out.println(DatabaseProvider.getUsers());
-				System.out.println(DatabaseProvider.getGroups());
+				pickedUserDelete = model.database.DatabaseProvider.searchForPickedUser(pickedName);
+				DatabaseProvider.getUsers().remove(pickedUserDelete);
 			}
 			new ShowUser();
 		}
@@ -88,35 +87,11 @@ public class ShowUserController {
 		return pickedUserEdit;
 	}
 
-	public User searchForPickedUser(String name) {
-		for (User currentUser : DatabaseProvider.getUsers()) {
-			if (name.equals(currentUser.getName())) {
-				return currentUser;
-			}
-		}
-		return null;
-	}
-
-	public Group searchForPickedGroup(User creator) {
-		for (Group currentGroup : DatabaseProvider.getGroups()) {
-			if (creator.equals(currentGroup.getCreator())) {
-				return currentGroup;
-			}
-		}
-		return null;
-	}
-
 	public void deletePickedUser() {
 		String pickedName = view.getFieldUser().getSelectedValue();
 
 		if (pickedName != null) {
-			User pickedUser = searchForPickedUser(pickedName);
-
-			for (int i = 0; i <= DatabaseProvider.getGroups().size(); i++) {
-				Group deleteGroup = searchForPickedGroup(pickedUser);
-				DatabaseProvider.getGroups().remove(deleteGroup);
-			}
-
+			User pickedUser = model.database.DatabaseProvider.searchForPickedUser(pickedName);
 			DatabaseProvider.getUsers().remove(pickedUser);
 		}
 		new ShowUser();
