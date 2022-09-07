@@ -10,7 +10,7 @@ Since it is a MVP, we abstracted a lot of features. The scenario is a planning t
 
 Different to Splitwise, there's no login, so all the users and groups can be create for you.
 
-## So... Let's go dutch?  
+## So... Let's go Dutch?  
 
 #### Special thanks to:
 [Igor Penha](https://github.com/igorpenhaa), my colleague, who spend hours discussing and coding with me.  
