@@ -11,6 +11,7 @@ import model.Restaurant;
 import model.Transportation;
 import model.database.DatabaseProvider;
 import view.Home;
+import view.RegisterGroup;
 import view.ShowInformationGroup;
 
 /**
@@ -45,6 +46,9 @@ public class ShowInformationGroupController {
 	public void sendAction(Object source) {
 		if (source == view.getButtonBack()) {
 			new Home();
+			view.dispose();
+		} else if (source == view.getButtonNewGroup()) {
+			new RegisterGroup();
 			view.dispose();
 		} else if (source == view.getButtonSearch()) {
 			if (view.getFieldExpectedGroup().getText() != null) {
