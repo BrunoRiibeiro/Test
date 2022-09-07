@@ -70,8 +70,7 @@ public class ShowUserController {
 			String pickedName = view.getFieldUser().getSelectedValue();
 
 			if (pickedName != null) {
-				pickedUserDelete = model.database.DatabaseProvider.searchForPickedUser(pickedName);
-				DatabaseProvider.getUsers().remove(pickedUserDelete);
+				deletePickedUser();
 			}
 			new ShowUser();
 		}
@@ -92,6 +91,11 @@ public class ShowUserController {
 
 		if (pickedName != null) {
 			User pickedUser = model.database.DatabaseProvider.searchForPickedUser(pickedName);
+			
+			for (int i = 0; i <= DatabaseProvider.getGroups().size(); i++) {
+				Group deleteGroup = model.database.DatabaseProvider.searchForPickedGroup(pickedUser);
+				DatabaseProvider.getGroups().remove(deleteGroup);
+			}
 			DatabaseProvider.getUsers().remove(pickedUser);
 		}
 		new ShowUser();

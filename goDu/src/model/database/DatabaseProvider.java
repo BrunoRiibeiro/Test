@@ -50,4 +50,13 @@ public class DatabaseProvider {
 		}
 		return null;
 	}
+	
+	public static Group searchForPickedGroup(User creator) {
+		for (Group currentGroup : DatabaseProvider.getGroups()) {
+			if (creator.equals(currentGroup.getCreator())) {
+				return currentGroup;
+			}
+		}
+		return null;
+	}
 }
