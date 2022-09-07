@@ -1,7 +1,7 @@
 # goDu
 
 ### What's up everyone!
-\
+
 goDu is a MVP (minimum viable product) Java project inspired by Splitwise app, an app to keep track of your shared expenses and balances with housemates, trips, groups, friends, and family.
 
 This software were build for an OOP (Object-Oriented Programming) class, with the aim of learn and practice the goals of OOP.
