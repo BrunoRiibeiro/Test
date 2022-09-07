@@ -22,26 +22,26 @@ public class RegisterTransportationController {
 
 	public void sendAction(Object source) {
 		if (source == view.getButtonConfirm()) {
-			String pickedNameSplitted = ShowGroupController.nameGroupEdit.substring(0,
-					ShowGroupController.nameGroupEdit.lastIndexOf(" -"));
-			registerNewTransport((pickedNameSplitted));
+			String pickedNameSplitted = view.getPickedGroupEdit().getNameGroup();
+			registerNewTransport(pickedNameSplitted);
 			System.out.println(DatabaseProvider.getGroups());
-			new EditGroup();
+			new EditGroup(view.getPickedGroupEdit());
 		} else if (source == view.getButtonCancel()) {
-			new EditGroup();
+			new EditGroup(view.getPickedGroupEdit());
 		}
 
 		view.dispose();
 	}
 
 	public void registerNewTransport(String name) {
+
 		for (Group currentGroup : DatabaseProvider.getGroups()) {
 			if (name.equals(currentGroup.getNameGroup())) {
 
 				String date = view.getFieldTravelDate().getText();
 				String locale = view.getFieldLocale().getText();
 				String transportMode = view.getFieldTransportation().getText();
-				Double transportationCost = Double.parseDouble(view.getTextFieldCost().getText());
+				Double transportationCost = Double.parseDouble(view.getFieldCost().getText());
 
 				String names = currentGroup.getNameGroup();
 				User creator = currentGroup.getCreator();

@@ -12,7 +12,7 @@ import view.RegisterUser;
 import view.ShowGroup;
 import view.ShowUser;
 
-class DeletingTests {
+class DeleteTests {
 
 	@BeforeEach
 	void cleanDatabase() {
@@ -24,8 +24,8 @@ class DeletingTests {
 	void tryToDeleteAUser() {
 		var userTest = new RegisterUser();
 
-		userTest.getTextFieldName().setText("Leo King");
-		userTest.getTextFieldBirthday().setText("03/07/2002");
+		userTest.getFieldName().setText("Leo King");
+		userTest.getFieldBirthday().setText("03/07/2002");
 
 		assertTrue(DatabaseProvider.getUsers().isEmpty());
 
@@ -45,8 +45,8 @@ class DeletingTests {
 	void tryToDeleteAGroup() {
 		var userTest = new RegisterUser();
 
-		userTest.getTextFieldName().setText("Leo King");
-		userTest.getTextFieldBirthday().setText("03/07/2002");
+		userTest.getFieldName().setText("Leo King");
+		userTest.getFieldBirthday().setText("03/07/2002");
 
 		userTest.getButtonConfirm().doClick();
 
@@ -65,7 +65,8 @@ class DeletingTests {
 
 		var deleteGroupTest = new ShowGroup();
 
-		deleteGroupTest.getFieldGroups().setSelectedValue(DatabaseProvider.getGroups().get(0).getNameGroup(), true);
+		deleteGroupTest.getFieldGroups().setSelectedValue(DatabaseProvider.getGroups().get(0).getNameGroup()
+				+ " - Preço total: " + DatabaseProvider.getGroups().get(0).getTotalPrice(), true);
 		deleteGroupTest.getButtonDelete().doClick();
 
 		assertEquals(0, DatabaseProvider.getGroups().size());

@@ -18,11 +18,16 @@ import javax.swing.border.LineBorder;
 import controller.ShowInformationGroupController;
 
 /**
- * JPanel para mostrar um relatorio de filmes.
+ * Classe herda de JFrame e implementa ActionListner , por meio das bibliotecas Java AWT e Java Swing.
+ * Lista as informações do gurpo escolido.
  * 
- * Herda a classe JRelatorios que cont�m um fundo, t�tulo e um bot�o.
+ * @see java.awt
+ * @see java.swing
+ * @see JFrame
+ * @see ActionListener
  * 
- * @author Eduardo Rodrigues
+ * @author Bruno Ribeiro
+ * @author Igor Penha
  */
 public class ShowInformationGroup extends JFrame implements ActionListener {
 
@@ -32,11 +37,16 @@ public class ShowInformationGroup extends JFrame implements ActionListener {
 	private JButton buttonBack, buttonSearch, buttonNewGroup;
 	private final JTextField fieldExpectedGroup;
 	private JScrollPane scrollPane;
-	private static final Font FONT = new Font("Algerian", Font.PLAIN, 14);
+	private static final Font FONT = new Font("Algerian", Font.PLAIN, 12);
 	private ShowInformationGroupController controller = new ShowInformationGroupController(this);
 
 	/**
-	 * Cria o panel com os campos para o relatorio.
+	 * A classe constroi um título da pagina em questão, um botão para voltar a página anterior.
+	 * Com este construtor criamos um JFrame, setando background, um tamanho padrão, e um método de fechar a página.
+	 * 
+	 * @param buttonBack
+	 * @param scrollPane
+	 * @param fieldReport
 	 */
 	public ShowInformationGroup() {
 		this.setBackground(new Color(255, 255, 255));
@@ -99,6 +109,14 @@ public class ShowInformationGroup extends JFrame implements ActionListener {
 		buttonBack.setEnabled(true);
 		buttonBack.addActionListener(this);
 		this.add(buttonBack);
+		
+		buttonNewGroup = new JButton("Novo grupo");
+		buttonNewGroup.addActionListener(this);
+		buttonNewGroup.setForeground(new Color(33, 113, 204));
+		buttonNewGroup.setBackground(Color.LIGHT_GRAY);
+		buttonNewGroup.setFont(FONT);
+		buttonNewGroup.setBounds(254, 450, 117, 21);
+		this.add(buttonNewGroup);
 
 		this.setVisible(true);
 
@@ -142,9 +160,7 @@ public class ShowInformationGroup extends JFrame implements ActionListener {
 	}
 
 	/**
-	 * Executa o comando para o bot�o selecionado.
-	 * 
-	 * implementa��o da interface ActionListener
+	 * Método herdado de ActionListner, o qual sinconiza a view com sua respectiva controller.
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {

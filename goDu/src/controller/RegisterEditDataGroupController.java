@@ -23,13 +23,12 @@ public class RegisterEditDataGroupController {
 
 	public void sendAction(Object source) {
 		if (source == view.getButtonConfirm()) {
-			String pickedNameSplitted = ShowGroupController.nameGroupEdit.substring(0,
-					ShowGroupController.nameGroupEdit.lastIndexOf(" -"));
+			String pickedNameSplitted = view.getPickedGroupEdit().getNameGroup();
 			editDataGroup((pickedNameSplitted));
 			System.out.println(DatabaseProvider.getGroups());
 			new Home();
 		} else if (source == view.getButtonCancel()) {
-			new EditGroup();
+			new EditGroup(view.getPickedGroupEdit());
 		}
 
 		view.dispose();
@@ -56,7 +55,7 @@ public class RegisterEditDataGroupController {
 					motivation = view.getFieldMotivation().getText();
 				}
 
-				if (view.getFieldDate().getText() == "__/__/____") {
+				if (view.getFieldDate().getText().matches("__/__/____")) {
 					expectedDate = currentGroup.getExpectedDate();
 				} else {
 					expectedDate = view.getFieldDate().getText();

@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * Classe que armazena as informações de cada restaurante adicionado no grupo.
+ * 
+ * @author Bruno Ribeiro
+ * @author Igora Penha
+ */
 public class Restaurant extends Arrangement {
 
 	private String name;
@@ -7,6 +13,16 @@ public class Restaurant extends Arrangement {
 	private String meal;
 	private double mealPrice;
 
+	/**
+	 * Contrutor padrão para registrar um restaurante dentro de cada grupo.
+	 * 
+	 * @param date
+	 * @param locale
+	 * @param name
+	 * @param stars
+	 * @param meal
+	 * @param mealPrice
+	 */
 	public Restaurant(String date, String locale, String name, int stars, String meal, double mealPrice) {
 		super(date, locale);
 		this.name = name;
@@ -45,21 +61,6 @@ public class Restaurant extends Arrangement {
 
 	public void setMealPrice(double mealPrice) {
 		this.mealPrice = mealPrice;
-	}
-
-	@Override
-	public void toPostpone() {
-
-	}
-
-	@Override
-	public void antecipate() {
-
-	}
-
-	@Override
-	public boolean cancel() {
-		return true;
 	}
 
 	@Override

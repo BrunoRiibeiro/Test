@@ -2,6 +2,7 @@ package controller;
 
 import javax.swing.DefaultListModel;
 
+import model.Group;
 import model.User;
 import model.database.DatabaseProvider;
 import view.Home;
@@ -9,20 +10,50 @@ import view.RegisterEditUser;
 import view.RegisterUser;
 import view.ShowUser;
 
+/**
+ * Classe controller da view.ShowUser, tem como função gerenciar e linkar os
+ * botões clicados com suas respectivas páginas.
+ * 
+ * @see javax.swing.DefaultListModel
+ * @see model.User
+ * @see model.database.DatabaseProvider
+ * @see view.Home
+ * @see view.RegisterEditUser
+ * @see view.RegisterUser
+ * @see view.ShowUser
+ * 
+ * @author Bruno Ribeiro
+ * @author Igor Penha
+ */
 public class ShowUserController {
 	private ShowUser view;
-	public static User pickedUserEdit;
+	private User pickedUserEdit;
 	private User pickedUserDelete;
 
 	public ShowUserController() {
 
 	}
 
+	/**
+	 * Construtor recebe a view a qual irá gerenciar.
+	 * 
+	 * @param view
+	 */
 	public ShowUserController(ShowUser view) {
 		super();
 		this.view = view;
 	}
 
+	/**
+	 * Executa uma ação de acordo com o botão selecionado na view
+	 * 
+	 * Casos: Caso buttonBack: volte à Home. Caso buttonEdit: verifique se algum
+	 * usuário foi selecionado, então encaminha a página RegisterEditUser. Caso
+	 * buttonNewUser: redireciona para a página RegisterUser. Caso buttonDelete:
+	 * verifica se algum usuário foi selecionado, então deleta o mesmo.
+	 * 
+	 * @param source Um botao da tela
+	 */
 	public void sendAction(Object source) {
 		if (source == view.getButtonBack()) {
 			new Home();
@@ -31,7 +62,7 @@ public class ShowUserController {
 
 			if (pickedName != null) {
 				pickedUserEdit = searchForPickedUser(pickedName);
-				new RegisterEditUser();
+				new RegisterEditUser(pickedUserEdit);
 			}
 		} else if (source == view.getButtonNewUser()) {
 			new RegisterUser();
@@ -39,8 +70,9 @@ public class ShowUserController {
 			String pickedName = view.getFieldUser().getSelectedValue();
 
 			if (pickedName != null) {
-				pickedUserDelete = searchForPickedUser(pickedName);
-				DatabaseProvider.getUsers().remove(pickedUserDelete);
+				deletePickedUser();
+				System.out.println(DatabaseProvider.getUsers());
+				System.out.println(DatabaseProvider.getGroups());
 			}
 			new ShowUser();
 		}
@@ -65,18 +97,33 @@ public class ShowUserController {
 		return null;
 	}
 
+	public Group searchForPickedGroup(User creator) {
+		for (Group currentGroup : DatabaseProvider.getGroups()) {
+			if (creator.equals(currentGroup.getCreator())) {
+				return currentGroup;
+			}
+		}
+		return null;
+	}
+
 	public void deletePickedUser() {
 		String pickedName = view.getFieldUser().getSelectedValue();
 
 		if (pickedName != null) {
 			User pickedUser = searchForPickedUser(pickedName);
+
+			for (int i = 0; i <= DatabaseProvider.getGroups().size(); i++) {
+				Group deleteGroup = searchForPickedGroup(pickedUser);
+				DatabaseProvider.getGroups().remove(deleteGroup);
+			}
+
 			DatabaseProvider.getUsers().remove(pickedUser);
 		}
 		new ShowUser();
 	}
 
 	/**
-	 * Gera um Model com o nome de todos os atores cadastrados.
+	 * Gera um Model com o nome de todos os usuarios cadastrados.
 	 * 
 	 * @return DefaultListModel
 	 */

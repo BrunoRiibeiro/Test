@@ -13,7 +13,7 @@ import view.RegisterRestaurant;
 
 public class RegisterRestaurantController {
 
-	private final RegisterRestaurant view;
+	private RegisterRestaurant view;
 
 	public RegisterRestaurantController(RegisterRestaurant view) {
 		super();
@@ -22,13 +22,12 @@ public class RegisterRestaurantController {
 
 	public void sendAction(Object source) {
 		if (source == view.getButtonConfirm()) {
-			String pickedNameSplitted = ShowGroupController.nameGroupEdit.substring(0,
-					ShowGroupController.nameGroupEdit.lastIndexOf(" -"));
+			String pickedNameSplitted = view.getPickedGroupEdit().getNameGroup();
 			registerNewRestaurant((pickedNameSplitted));
 			System.out.println(DatabaseProvider.getGroups());
-			new EditGroup();
+			new EditGroup(view.getPickedGroupEdit());
 		} else if (source == view.getButtonCancel()) {
-			new EditGroup();
+			new EditGroup(view.getPickedGroupEdit());
 		}
 
 		view.dispose();

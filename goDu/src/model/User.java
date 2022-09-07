@@ -1,10 +1,22 @@
 package model;
 
+/**
+ * Classe que armazena as informações de um usuário.
+ * 
+ * @author Bruno Ribeiro
+ * @author Igora Penha
+ */
 public class User {
 
 	private String name;
 	private String birthday;
 
+	/**
+	 * Gera um usuário, com nome, e dada de nascimento.
+	 * 
+	 * @param name nome do usuário
+	 * @param birthday data de nascimento do usuário.
+	 */
 	public User(String name, String birthday) {
 		super();
 		this.name = name;
