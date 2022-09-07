@@ -41,7 +41,7 @@ public class ShowGroup extends JstructureShow {
 
 		buttonNewGroup = new JButton("Novo grupo");
 		buttonNewGroup.setFont(JstructureShow.FONT);
-		buttonNewGroup.setForeground(new Color(77, 112, 98));
+		buttonNewGroup.setForeground(new Color(33, 113, 204));
 		buttonNewGroup.setBackground(Color.LIGHT_GRAY);
 		buttonNewGroup.setBounds(122, 420, 117, 21);
 		buttonNewGroup.setEnabled(true);
@@ -58,7 +58,7 @@ public class ShowGroup extends JstructureShow {
 	public JButton getButtonNewGroup() {
 		return buttonNewGroup;
 	}
-	
+
 	public ShowGroupController getController() {
 		return controller;
 	}

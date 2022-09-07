@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
@@ -33,7 +34,8 @@ public class ShowInformationGroup extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private JComboBox<Object> fieldGroup;
 	private JTextArea fieldReport;
-	private JButton buttonBack, buttonNewGroup;
+	private JButton buttonBack, buttonSearch, buttonNewGroup;
+	private final JTextField fieldExpectedGroup;
 	private JScrollPane scrollPane;
 	private static final Font FONT = new Font("Algerian", Font.PLAIN, 12);
 	private ShowInformationGroupController controller = new ShowInformationGroupController(this);
@@ -60,21 +62,26 @@ public class ShowInformationGroup extends JFrame implements ActionListener {
 		labelTitle.setBounds(51, 59, 725, 13);
 		this.add(labelTitle);
 
-		JLabel labelChooseGroup = new JLabel("Escolha um grupo");
+		JLabel labelChooseGroup = new JLabel("Escreva ou escolha um grupo");
 		labelChooseGroup.setHorizontalAlignment(SwingConstants.CENTER);
 		labelChooseGroup.setFont(FONT);
-		labelChooseGroup.setBounds(49, 135, 162, 21);
+		labelChooseGroup.setBounds(3, 135, 230, 21);
 		this.add(labelChooseGroup);
 
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(221, 109, 512, 295);
+		scrollPane.setBounds(271, 109, 512, 295);
 		this.add(scrollPane);
 
 		fieldGroup = new JComboBox<>();
 		fieldGroup.addActionListener(this);
-		fieldGroup.setBounds(71, 168, 113, 21);
+		fieldGroup.setBounds(14, 208, 243, 21);
 		fieldGroup.setModel(controller.updateModel());
 		this.add(fieldGroup);
+
+		fieldExpectedGroup = new JTextField();
+		fieldExpectedGroup.setBounds(15, 168, 113, 21);
+		this.add(fieldExpectedGroup);
+		fieldExpectedGroup.setColumns(10);
 
 		fieldReport = new JTextArea();
 		fieldReport.setFont(new Font("Algerian", Font.PLAIN, 12));
@@ -83,11 +90,22 @@ public class ShowInformationGroup extends JFrame implements ActionListener {
 		fieldReport.setBackground(new Color(245, 245, 220));
 		fieldReport.setEditable(false);
 
+		buttonSearch = new JButton("Pesquisar");
+		buttonSearch.setFont(JstructureShow.FONT);
+		buttonSearch.setForeground(new Color(0, 0, 155));
+		buttonSearch.setBackground(Color.LIGHT_GRAY);
+		buttonSearch.setBounds(148, 168, 103, 21);
+		buttonSearch.setEnabled(true);
+		buttonSearch.addActionListener(this);
+		this.add(buttonSearch);
+
+		this.setVisible(true);
+
 		buttonBack = new JButton("Voltar");
 		buttonBack.setFont(JstructureShow.FONT);
-		buttonBack.setForeground(new Color(110, 24, 196));
+		buttonBack.setForeground(new Color(0, 0, 0));
 		buttonBack.setBackground(Color.LIGHT_GRAY);
-		buttonBack.setBounds(122, 450, 117, 21);
+		buttonBack.setBounds(15, 450, 117, 21);
 		buttonBack.setEnabled(true);
 		buttonBack.addActionListener(this);
 		this.add(buttonBack);
@@ -101,6 +119,16 @@ public class ShowInformationGroup extends JFrame implements ActionListener {
 		this.add(buttonNewGroup);
 
 		this.setVisible(true);
+
+		buttonNewGroup = new JButton("Novo grupo");
+		buttonNewGroup.addActionListener(this);
+		buttonNewGroup.setForeground(new Color(33, 113, 204));
+		buttonNewGroup.setBackground(Color.LIGHT_GRAY);
+		buttonNewGroup.setFont(FONT);
+		buttonNewGroup.setBounds(140, 450, 113, 21);
+		this.add(buttonNewGroup);
+
+		this.setVisible(true);
 	}
 
 	public JComboBox<Object> getFieldGroup() {
@@ -111,16 +139,20 @@ public class ShowInformationGroup extends JFrame implements ActionListener {
 		return fieldReport;
 	}
 
+	public JTextField getFieldExpectedGroup() {
+		return fieldExpectedGroup;
+	}
+
+	public JButton getButtonSearch() {
+		return buttonSearch;
+	}
+
 	public JButton getButtonBack() {
 		return buttonBack;
 	}
-	
+
 	public JButton getButtonNewGroup() {
 		return buttonNewGroup;
-	}
-
-	public void setButtonNewGroup(JButton buttonNewGroup) {
-		this.buttonNewGroup = buttonNewGroup;
 	}
 
 	public ShowInformationGroupController getController() {

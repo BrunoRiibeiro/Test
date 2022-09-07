@@ -42,7 +42,7 @@ public class ShowUser extends JstructureShow {
 
 		buttonNewUser = new JButton("Novo Usuário");
 		buttonNewUser.setFont(JstructureShow.FONT);
-		buttonNewUser.setForeground(new Color(77, 112, 98));
+		buttonNewUser.setForeground(new Color(33, 113, 204));
 		buttonNewUser.setBackground(Color.LIGHT_GRAY);
 		buttonNewUser.setBounds(122, 420, 117, 21);
 		buttonNewUser.setEnabled(true);
