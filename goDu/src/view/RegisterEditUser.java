@@ -11,7 +11,8 @@ import controller.RegisterEditUserController;
 import model.User;
 
 /**
- * Classe herdeira de {@link JstructureRegisters}, a qual tem frame para editar as informações de um usuário.
+ * Classe herdeira de {@link JstructureRegisters}, a qual tem frame para editar
+ * as informações de um usuário.
  * 
  * @see java.awt.event.ActionEvent
  * @see javax.swing.JFormattedTextField
@@ -32,7 +33,8 @@ public class RegisterEditUser extends JstructureRegisters {
 	private final RegisterEditUserController controller = new RegisterEditUserController(this);
 
 	/**
-	 * A classe recebe um novo nome e a data de nascimento do usuário e "setting" os paramêtros da classe mãe.
+	 * A classe recebe um novo nome e a data de nascimento do usuário e "setting" os
+	 * paramêtros da classe mãe.
 	 */
 	public RegisterEditUser(User pickedUserEdit) {
 		super("Editando Usuario");
@@ -80,7 +82,8 @@ public class RegisterEditUser extends JstructureRegisters {
 	}
 
 	/**
-	 * Método herdado de ActionListner, o qual sinconiza a view com sua respectiva controller.
+	 * Método herdado de ActionListner, o qual sinconiza a view com sua respectiva
+	 * controller.
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {

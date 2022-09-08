@@ -11,7 +11,8 @@ import view.RegisterUser;
 import view.ShowUser;
 
 /**
- * Classe controller da {@link view.ShowUser}, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
+ * Classe controller da {@link view.ShowUser}, tem como função gerenciar e
+ * linkar os botões clicados com suas respectivas páginas.
  * 
  * @see javax.swing.DefaultListModel
  * @see model.User
@@ -85,12 +86,17 @@ public class ShowUserController {
 		return pickedUserEdit;
 	}
 
+	/**
+	 * Método que deleta da database um usuário selecionado na tela, assim como os
+	 * grupos que foram criados pelo mesmo
+	 * 
+	 */
 	public void deletePickedUser() {
 		String pickedName = view.getFieldUser().getSelectedValue();
 
 		if (pickedName != null) {
 			User pickedUser = model.database.DatabaseProvider.searchForPickedUser(pickedName);
-			
+
 			for (int i = 0; i <= DatabaseProvider.getGroups().size(); i++) {
 				Group deleteGroup = model.database.DatabaseProvider.searchForPickedGroup(pickedUser);
 				DatabaseProvider.getGroups().remove(deleteGroup);
