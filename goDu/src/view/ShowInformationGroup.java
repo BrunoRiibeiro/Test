@@ -109,16 +109,6 @@ public class ShowInformationGroup extends JFrame implements ActionListener {
 		buttonBack.setEnabled(true);
 		buttonBack.addActionListener(this);
 		this.add(buttonBack);
-		
-		buttonNewGroup = new JButton("Novo grupo");
-		buttonNewGroup.addActionListener(this);
-		buttonNewGroup.setForeground(new Color(33, 113, 204));
-		buttonNewGroup.setBackground(Color.LIGHT_GRAY);
-		buttonNewGroup.setFont(FONT);
-		buttonNewGroup.setBounds(254, 450, 117, 21);
-		this.add(buttonNewGroup);
-
-		this.setVisible(true);
 
 		buttonNewGroup = new JButton("Novo grupo");
 		buttonNewGroup.addActionListener(this);

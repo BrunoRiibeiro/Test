@@ -65,7 +65,7 @@ public class ShowGroupController {
 
 			if (nameGroupEdit != null) {
 
-				pickedGroupEdit = searchForPickedGroup(nameGroupEdit.substring(0, nameGroupEdit.lastIndexOf(" -")));
+				pickedGroupEdit = model.database.DatabaseProvider.searchForPickedGroup(nameGroupEdit.substring(0, nameGroupEdit.lastIndexOf(" -")));
 				new EditGroup(pickedGroupEdit);
 
 			}
@@ -82,21 +82,14 @@ public class ShowGroupController {
 		return pickedGroup;
 	}
 
-	public Group searchForPickedGroup(String name) {
-		for (Group currentGroup : DatabaseProvider.getGroups()) {
-			if (name.equals(currentGroup.getNameGroup())) {
-				return currentGroup;
-			}
-		}
-		return null;
-	}
+	
 
 	public void deletePickedGroup() {
 		String pickedName = view.getFieldGroups().getSelectedValue();
 		String pickedNameSplitted = pickedName.substring(0, pickedName.lastIndexOf(" -"));
 
 		if (pickedName != null) {
-			pickedGroup = searchForPickedGroup(pickedNameSplitted);
+			pickedGroup = model.database.DatabaseProvider.searchForPickedGroup(pickedNameSplitted);
 			DatabaseProvider.getGroups().remove(pickedGroup);
 		}
 
