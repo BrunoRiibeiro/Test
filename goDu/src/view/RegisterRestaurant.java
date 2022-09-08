@@ -11,9 +11,15 @@ import controller.RegisterRestaurantController;
 import model.Group;
 
 /**
- * Classe herdeira de JstructureRegisters, a qual tem frame para registrar um novo restaurante em cada grupo.
+ * Classe herdeira de {@link JstructureRegisters}, a qual tem frame para registrar um novo restaurante em cada grupo.
  * 
- * @see JstructureRegisters
+ * @see java.awt.event.ActionEvent
+ * @see javax.swing.JFormattedTextField
+ * @see javax.swing.JLabel
+ * @see javax.swing.JTextField
+ * @see javax.swing.SwingConstants
+ * @see controller.RegisterRestaurantController
+ * @see model.Group
  * 
  * @author Bruno Ribeiro
  * @author Igor Penha
@@ -29,13 +35,6 @@ public class RegisterRestaurant extends JstructureRegisters {
 	 * A classe recebe um restaurante, um local do esatabelecimento, o valor do prato consumido,
 	 * quantidade (int) de estrelas do estabelecimento, o prato consumido e data do acontecimento.
 	 * "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param fieldRestaurant
-	 * @param fieldLocale
-	 * @param fieldStars
-	 * @param fieldMeal
-	 * @param fieldCost
-	 * @param fieldDate
 	 */
 	public RegisterRestaurant(Group pickedGroupEdit) {
 		super("Cadastre um novo Restaurante");

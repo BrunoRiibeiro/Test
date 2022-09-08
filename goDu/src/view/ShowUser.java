@@ -10,9 +10,14 @@ import javax.swing.border.LineBorder;
 import controller.ShowUserController;
 
 /**
- * Classe herdeira de JstructureShow, a qual lista todos os usuários existentes.
+ * Classe herdeira de {@link JstructureShow}, a qual lista todos os usuários existentes.
  * 
- * @see JstructureShow
+ * @see java.awt.Color
+ * @see java.awt.event.ActionEvent
+ * @see javax.swing.JButton
+ * @see javax.swing.JList
+ * @see javax.swing.border.LineBorder
+ * @see controller.ShowUserController
  * 
  * @author Bruno Ribeiro
  * @author Igor Penha
@@ -26,8 +31,6 @@ public class ShowUser extends JstructureShow {
 
 	/**
 	 * A classe constroi um novo botão para sua tela e "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param buttonNewUser
 	 */
 	public ShowUser() {
 		super("Usuários", "Usuarios cadastrados:", "Lista:");

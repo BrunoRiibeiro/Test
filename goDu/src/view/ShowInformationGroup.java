@@ -18,13 +18,14 @@ import javax.swing.border.LineBorder;
 import controller.ShowInformationGroupController;
 
 /**
- * Classe herda de JFrame e implementa ActionListner , por meio das bibliotecas Java AWT e Java Swing.
+ * Classe herda de {@link JFrame} e implementa {@link ActionListener}, por meio das bibliotecas Java AWT e Java Swing.
  * Lista as informações do gurpo escolido.
  * 
  * @see java.awt
- * @see java.swing
+ * @see javax.swing
  * @see JFrame
  * @see ActionListener
+ * @see controller.ShowInformationGroupController
  * 
  * @author Bruno Ribeiro
  * @author Igor Penha
@@ -43,10 +44,6 @@ public class ShowInformationGroup extends JFrame implements ActionListener {
 	/**
 	 * A classe constroi um título da pagina em questão, um botão para voltar a página anterior.
 	 * Com este construtor criamos um JFrame, setando background, um tamanho padrão, e um método de fechar a página.
-	 * 
-	 * @param buttonBack
-	 * @param scrollPane
-	 * @param fieldReport
 	 */
 	public ShowInformationGroup() {
 		this.setBackground(new Color(255, 255, 255));

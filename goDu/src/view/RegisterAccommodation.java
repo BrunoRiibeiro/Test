@@ -11,9 +11,15 @@ import controller.RegisterAccommodationController;
 import model.Group;
 
 /**
- * Classe herdeira de JstructureRegisters, a qual tem frame para registrar uma nova acomodação em cada grupo.
+ * Classe herdeira de {@link JstructureRegisters}, a qual tem frame para registrar uma nova acomodação em cada grupo.
  * 
- * @see JstructureRegisters
+ * @see java.awt.event.ActionEvent
+ * @see javax.swing.JFormattedTextField
+ * @see javax.swing.JLabel
+ * @see javax.swing.JTextField
+ * @see javax.swing.SwingConstants
+ * @see controller.RegisterAccommodationController
+ * @see model.Group
  * 
  * @author Bruno Ribeiro
  * @author Igor Penha
@@ -28,11 +34,6 @@ public class RegisterAccommodation extends JstructureRegisters {
 	/**
 	 * A classe recebe um tipo de hospedagem, um local de acomodação, o valor de da estadia e data de hospedagem.
 	 * "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param fieldAccommodation
-	 * @param fieldLocale
-	 * @param fieldCost
-	 * @param accommodationDate
 	 */
 	public RegisterAccommodation(Group pickedGroupEdit) {
 		super("Cadastre uma nova Acomodação");

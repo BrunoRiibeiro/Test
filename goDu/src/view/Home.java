@@ -8,9 +8,12 @@ import javax.swing.JButton;
 import controller.HomeController;
 
 /**
- * Classe herdeira de Jstructure, sendo a tela inicial do projeto.
+ * Classe herdeira de {@link Jstructure}, sendo a tela inicial do projeto.
  * 
- * @see Jstructure
+ * @see java.awt.Color
+ * @see java.awt.event.ActionEvent
+ * @see javax.swing.JButton
+ * @see controller.HomeController
  * 
  * @author Bruno Ribeiro
  * @author Igor Penha
@@ -23,8 +26,6 @@ public class Home extends Jstructure {
 
 	/**
 	 * A classe constroi um novo botão para sua tela e "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param button5
 	 */
 	public Home() {
 		super("goDu", "Cadastrar Usuário", "Cadastrar Grupo", "Grupos", "Usuarios");

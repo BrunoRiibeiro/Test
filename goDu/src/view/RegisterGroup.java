@@ -13,10 +13,18 @@ import javax.swing.SwingConstants;
 import controller.RegisterGroupController;
 
 /**
- * Classe herdeira de JstructureRegisters, a qual tem frame para registrar um novo grupo.
+ * Classe herdeira de {@link JstructureRegisters}, a qual tem frame para registrar um novo grupo.
  * 
- * @see JstructureRegisters
- * 
+ * @see java.awt.Color
+ * @see java.awt.event.ActionEvent
+ * @see javax.swing.JButton
+ * @see javax.swing.JComboBox
+ * @see javax.swing.JFormattedTextField
+ * @see javax.swing.JLabel
+ * @see javax.swing.JTextField
+ * @see javax.swing.SwingConstants
+ * @see controller.RegisterGroupController
+ *  
  * @author Bruno Ribeiro
  * @author Igor Penha
  */
@@ -32,11 +40,6 @@ public class RegisterGroup extends JstructureRegisters {
 	/**
 	 * A classe recebe um nome do grupo, usuário criador, motivação do grupo e data de planejamento.
 	 * "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param fieldName
-	 * @param fieldCreator
-	 * @param fieldMotivation
-	 * @param expectedDate
 	 */
 	public RegisterGroup() {
 		super("Cadastre um novo Grupo");

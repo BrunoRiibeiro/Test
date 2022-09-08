@@ -10,7 +10,7 @@ import view.RegisterGroup;
 import view.ShowGroup;
 
 /**
- * Classe controller da view.ShowGroup, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
+ * Classe controller da {@link view.ShowGroup}, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
  * 
  * @see javax.swing.DefaultListModel
  * @see model.Group
@@ -82,8 +82,11 @@ public class ShowGroupController {
 		return pickedGroup;
 	}
 
-	
-
+	/**
+	 * Método deleta do database um grupo selecionado na tela.
+	 * 
+	 * @see searchForPickedGroup
+	 */
 	public void deletePickedGroup() {
 		String pickedName = view.getFieldGroups().getSelectedValue();
 		String pickedNameSplitted = pickedName.substring(0, pickedName.lastIndexOf(" -"));
@@ -96,6 +99,11 @@ public class ShowGroupController {
 		new ShowGroup();
 	}
 
+	/**
+	 * Gera um Model com o nome de todos os grupos cadastrados.
+	 * 
+	 * @return DefaultListModel
+	 */
 	public DefaultListModel<String> updateList() {
 		DefaultListModel<String> names = new DefaultListModel<>();
 

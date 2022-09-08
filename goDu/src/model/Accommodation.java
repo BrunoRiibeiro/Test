@@ -1,8 +1,7 @@
 package model;
 
 /**
- * Classe que armazena as informações de cada acomodação criada pelo usuário em seu respectivo grupo.
- * 
+ * Classe herdeira de {@link model.Arrangement}, armazena as informações de cada acomodação adicionado ao grupo.
  * @author Bruno Ribeiro
  * @author Igora Penha
  */

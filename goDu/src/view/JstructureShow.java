@@ -12,11 +12,11 @@ import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 
 /**
- * Classe abstrata a qual herda de JFrame e implementa ActionListener, por meio das bibliotecas Java AWT e Java Swing.
+ * Classe abstrata a qual herda de {@link JFrame} e implementa {@link ActionListener}, por meio das bibliotecas Java AWT e Java Swing.
  * A classe molde para as telas de apresentação comuns e possui uma constante para definir a fonte de texto comum.
  * 
  * @see java.awt
- * @see java.swing
+ * @see javax.swing
  * @see JFrame
  * @see ActionListener
  * 

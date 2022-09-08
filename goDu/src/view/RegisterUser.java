@@ -10,9 +10,14 @@ import javax.swing.SwingConstants;
 import controller.RegisterUserController;
 
 /**
- * Classe herdeira de JstructureRegisters, a qual tem frame para registrar um novo usuário.
+ * Classe herdeira de {@link JstructureRegisters}, a qual tem frame para registrar um novo usuário.
  * 
- * @see JstructureRegisters
+ * @see java.awt.event.ActionEvent
+ * @see javax.swing.JFormattedTextField
+ * @see javax.swing.JLabel
+ * @see javax.swing.JTextField
+ * @see javax.swing.SwingConstants
+ * @see controller.RegisterUserController
  * 
  * @author Bruno Ribeiro
  * @author Igor Penha
@@ -25,9 +30,6 @@ public class RegisterUser extends JstructureRegisters {
 
 	/**
 	 * A classe recebe o nome a data de nascimento do usuário e "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param fieldName
-	 * @param expectedDate
 	 */
 	public RegisterUser() {
 		super("Cadastre um novo Usuário");

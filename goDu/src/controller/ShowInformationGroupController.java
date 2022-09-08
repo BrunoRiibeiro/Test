@@ -15,7 +15,7 @@ import view.RegisterGroup;
 import view.ShowInformationGroup;
 
 /**
- * Classe controller da view.ShowInformationGroup, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
+ * Classe controller da {@link view.ShowInformationGroup}, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
  * 
  * @see java.util.ArrayList
  * @see java.util.List
@@ -23,7 +23,7 @@ import view.ShowInformationGroup;
  * @see model.Accommodation
  * @see model.Group
  * @see model.Restaurant
- * @see model.Transportationoup
+ * @see model.Transportation
  * @see model.database.DatabaseProvider
  * @see view.Home
  * @see view.ShowInformationGroup
@@ -32,7 +32,6 @@ import view.ShowInformationGroup;
  * @author Igor Penha
  */
 public class ShowInformationGroupController {
-
 	private ShowInformationGroup view;
 	private String NameInformationGroup;
 
@@ -78,7 +77,7 @@ public class ShowInformationGroupController {
 	}
 
 	/**
-	 * Metodo chama o helper para criar a array de estudios e retorna um
+	 * Método chama o helper para criar a array de estudios e retorna um
 	 * DefaultComboBoxModel com essa array.
 	 * 
 	 * @return DefaultComboBoxModel o model cadastrado para um comboBox

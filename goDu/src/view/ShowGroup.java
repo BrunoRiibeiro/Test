@@ -10,9 +10,14 @@ import javax.swing.border.LineBorder;
 import controller.ShowGroupController;
 
 /**
- * Classe herdeira de JstructureShow, a qual lista todos os grupos existentes.
+ * Classe herdeira de {@link JstructureShow}, a qual lista todos os grupos existentes.
  * 
- * @see JstructureShow
+ * @see java.awt.Color
+ * @see java.awt.event.ActionEvent
+ * @see javax.swing.JButton
+ * @see javax.swing.JList
+ * @see javax.swing.border.LineBorder
+ * @see controller.ShowGroupController
  * 
  * @author Bruno Ribeiro
  * @author Igor Penha
@@ -25,8 +30,6 @@ public class ShowGroup extends JstructureShow {
 
 	/**
 	 * A classe constroi um novo botão para sua tela e "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param buttonNewGroup
 	 */
 	public ShowGroup() {
 		super("Grupos", "Grupos cadastrados:", "Lista:");
