@@ -10,7 +10,8 @@ import view.RegisterGroup;
 import view.ShowGroup;
 
 /**
- * Classe controller da {@link view.ShowGroup}, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
+ * Classe controller da {@link view.ShowGroup}, tem como função gerenciar e
+ * linkar os botões clicados com suas respectivas páginas.
  * 
  * @see javax.swing.DefaultListModel
  * @see model.Group
@@ -38,9 +39,10 @@ public class ShowGroupController {
 		super();
 		this.view = view;
 	}
-	
+
 	/**
-	 * Construtor sem paramêtros para acessar métodos da ShowGroupController sem estanciar a sua view.
+	 * Construtor sem paramêtros para acessar métodos da ShowGroupController sem
+	 * estanciar a sua view.
 	 */
 	public ShowGroupController() {
 
@@ -49,11 +51,10 @@ public class ShowGroupController {
 	/**
 	 * Executa uma ação de acordo com o botão selecionado na view
 	 * 
-	 * Casos: 
-	 * Caso buttonBack: volte à Home. 
-	 * Caso buttonEdit: verifique se algum grupo foi selecionado, então encaminha a página RegisterEditGroup.
-	 * Caso buttonNewGroup: redireciona para a página RegisterGroup.
-	 * Caso buttonDelete: verifica se algum grupo foi selecionado, então deleta o mesmo.
+	 * Casos: Caso buttonBack: volte à Home. Caso buttonEdit: verifique se algum
+	 * grupo foi selecionado, então encaminha a página RegisterEditGroup. Caso
+	 * buttonNewGroup: redireciona para a página RegisterGroup. Caso buttonDelete:
+	 * verifica se algum grupo foi selecionado, então deleta o mesmo.
 	 * 
 	 * @param source Um botao da tela
 	 */
@@ -65,7 +66,8 @@ public class ShowGroupController {
 
 			if (nameGroupEdit != null) {
 
-				pickedGroupEdit = model.database.DatabaseProvider.searchForPickedGroup(nameGroupEdit.substring(0, nameGroupEdit.lastIndexOf(" -")));
+				pickedGroupEdit = model.database.DatabaseProvider
+						.searchForPickedGroup(nameGroupEdit.substring(0, nameGroupEdit.lastIndexOf(" -")));
 				new EditGroup(pickedGroupEdit);
 
 			}
@@ -85,7 +87,6 @@ public class ShowGroupController {
 	/**
 	 * Método deleta do database um grupo selecionado na tela.
 	 * 
-	 * @see searchForPickedGroup
 	 */
 	public void deletePickedGroup() {
 		String pickedName = view.getFieldGroups().getSelectedValue();

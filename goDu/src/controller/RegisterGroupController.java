@@ -13,7 +13,8 @@ import view.RegisterGroup;
 import view.RegisterUser;
 
 /**
- * Classe controller da {@link view.RegisterGroup}, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
+ * Classe controller da {@link view.RegisterGroup}, tem como função gerenciar e
+ * linkar os botões clicados com suas respectivas páginas.
  * 
  * @see java.util.ArrayList
  * @see java.util.List
@@ -45,10 +46,9 @@ public class RegisterGroupController {
 	/**
 	 * Executa uma ação de acordo com o botão selecionado na view
 	 * 
-	 * Casos: 
-	 * Caso buttonConfirm: confirma os valores cadastrados registrando um novo grupo, em seguida volta à Home. 
-	 * Caso buttonCancel: cancela a operação e volta à Home.
-	 * Caso buttonNewUser: redireciona para a página RegisterUser.
+	 * Casos: Caso buttonConfirm: confirma os valores cadastrados registrando um
+	 * novo grupo, em seguida volta à Home. Caso buttonCancel: cancela a operação e
+	 * volta à Home. Caso buttonNewUser: redireciona para a página RegisterUser.
 	 * 
 	 * @param source Um botao da tela
 	 */
@@ -67,12 +67,13 @@ public class RegisterGroupController {
 	}
 
 	/*
-	 * Método cria e armazena no database um novo grupo com o nome, criador, data de planejamento e motivação
-	 * digitados na tela.
+	 * Método cria e armazena no database um novo grupo com o nome, criador, data de
+	 * planejamento e motivação digitados na tela.
 	 */
 	private void registerNewGroup() {
 		String name = view.getFieldName().getText();
-		User creator = model.database.DatabaseProvider.searchForPickedUser(view.getFieldCreator().getSelectedItem().toString());
+		User creator = model.database.DatabaseProvider
+				.searchForPickedUser(view.getFieldCreator().getSelectedItem().toString());
 		String expectedDate = view.getFieldDate().getText();
 		String motivation = view.getFieldMotivation().getText();
 
@@ -81,10 +82,21 @@ public class RegisterGroupController {
 		DatabaseProvider.getGroups().add(group);
 	}
 
+	/**
+	 * Método que atualiza a lista de usuários que podem ser os criadores dos
+	 * grupos.
+	 * 
+	 * @return DefaultComboBoxModel
+	 */
 	public DefaultComboBoxModel<Object> updateModel() {
 		return new DefaultComboBoxModel<>(createArrayUser());
 	}
 
+	/**
+	 * Cria o array de usuários que serão apresentados na DefaultComboBoxModel.
+	 * 
+	 * @return model.toArray()
+	 */
 	public Object[] createArrayUser() {
 		List<String> model = new ArrayList<>();
 
@@ -94,5 +106,5 @@ public class RegisterGroupController {
 
 		return model.toArray();
 	}
-	
+
 }

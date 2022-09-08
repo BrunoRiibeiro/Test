@@ -11,7 +11,8 @@ import controller.RegisterRestaurantController;
 import model.Group;
 
 /**
- * Classe herdeira de {@link JstructureRegisters}, a qual tem frame para registrar um novo restaurante em cada grupo.
+ * Classe herdeira de {@link JstructureRegisters}, a qual tem frame para
+ * registrar um novo restaurante em cada grupo.
  * 
  * @see java.awt.event.ActionEvent
  * @see javax.swing.JFormattedTextField
@@ -32,9 +33,9 @@ public class RegisterRestaurant extends JstructureRegisters {
 	private final RegisterRestaurantController controller = new RegisterRestaurantController(this);
 
 	/**
-	 * A classe recebe um restaurante, um local do esatabelecimento, o valor do prato consumido,
-	 * quantidade (int) de estrelas do estabelecimento, o prato consumido e data do acontecimento.
-	 * "setting" os paramêtros da classe mãe.
+	 * A classe recebe um restaurante, um local do esatabelecimento, o valor do
+	 * prato consumido, quantidade (int) de estrelas do estabelecimento, o prato
+	 * consumido e data do acontecimento. "setting" os paramêtros da classe mãe.
 	 */
 	public RegisterRestaurant(Group pickedGroupEdit) {
 		super("Cadastre um novo Restaurante");
@@ -110,7 +111,7 @@ public class RegisterRestaurant extends JstructureRegisters {
 		fieldCost = new JTextField();
 		labelCost.setLabelFor(fieldCost);
 		fieldCost.setBounds(405, 343, 147, 19);
-		add(fieldCost);
+		this.add(fieldCost);
 		fieldCost.setColumns(10);
 
 	}
@@ -149,7 +150,8 @@ public class RegisterRestaurant extends JstructureRegisters {
 	}
 
 	/**
-	 * Método herdado de ActionListner, o qual sinconiza a view com sua respectiva controller.
+	 * Método herdado de ActionListner, o qual sinconiza a view com sua respectiva
+	 * controller.
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
