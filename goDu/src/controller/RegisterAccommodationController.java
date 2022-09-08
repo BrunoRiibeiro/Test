@@ -12,7 +12,8 @@ import view.EditGroup;
 import view.RegisterAccommodation;
 
 /**
- * Classe controller da {@link view.RegisterAccommodation}, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
+ * Classe controller da {@link view.RegisterAccommodation}, tem como função
+ * gerenciar e linkar os botões clicados com suas respectivas páginas.
  * 
  * @see java.util.List
  * @see model.Accommodation
@@ -44,9 +45,9 @@ public class RegisterAccommodationController {
 	/**
 	 * Executa uma ação de acordo com o botão selecionado na view
 	 * 
-	 * Casos: 
-	 * Caso buttonConfirm: confirma os valores cadastrados registrando uma nova acomodação, em seguida volta à EditGroup. 
-	 * Caso buttonCancel: cancela a operação e volta à EditGroup.
+	 * Casos: Caso buttonConfirm: confirma os valores cadastrados registrando uma
+	 * nova acomodação, em seguida volta à EditGroup. Caso buttonCancel: cancela a
+	 * operação e volta à EditGroup.
 	 * 
 	 * @see registerNewAccommodation
 	 * @param source Um botao da tela
@@ -65,8 +66,8 @@ public class RegisterAccommodationController {
 	}
 
 	/**
-	 * Método busca pelo grupo em questão clona seus dados anteriores, cria um novo gurpo
-	 * com a acomodação adicionada e deleta o gurpo atual.
+	 * Método busca pelo grupo em questão clona seus dados anteriores, cria um novo
+	 * gurpo com a acomodação adicionada e deleta o gurpo atual.
 	 * 
 	 * @param name
 	 */
