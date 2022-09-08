@@ -110,12 +110,24 @@ public class Group {
 		return restaurant;
 	}
 
+	public void setRestaurant(List<Restaurant> restaurant) {
+		this.restaurant = restaurant;
+	}
+
 	public List<Accommodation> getAccommodation() {
 		return accommodation;
 	}
 
+	public void setAccommodation(List<Accommodation> accommodation) {
+		this.accommodation = accommodation;
+	}
+
 	public List<Transportation> getTransportation() {
 		return transportation;
+	}
+
+	public void setTransportation(List<Transportation> transportation) {
+		this.transportation = transportation;
 	}
 
 	public double getTotalPrice() {
