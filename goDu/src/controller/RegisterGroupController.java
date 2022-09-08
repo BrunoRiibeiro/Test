@@ -72,7 +72,7 @@ public class RegisterGroupController {
 	 */
 	private void registerNewGroup() {
 		String name = view.getFieldName().getText();
-		User creator = searchForPickedUser(view.getFieldCreator().getSelectedItem().toString());
+		User creator = model.database.DatabaseProvider.searchForPickedUser(view.getFieldCreator().getSelectedItem().toString());
 		String expectedDate = view.getFieldDate().getText();
 		String motivation = view.getFieldMotivation().getText();
 
@@ -94,14 +94,5 @@ public class RegisterGroupController {
 
 		return model.toArray();
 	}
-
-	public User searchForPickedUser(String name) {
-		for (User currentUser : DatabaseProvider.getUsers()) {
-			if (currentUser.getName().equals(name)) {
-				return currentUser;
-			}
-		}
-
-		return null;
-	}
+	
 }

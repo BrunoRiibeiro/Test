@@ -65,7 +65,7 @@ public class ShowGroupController {
 
 			if (nameGroupEdit != null) {
 
-				pickedGroupEdit = searchForPickedGroup(nameGroupEdit.substring(0, nameGroupEdit.lastIndexOf(" -")));
+				pickedGroupEdit = model.database.DatabaseProvider.searchForPickedGroup(nameGroupEdit.substring(0, nameGroupEdit.lastIndexOf(" -")));
 				new EditGroup(pickedGroupEdit);
 
 			}
@@ -81,22 +81,6 @@ public class ShowGroupController {
 	public Group getPickedGroup() {
 		return pickedGroup;
 	}
-	
-	/**
-	 * Método para a busca dentro do database um grupo selecionado na view.
-	 * Verifica por O(n) cada grupo cadastrado e se corresponde ao nome clicado na tela.
-	 * 
-	 * @param name; nome clicado na tela.
-	 * @return currentGroup/null; grupo equivalente ao nome clicado na tela / null caso nenhum grupo seja correspondente.
-	 */
-	public Group searchForPickedGroup(String name) {
-		for (Group currentGroup : DatabaseProvider.getGroups()) {
-			if (name.equals(currentGroup.getNameGroup())) {
-				return currentGroup;
-			}
-		}
-		return null;
-	}
 
 	/**
 	 * Método deleta do database um grupo selecionado na tela.
@@ -108,7 +92,7 @@ public class ShowGroupController {
 		String pickedNameSplitted = pickedName.substring(0, pickedName.lastIndexOf(" -"));
 
 		if (pickedName != null) {
-			pickedGroup = searchForPickedGroup(pickedNameSplitted);
+			pickedGroup = model.database.DatabaseProvider.searchForPickedGroup(pickedNameSplitted);
 			DatabaseProvider.getGroups().remove(pickedGroup);
 		}
 

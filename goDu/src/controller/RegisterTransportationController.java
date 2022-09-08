@@ -78,7 +78,7 @@ public class RegisterTransportationController {
 				String date = view.getFieldTravelDate().getText();
 				String locale = view.getFieldLocale().getText();
 				String transportMode = view.getFieldTransportation().getText();
-				Double transportationCost = Double.parseDouble(view.getTextFieldCost().getText());
+				Double transportationCost = Double.parseDouble(view.getFieldCost().getText());
 
 				String names = currentGroup.getNameGroup();
 				User creator = currentGroup.getCreator();

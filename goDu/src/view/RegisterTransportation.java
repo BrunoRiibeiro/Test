@@ -101,7 +101,7 @@ public class RegisterTransportation extends JstructureRegisters {
 		return fieldTravelDate;
 	}
 
-	public JTextField getTextFieldCost() {
+	public JTextField getFieldCost() {
 		return fieldCost;
 	}
 
@@ -114,7 +114,8 @@ public class RegisterTransportation extends JstructureRegisters {
 	}
 
 	/**
-	 * Método herdado de ActionListner, o qual sinconiza a view com sua respectiva controller.
+	 * Método herdado de ActionListner, o qual sinconiza a view com sua respectiva
+	 * controller.
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {

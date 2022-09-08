@@ -92,7 +92,7 @@ public class RegisterEditDataGroupController {
 					motivation = view.getFieldMotivation().getText();
 				}
 
-				if (view.getFieldDate().getText() == "__/__/____") {
+				if (view.getFieldDate().getText().matches("__/__/____")) {
 					expectedDate = currentGroup.getExpectedDate();
 				} else {
 					expectedDate = view.getFieldDate().getText();

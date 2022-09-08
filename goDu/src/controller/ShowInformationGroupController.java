@@ -33,6 +33,7 @@ import view.ShowInformationGroup;
  */
 public class ShowInformationGroupController {
 	private ShowInformationGroup view;
+	private String NameInformationGroup;
 
 	/**
 	 * Construtor recebe a view a qual irá gerenciar.
@@ -59,9 +60,17 @@ public class ShowInformationGroupController {
 		} else if (source == view.getButtonNewGroup()) {
 			new RegisterGroup();
 			view.dispose();
+    } else if (source == view.getButtonSearch()) {
+			if (view.getFieldExpectedGroup().getText() != null) {
+				NameInformationGroup = view.getFieldExpectedGroup().getText();
+				view.getFieldReport().setText(generateReport());
+				view.getFieldGroup().setSelectedItem(NameInformationGroup);
+		  }
 		} else {
 			if (view.getFieldGroup().getSelectedItem() != null) {
+				NameInformationGroup = view.getFieldGroup().getSelectedItem().toString();
 				view.getFieldReport().setText(generateReport());
+				view.getFieldExpectedGroup().setText(NameInformationGroup);
 			}
 		}
 		
@@ -97,7 +106,7 @@ public class ShowInformationGroupController {
 		model.append("Grupo:\n");
 
 		for (Group currentGroup : DatabaseProvider.getGroups()) {
-			if (currentGroup.getNameGroup().equals(view.getFieldGroup().getSelectedItem())) {
+			if (currentGroup.getNameGroup().equals(NameInformationGroup)) {
 
 				model.append("    - ");
 				model.append("Nome do grupo: " + currentGroup.getNameGroup());
@@ -214,5 +223,9 @@ public class ShowInformationGroupController {
 		}
 
 		return model.toString();
+	}
+
+	public String getNameInformationGroup() {
+		return NameInformationGroup;
 	}
 }

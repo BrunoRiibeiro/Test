@@ -31,4 +31,32 @@ public class DatabaseProvider {
 	public static List<Group> getGroups() {
 		return GROUPS;
 	}
+	
+	public static User searchForPickedUser(String name) {
+		for (User currentUser : DatabaseProvider.getUsers()) {
+			if (currentUser.getName().equals(name)) {
+				return currentUser;
+			}
+		}
+
+		return null;
+	}
+	
+	public static Group searchForPickedGroup(String name) {
+		for (Group currentGroup : DatabaseProvider.getGroups()) {
+			if (name.equals(currentGroup.getNameGroup())) {
+				return currentGroup;
+			}
+		}
+		return null;
+	}
+	
+	public static Group searchForPickedGroup(User creator) {
+		for (Group currentGroup : DatabaseProvider.getGroups()) {
+			if (creator.equals(currentGroup.getCreator())) {
+				return currentGroup;
+			}
+		}
+		return null;
+	}
 }

@@ -2,6 +2,7 @@ package controller;
 
 import javax.swing.DefaultListModel;
 
+import model.Group;
 import model.User;
 import model.database.DatabaseProvider;
 import view.Home;
@@ -31,7 +32,7 @@ public class ShowUserController {
 	public ShowUserController() {
 
 	}
-	
+
 	/**
 	 * Construtor recebe a view a qual irá gerenciar.
 	 * 
@@ -45,11 +46,10 @@ public class ShowUserController {
 	/**
 	 * Executa uma ação de acordo com o botão selecionado na view
 	 * 
-	 * Casos: 
-	 * Caso buttonBack: volte à Home. 
-	 * Caso buttonEdit: verifique se algum usuário foi selecionado, então encaminha a página RegisterEditUser.
-	 * Caso buttonNewUser: redireciona para a página RegisterUser.
-	 * Caso buttonDelete: verifica se algum usuário foi selecionado, então deleta o mesmo.
+	 * Casos: Caso buttonBack: volte à Home. Caso buttonEdit: verifique se algum
+	 * usuário foi selecionado, então encaminha a página RegisterEditUser. Caso
+	 * buttonNewUser: redireciona para a página RegisterUser. Caso buttonDelete:
+	 * verifica se algum usuário foi selecionado, então deleta o mesmo.
 	 * 
 	 * @param source Um botao da tela
 	 */
@@ -60,7 +60,7 @@ public class ShowUserController {
 			String pickedName = view.getFieldUser().getSelectedValue();
 
 			if (pickedName != null) {
-				pickedUserEdit = searchForPickedUser(pickedName);
+				pickedUserEdit = model.database.DatabaseProvider.searchForPickedUser(pickedName);
 				new RegisterEditUser(pickedUserEdit);
 			}
 		} else if (source == view.getButtonNewUser()) {
@@ -69,8 +69,7 @@ public class ShowUserController {
 			String pickedName = view.getFieldUser().getSelectedValue();
 
 			if (pickedName != null) {
-				pickedUserDelete = searchForPickedUser(pickedName);
-				DatabaseProvider.getUsers().remove(pickedUserDelete);
+				deletePickedUser();
 			}
 			new ShowUser();
 		}
@@ -85,33 +84,17 @@ public class ShowUserController {
 	public User getPickedUserEdit() {
 		return pickedUserEdit;
 	}
-	
-	/**
-	 * Método para a busca dentro do database um usuário selecionado na view.
-	 * Verifica por O(n) cada usuário cadastrado e se corresponde ao nome clicado na tela.
-	 * 
-	 * @param name; nome clicado na tela.
-	 * @return currentUser/null; usuário equivalente ao nome clicado na tela / null caso nenhum usuário seja correspondente.
-	 */
-	public User searchForPickedUser(String name) {
-		for (User currentUser : DatabaseProvider.getUsers()) {
-			if (name.equals(currentUser.getName())) {
-				return currentUser;
-			}
-		}
-		return null;
-	}
 
-	/**
-	 * Método deleta do database um usuário selecionado na tela, assim como os grupos que por esse usuário foram criados.
-	 * 
-	 * @see searchForPickedUser
-	 */
 	public void deletePickedUser() {
 		String pickedName = view.getFieldUser().getSelectedValue();
 
 		if (pickedName != null) {
-			User pickedUser = searchForPickedUser(pickedName);
+			User pickedUser = model.database.DatabaseProvider.searchForPickedUser(pickedName);
+			
+			for (int i = 0; i <= DatabaseProvider.getGroups().size(); i++) {
+				Group deleteGroup = model.database.DatabaseProvider.searchForPickedGroup(pickedUser);
+				DatabaseProvider.getGroups().remove(deleteGroup);
+			}
 			DatabaseProvider.getUsers().remove(pickedUser);
 		}
 		new ShowUser();
