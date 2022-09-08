@@ -8,7 +8,7 @@ import view.ShowInformationGroup;
 import view.ShowUser;
 
 /**
- * Classe controller da view.Home, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
+ * Classe controller da {@link view.Home}, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
  * 
  * @see view.Home
  * @see view.RegisterGroup

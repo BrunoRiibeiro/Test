@@ -11,10 +11,16 @@ import controller.RegisterTransportationController;
 import model.Group;
 
 /**
- * Classe herdeira de JstructureRegisters, a qual tem frame para registrar um
- * novo transporte em cada grupo.
+ * Classe herdeira de {@link JstructureRegisters}, a qual tem frame para
+ * registrar um novo transporte em cada grupo.
  * 
- * @see JstructureRegisters
+ * @see java.awt.event.ActionEvent
+ * @see javax.swing.JFormattedTextField
+ * @see javax.swing.JLabel
+ * @see javax.swing.JTextField
+ * @see javax.swing.SwingConstants
+ * @see controller.RegisterTransportationController
+ * @see model.Group
  * 
  * @author Bruno Ribeiro
  * @author Igor Penha
@@ -29,11 +35,6 @@ public class RegisterTransportation extends JstructureRegisters {
 	/**
 	 * A classe recebe um modal de transporte, um local de destino, o valor de
 	 * locomoção e data da viagem. "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param fieldTransportation
-	 * @param fieldLocale
-	 * @param fieldCost
-	 * @param fieldTravelDate
 	 */
 	public RegisterTransportation(Group pickedGroupEdit) {
 		super("Cadastre um novo Transporte");
@@ -84,7 +85,7 @@ public class RegisterTransportation extends JstructureRegisters {
 		fieldCost = new JTextField();
 		labelCost.setLabelFor(fieldCost);
 		fieldCost.setBounds(405, 343, 147, 19);
-		add(fieldCost);
+		this.add(fieldCost);
 		fieldCost.setColumns(10);
 
 	}

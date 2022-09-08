@@ -9,9 +9,13 @@ import controller.EditGroupController;
 import model.Group;
 
 /**
- * Classe herdeira de Jstructure, sendo a tela responsável pela seleção de elementos a serem editados em cada grupo.
+ * Classe herdeira de {@link Jstructure}, sendo a tela responsável pela seleção de elementos a serem editados em cada grupo.
  * 
- * @see Jstructure
+ * @see java.awt.Color
+ * @see java.awt.event.ActionEvent
+ * @see javax.swing.JButton
+ * @see controller.EditGroupController
+ * @see model.Group
  * 
  * @author Bruno Ribeiro
  * @author Igor Penha
@@ -26,8 +30,6 @@ public class EditGroup extends Jstructure {
 	/**
 	 * A classe constroi um novo botão para sua tela, permitindo que o usuário volte para a página anterior
 	 * e "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param buttonBackGroup
 	 */
 	public EditGroup(Group pickedGroupEdit) {
 		super("Editar Grupos", "Acomodação", "Restaurante", "Transporte", "Editar Dados do Grupo");

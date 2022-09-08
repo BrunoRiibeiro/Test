@@ -15,7 +15,8 @@ import view.RegisterGroup;
 import view.ShowInformationGroup;
 
 /**
- * Classe controller da view.ShowInformationGroup, tem como função gerenciar e linkar os botões clicados com suas respectivas páginas.
+ * Classe controller da {@link view.ShowInformationGroup}, tem como função
+ * gerenciar e linkar os botões clicados com suas respectivas páginas.
  * 
  * @see java.util.ArrayList
  * @see java.util.List
@@ -23,7 +24,7 @@ import view.ShowInformationGroup;
  * @see model.Accommodation
  * @see model.Group
  * @see model.Restaurant
- * @see model.Transportationoup
+ * @see model.Transportation
  * @see model.database.DatabaseProvider
  * @see view.Home
  * @see view.ShowInformationGroup
@@ -32,7 +33,6 @@ import view.ShowInformationGroup;
  * @author Igor Penha
  */
 public class ShowInformationGroupController {
-
 	private ShowInformationGroup view;
 	private String NameInformationGroup;
 
@@ -48,9 +48,8 @@ public class ShowInformationGroupController {
 	/**
 	 * Executa uma ação de acordo com o botão selecionado na view
 	 * 
-	 * Casos: 
-	 * Caso buttonBack: volte à Home.
-	 * Caso ComboBox Group: mostre as informações deste grupo.
+	 * Casos: Caso buttonBack: volte à Home. Caso ComboBox Group: mostre as
+	 * informações deste grupo.
 	 * 
 	 * @param source Um botao da tela
 	 */
@@ -61,12 +60,12 @@ public class ShowInformationGroupController {
 		} else if (source == view.getButtonNewGroup()) {
 			new RegisterGroup();
 			view.dispose();
-    } else if (source == view.getButtonSearch()) {
+		} else if (source == view.getButtonSearch()) {
 			if (view.getFieldExpectedGroup().getText() != null) {
 				NameInformationGroup = view.getFieldExpectedGroup().getText();
 				view.getFieldReport().setText(generateReport());
 				view.getFieldGroup().setSelectedItem(NameInformationGroup);
-		  }
+			}
 		} else {
 			if (view.getFieldGroup().getSelectedItem() != null) {
 				NameInformationGroup = view.getFieldGroup().getSelectedItem().toString();
@@ -74,21 +73,25 @@ public class ShowInformationGroupController {
 				view.getFieldExpectedGroup().setText(NameInformationGroup);
 			}
 		}
-		
+
 	}
 
 	/**
-	 * Metodo chama o helper para criar a array de estudios e retorna um
-	 * DefaultComboBoxModel com essa array.
+	 * Método que mostra a array de grupos e retorna um DefaultComboBoxModel com a
+	 * array criada pela createArrayGroup.
 	 * 
-	 * @return DefaultComboBoxModel o model cadastrado para um comboBox
+	 * @return DefaultComboBoxModel
 	 */
-
 	public DefaultComboBoxModel<Object> updateModel() {
-		return new DefaultComboBoxModel<>(createArrayUser());
+		return new DefaultComboBoxModel<>(createArrayGroup());
 	}
 
-	public Object[] createArrayUser() {
+	/**
+	 * Cria a array de grupos que será mostrada pela updateModel
+	 * 
+	 * @return model.toArray()
+	 */
+	public Object[] createArrayGroup() {
 		List<String> model = new ArrayList<>();
 
 		for (Group group : DatabaseProvider.getGroups()) {

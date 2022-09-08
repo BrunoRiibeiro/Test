@@ -11,9 +11,15 @@ import controller.RegisterEditDataGroupController;
 import model.Group;
 
 /**
- * Classe herdeira de JstructureRegisters, a qual tem frame para editar iformações de cada grupo.
+ * Classe herdeira de {@link JstructureRegisters}, a qual tem frame para editar iformações de cada grupo.
  * 
- * @see JstructureRegisters
+ * @see java.awt.event.ActionEvent
+ * @see javax.swing.JFormattedTextField
+ * @see javax.swing.JLabel
+ * @see javax.swing.JTextField
+ * @see javax.swing.SwingConstants
+ * @see controller.RegisterEditDataGroupController
+ * @see model.Group
  * 
  * @author Bruno Ribeiro
  * @author Igor Penha
@@ -29,11 +35,6 @@ public class RegisterEditDataGroup extends JstructureRegisters {
 	/**
 	 * A classe recebe um novo nome do grupo, uma nova motivação do grupo, o número de membros pertencentes e data de planejamento.
 	 * "setting" os paramêtros da classe mãe.
-	 * 
-	 * @param fieldName
-	 * @param fieldMotivation
-	 * @param fieldMembers
-	 * @param expectedDate
 	 */
 	public RegisterEditDataGroup(Group pickedGroupEdit) {
 		super("Editando um novo Grupo");

@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Classe que armazena as informações de cada modal adicionado ao grupo.
+ * Classe herdeira de {@link model.Arrangement}, armazena as informações de cada modal adicionado ao grupo.
  * 
  * @author Bruno Ribeiro
  * @author Igor Penha
