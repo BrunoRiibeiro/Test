@@ -11,8 +11,23 @@ import model.Transportation;
 import model.User;
 import model.database.DatabaseProvider;
 
+/**
+ * Classe responsável pelo geramento de dados pré cadastrados do software.
+ * 
+ * @see java.util.Calendar
+ * @see java.util.GregorianCalendar
+ * @see java.util.List
+ * @see model
+ * @see model.database 
+ * 
+ * @author Bruno Ribeiro
+ * @author Igor Penha
+ */
 public class RandomBuild {
 
+	/**
+	 * Método o qual instancia cinco usuários, cinco grupos, quatro acomodações, quatro restaurantes e quatro transportes.
+	 */
 	public void RandomBuilder() {
 
 		User igor = new User("Igor", randDate(1500, 2004));
@@ -130,10 +145,26 @@ public class RandomBuild {
 
 	}
 
+	/**
+	 * Método para gerar um número aleatório dentro de um range específico.
+	 * 
+	 * @param start
+	 * @param stop
+	 * @return randomNumber; between start and stop.
+	 */
 	public int randBetween(int start, int stop) {
 		return start + (int) Math.round(Math.random() * (stop - start));
 	}
 
+	/**
+	 * Método para geração de Strings de datas aleatórias.
+	 * 
+	 * @see randBetween
+	 * 
+	 * @param start
+	 * @param stop
+	 * @return date dd/MM/yyyy
+	 */
 	public String randDate(int start, int stop) {
 
 		GregorianCalendar gc = new GregorianCalendar();
