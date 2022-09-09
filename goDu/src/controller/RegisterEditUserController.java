@@ -44,7 +44,6 @@ public class RegisterEditUserController {
 	public void sendAction(Object source) {
 		if (source == view.getButtonConfirm()) {
 			editUser();
-			System.out.println(DatabaseProvider.getUsers());
 			new Home();
 		} else if (source == view.getButtonCancel()) {
 			new ShowUser();

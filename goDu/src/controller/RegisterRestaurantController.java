@@ -55,7 +55,6 @@ public class RegisterRestaurantController {
 		if (source == view.getButtonConfirm()) {
 			String pickedNameSplitted = view.getPickedGroupEdit().getNameGroup();
 			registerNewRestaurant((pickedNameSplitted));
-			System.out.println(DatabaseProvider.getGroups());
 			new EditGroup(view.getPickedGroupEdit());
 		} else if (source == view.getButtonCancel()) {
 			new EditGroup(view.getPickedGroupEdit());
