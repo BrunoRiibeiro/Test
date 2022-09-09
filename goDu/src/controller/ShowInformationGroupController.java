@@ -110,7 +110,7 @@ public class ShowInformationGroupController {
 		model.append("Grupo:\n");
 
 		for (Group currentGroup : DatabaseProvider.getGroups()) {
-			if (currentGroup.getNameGroup().equals(NameInformationGroup)) {
+			if (currentGroup.getNameGroup().toUpperCase().equals(NameInformationGroup.toUpperCase())) {
 
 				model.append("    - ");
 				model.append("Nome do grupo: " + currentGroup.getNameGroup());
