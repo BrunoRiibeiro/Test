@@ -18,8 +18,8 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		RandomBuild carregamentoAleatorio = new RandomBuild();
-		carregamentoAleatorio.RandomBuilder();
+		RandomBuild randomLoading = new RandomBuild();
+		randomLoading.RandomBuilder();
 		new Home();
 	}
 
