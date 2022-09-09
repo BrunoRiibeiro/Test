@@ -56,7 +56,6 @@ public class RegisterEditDataGroupController {
 		if (source == view.getButtonConfirm()) {
 			String pickedNameSplitted = view.getPickedGroupEdit().getNameGroup();
 			editDataGroup((pickedNameSplitted));
-			System.out.println(DatabaseProvider.getGroups());
 			new Home();
 		} else if (source == view.getButtonCancel()) {
 			new EditGroup(view.getPickedGroupEdit());

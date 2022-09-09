@@ -56,7 +56,6 @@ public class RegisterAccommodationController {
 		if (source == view.getButtonConfirm()) {
 			String pickedNameSplitted = view.getPickedGroupEdit().getNameGroup();
 			registerNewAccommodation(pickedNameSplitted);
-			System.out.println(DatabaseProvider.getGroups());
 			new EditGroup(view.getPickedGroupEdit());
 		} else if (source == view.getButtonCancel()) {
 			new EditGroup(view.getPickedGroupEdit());

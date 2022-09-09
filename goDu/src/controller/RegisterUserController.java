@@ -43,7 +43,6 @@ public class RegisterUserController {
 	public void sendAction(Object source) {
 		if (source == view.getButtonConfirm()) {
 			registerNewUser();
-			System.out.println(DatabaseProvider.getUsers());
 			new Home();
 		} else if (source == view.getButtonCancel()) {
 			new Home();
